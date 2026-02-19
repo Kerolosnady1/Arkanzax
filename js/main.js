@@ -12,8 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonialsSlider();
   initScrollTopButton();
   initCTAForm();
+  initLanguageToggle();
   initCardHoverEffects();
 });
+
 
 // ─── 2. Sticky Header ────────────────────────────────────────
 function initStickyHeader() {
@@ -233,7 +235,58 @@ function initCTAForm() {
   });
 }
 
-// ─── 8. Card 3D Hover Effects ────────────────────────────────
+// ─── 8. Language Toggle (EN ↔ AR) ────────────────────────────
+function initLanguageToggle() {
+  const btn = document.getElementById('lang-toggle');
+  const label = document.getElementById('lang-label');
+  if (!btn) return;
+
+  let isArabic = false;
+
+  btn.addEventListener('click', () => {
+    isArabic = !isArabic;
+    const html = document.documentElement;
+
+    // 1. Flip direction and language
+    html.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
+    html.setAttribute('lang', isArabic ? 'ar' : 'en');
+
+    // 2. Update button UI
+    if (label) label.textContent = isArabic ? 'EN' : 'AR';
+    const flag = btn.querySelector('.lang-flag');
+    if (flag) flag.textContent = isArabic ? '🇬🇧' : '🇸🇦';
+    btn.setAttribute('title', isArabic ? 'Switch to English' : 'التبديل إلى العربية');
+
+    // 3. Swap all translatable text nodes
+    const translatables = document.querySelectorAll('[data-en][data-ar]');
+    translatables.forEach(el => {
+      // Skip the button label itself (handled above)
+      if (el === label) return;
+
+      const text = isArabic ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+      if (text) el.textContent = text;
+    });
+
+    // 4. Swap input placeholders
+    const inputs = document.querySelectorAll('[data-en-placeholder][data-ar-placeholder]');
+    inputs.forEach(inp => {
+      inp.placeholder = isArabic
+        ? inp.getAttribute('data-ar-placeholder')
+        : inp.getAttribute('data-en-placeholder');
+    });
+
+    // 5. Announce to screen readers
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.className = 'sr-only';
+    announcement.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);';
+    announcement.textContent = isArabic ? 'تم التبديل إلى العربية' : 'Switched to English';
+    document.body.appendChild(announcement);
+    setTimeout(() => announcement.remove(), 1000);
+  });
+}
+
+// ─── 9. Card 3D Hover Effects ────────────────────────────────
 function initCardHoverEffects() {
   const cards = document.querySelectorAll('.challenge-card, .service-card');
 

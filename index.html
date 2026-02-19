@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arkanzax | AI-Powered Marketing & SEO Agency</title>
-  <meta name="description" content="Arkanzax is an AI-powered marketing and SEO agency helping businesses grow faster with smarter digital strategies.">
-  <meta name="keywords" content="SEO, marketing agency, AI marketing, digital marketing, Egypt, KSA">
-  <meta property="og:title" content="Arkanzax | AI-Powered Marketing & SEO Agency">
-  <meta property="og:description" content="Manage & optimize your business with AI-driven marketing solutions.">
-  <meta property="og:type" content="website">
-  <link rel="icon" type="image/png" href="assets/logo.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Arkanzax — AI-powered marketing agency helping brands grow with data-driven strategies, creative campaigns, and performance marketing." />
+  <meta name="keywords" content="Arkanzax, digital marketing, AI marketing, SEO, social media, paid ads, branding" />
+  <meta property="og:title" content="Arkanzax | AI-Powered Marketing Agency" />
+  <meta property="og:description" content="We help brands grow with AI-driven marketing solutions." />
+  <meta property="og:type" content="website" />
+  <title>Arkanzax | AI-Powered Marketing Agency</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Latin + Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet" />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- RTL Arabic font override via inline style injected by JS -->
+  <style>
+    html[dir="rtl"] body {
+      font-family: 'Cairo', 'Outfit', sans-serif;
+    }
+
+    html[dir="rtl"] .section-title,
+    html[dir="rtl"] .hero-title,
+    html[dir="rtl"] h1,
+    html[dir="rtl"] h2,
+    html[dir="rtl"] h3 {
+      font-family: 'Cairo', 'Outfit', sans-serif;
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- ==================== HEADER ==================== -->
+  <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
   <header class="site-header" id="header">
+
     <!-- Top Bar -->
     <div class="header-top">
-      <div class="container-fluid">
+      <div class="container">
         <div class="header-top-inner">
           <div class="header-contact-info">
             <a href="mailto:info@arkanzax.com"><i class="fas fa-envelope"></i> info@arkanzax.com</a>
-            <a href="https://wa.me/+201033477682"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="tel:+1234567890"><i class="fas fa-phone"></i> +1 (234) 567-890</a>
           </div>
           <div class="social-links">
-            <a href="https://facebook.com/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/+201033477682" title="WhatsApp Egypt" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
           </div>
         </div>
       </div>
@@ -46,288 +67,328 @@
 
     <!-- Main Nav -->
     <div class="header-main" id="header-main">
-      <div class="container-fluid">
-        <div class="nav-inner">
+      <div class="container">
+        <nav class="nav-inner">
           <!-- Logo -->
-          <div class="logo">
-            <a href="index.html">
-              <img src="assets/logo.png" alt="Arkanzax Logo">
-            </a>
-          </div>
+          <a href="#" class="logo">
+            <img src="assets/logo.png" alt="Arkanzax Logo" width="160" height="52" />
+          </a>
 
-          <!-- Navigation -->
-          <nav class="main-nav" id="main-nav">
-            <ul class="nav-list">
-              <li><a href="index.html" class="active">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#why-us">Why Us</a></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
+          <!-- Desktop Nav Links -->
+          <ul class="nav-list main-nav" role="list">
+            <li><a href="#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+            <li><a href="#about" data-en="About" data-ar="من نحن">About</a></li>
+            <li><a href="#testi-sec" data-en="Testimonials" data-ar="آراء العملاء">Testimonials</a></li>
+            <li><a href="#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
+            <li><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+          </ul>
 
-          <!-- CTA + Mobile Toggle -->
+          <!-- Header Actions -->
           <div class="header-actions">
-            <a href="#contact" class="btn btn-primary">Contact Us <i class="fa-regular fa-arrow-right ms-1"></i></a>
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
-              <i class="far fa-bars"></i>
+            <!-- Language Toggle -->
+            <button id="lang-toggle" class="lang-toggle" aria-label="Switch language" title="Switch language">
+              <span class="lang-flag">🇸🇦</span>
+              <span id="lang-label">AR</span>
             </button>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Mobile Nav -->
-    <div class="mobile-nav" id="mobile-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#why-us">Why Us</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+            <!-- CTA Button -->
+            <a href="#contact" class="btn btn-primary" data-en="Get Started" data-ar="ابدأ الآن">Get Started</a>
+          </div>
+
+          <!-- Mobile Toggle -->
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+            <i class="far fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div class="mobile-nav" id="mobile-nav">
+        <ul role="list">
+          <li><a href="#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+          <li><a href="#about" data-en="About" data-ar="من نحن">About</a></li>
+          <li><a href="#testi-sec" data-en="Testimonials" data-ar="آراء العملاء">Testimonials</a></li>
+          <li><a href="#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
+          <li><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
-  <!-- ==================== HERO ==================== -->
+  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
   <section class="hero-section" id="hero">
     <div class="hero-bg-overlay"></div>
-    <div class="hero-particles" id="hero-particles"></div>
+    <div class="hero-particles"></div>
+
     <div class="container">
       <div class="hero-content">
-        <div class="hero-text reveal-left">
-          <span class="hero-badge">Twing SEO Agency</span>
-          <h1 class="hero-title">Manage &amp; optimize your <span class="gradient-text">business</span></h1>
-          <p class="hero-description">AI-powered marketing solutions designed to scale your business faster, smarter, and more profitably than traditional agencies.</p>
+        <!-- Left Text -->
+        <div class="hero-text">
+          <span class="hero-badge">
+            <i class="fas fa-bolt"></i>&nbsp;
+            <span data-en="AI-Powered Marketing" data-ar="تسويق مدعوم بالذكاء الاصطناعي">AI-Powered Marketing</span>
+          </span>
+
+          <h1 class="hero-title">
+            <span data-en="Grow Your Brand" data-ar="نمّ علامتك التجارية">Grow Your Brand</span><br />
+            <span class="gradient-text" data-en="With Smarter Marketing" data-ar="بتسويق أكثر ذكاءً">With Smarter
+              Marketing</span>
+          </h1>
+
+          <p class="hero-description"
+            data-en="We combine AI technology with creative strategy to deliver marketing campaigns that actually convert. Data-driven, results-focused, and built for scale."
+            data-ar="نجمع تقنية الذكاء الاصطناعي مع الاستراتيجية الإبداعية لتقديم حملات تسويقية تحقق نتائج حقيقية. مدفوعة بالبيانات، مركّزة على النتائج، ومصمّمة للنمو.">
+            We combine AI technology with creative strategy to deliver marketing campaigns that actually convert.
+            Data-driven, results-focused, and built for scale.
+          </p>
+
           <div class="hero-buttons">
-            <a href="#about" class="btn btn-blue">Get Started Now <i class="fa-regular fa-arrow-right ms-1"></i></a>
-            <a href="#services" class="btn btn-outline-white">Our Services <i class="fas fa-caret-right ms-1"></i></a>
+            <a href="#services" class="btn btn-primary" data-en="Explore Services" data-ar="استكشف الخدمات">Explore
+              Services</a>
+            <a href="#testi-sec" class="btn btn-outline-white" data-en="View Success Stories"
+              data-ar="اقرأ قصص النجاح">View Success Stories</a>
           </div>
+
           <div class="hero-stats">
             <div class="stat-item">
               <span class="stat-num">500+</span>
-              <span class="stat-label">Clients Served</span>
+              <span class="stat-label" data-en="Clients Served" data-ar="عميل تم خدمته">Clients Served</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
               <span class="stat-num">98%</span>
-              <span class="stat-label">Success Rate</span>
+              <span class="stat-label" data-en="Client Retention" data-ar="نسبة الاحتفاظ بالعملاء">Client
+                Retention</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-              <span class="stat-num">10+</span>
-              <span class="stat-label">Years Experience</span>
+              <span class="stat-num">3x</span>
+              <span class="stat-label" data-en="Avg. ROI Increase" data-ar="متوسط زيادة العائد">Avg. ROI Increase</span>
             </div>
           </div>
         </div>
-        <div class="hero-image reveal-right">
-          <div class="hero-img-wrapper">
-            <img src="assets/hero-img.png" alt="Marketing Analytics Dashboard" class="hero-main-img">
-            <div class="hero-shape shape-1"></div>
-            <div class="hero-shape shape-2"></div>
-            <div class="floating-card card-1">
-              <i class="fas fa-chart-line"></i>
-              <div>
-                <strong>+127%</strong>
-                <span>ROI Increase</span>
-              </div>
+
+        <!-- Right Image -->
+        <div class="hero-image hero-img-wrapper">
+          <div class="hero-shape shape-1"></div>
+          <div class="hero-shape shape-2"></div>
+          <img src="assets/hero-img.png" alt="AI Marketing Dashboard" class="hero-main-img" width="600" height="500" />
+
+          <!-- Floating cards -->
+          <div class="floating-card card-1">
+            <i class="fas fa-chart-line"></i>
+            <div>
+              <strong>+247%</strong>
+              <span data-en="Traffic Growth" data-ar="نمو الزيارات">Traffic Growth</span>
             </div>
-            <div class="floating-card card-2">
-              <i class="fas fa-bullseye"></i>
-              <div>
-                <strong>2.4M+</strong>
-                <span>Leads Generated</span>
-              </div>
+          </div>
+          <div class="floating-card card-2">
+            <i class="fas fa-robot"></i>
+            <div>
+              <strong>AI</strong>
+              <span data-en="Campaign Optimized" data-ar="حملة محسّنة">Campaign Optimized</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
+
+    <div class="scroll-indicator" aria-hidden="true">
       <div class="scroll-dot"></div>
     </div>
   </section>
 
-  <!-- ==================== TRUSTED BRANDS ==================== -->
-  <section class="brands-section" id="about">
-    <div class="container">
-      <div class="section-header text-center reveal-up">
-        <h3 class="brands-title">Trusted by millions of customers</h3>
-        <div class="title-hr">
-          <span class="hr-line"></span>
-          <span class="hr-dot"></span>
-          <span class="hr-line"></span>
-        </div>
+  <!-- ═══════════════════════════ BRANDS ═══════════════════════════ -->
+  <section class="brands-section">
+    <div class="container text-center">
+      <p class="brands-title reveal-up" data-en="Trusted by Leading Brands Worldwide"
+        data-ar="موثوق به من قبل العلامات التجارية الرائدة">
+        Trusted by Leading Brands Worldwide
+      </p>
+      <div class="title-hr">
+        <span class="hr-line"></span>
+        <span class="hr-dot"></span>
+        <span class="hr-line"></span>
       </div>
-      <div class="brands-grid reveal-up">
-        <div class="brand-logo">
-          <div class="brand-placeholder">Brand 1</div>
-        </div>
-        <div class="brand-logo">
-          <div class="brand-placeholder">Brand 2</div>
-        </div>
-        <div class="brand-logo">
-          <div class="brand-placeholder">Brand 3</div>
-        </div>
-        <div class="brand-logo">
-          <div class="brand-placeholder">Brand 4</div>
-        </div>
-        <div class="brand-logo">
-          <div class="brand-placeholder">Brand 5</div>
-        </div>
-        <div class="brand-logo">
-          <div class="brand-placeholder">Brand 6</div>
-        </div>
+      <div class="brands-grid">
+        <div class="brand-logo reveal-card"><span class="brand-placeholder">TechCorp</span></div>
+        <div class="brand-logo reveal-card"><span class="brand-placeholder">Novex</span></div>
+        <div class="brand-logo reveal-card"><span class="brand-placeholder">Brandify</span></div>
+        <div class="brand-logo reveal-card"><span class="brand-placeholder">Nexura</span></div>
+        <div class="brand-logo reveal-card"><span class="brand-placeholder">Helios</span></div>
+        <div class="brand-logo reveal-card"><span class="brand-placeholder">Orbix</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== MARKETING CHALLENGES ==================== -->
-  <section class="challenges-section">
+  <!-- ═══════════════════════════ CHALLENGES ═══════════════════════════ -->
+  <section class="challenges-section" id="about">
     <div class="container">
       <div class="section-header text-center reveal-up">
-        <h2 class="section-title">Marketing Challenges?</h2>
-        <div class="title-underline"></div>
+        <span class="sub-badge light" data-en="Common Pain Points" data-ar="نقاط الألم الشائعة">Common Pain
+          Points</span>
+        <h2 class="section-title light" data-en="Marketing Challenges You Face" data-ar="تحديات التسويق التي تواجهها">
+          Marketing Challenges You Face
+        </h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,.6);"
+          data-en="We understand every obstacle holding your brand back."
+          data-ar="نفهم كل عقبة تعيق نمو علامتك التجارية.">
+          We understand every obstacle holding your brand back.
+        </p>
       </div>
+
       <div class="challenges-grid">
         <!-- Card 1 -->
-        <div class="challenge-card reveal-card" tabindex="0">
-          <div class="challenge-icon">
-            <div class="icon-glow"></div>
-            <span class="icon-emoji">👤</span>
-          </div>
-          <div class="challenge-content">
-            <h3>Struggling to Find High-Quality Leads?</h3>
-            <p>Most B2B businesses waste time and resources chasing unqualified leads.</p>
-          </div>
-        </div>
-        <!-- Card 2 -->
         <div class="challenge-card reveal-card" tabindex="0">
           <div class="challenge-icon">
             <div class="icon-glow"></div>
             <span class="icon-emoji">📉</span>
           </div>
           <div class="challenge-content">
-            <h3>Traditional Marketing is Expensive &amp; Slow</h3>
-            <p>Relying on outdated tactics drains budgets, while competitors using AI-driven tactics scale faster.</p>
+            <h3 data-en="Low ROI on Ad Spend" data-ar="عائد منخفض على الإنفاق الإعلاني">Low ROI on Ad Spend</h3>
+            <p data-en="Pouring budget into ads that don't convert? Our AI optimises every dirham for maximum return."
+              data-ar="تنفق ميزانيتك على إعلانات لا تحقق نتائج؟ ذكاؤنا الاصطناعي يحسّن كل ريال لأقصى عائد.">Pouring
+              budget into ads that don't convert? Our AI optimises every dirham for maximum return.</p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="challenge-card reveal-card" tabindex="0">
+          <div class="challenge-icon">
+            <div class="icon-glow"></div>
+            <span class="icon-emoji">🎯</span>
+          </div>
+          <div class="challenge-content">
+            <h3 data-en="Poor Audience Targeting" data-ar="استهداف ضعيف للجمهور">Poor Audience Targeting</h3>
+            <p data-en="Reaching the wrong people wastes time and money. We use precision data to find your ideal customers."
+              data-ar="الوصول إلى الأشخاص الخطأ يضيع الوقت والمال. نستخدم البيانات الدقيقة للعثور على عملائك المثاليين.">
+              Reaching the wrong people wastes time and money. We use precision data to find your ideal customers.</p>
           </div>
         </div>
         <!-- Card 3 -->
         <div class="challenge-card reveal-card" tabindex="0">
           <div class="challenge-icon">
             <div class="icon-glow"></div>
-            <span class="icon-emoji">📪</span>
+            <span class="icon-emoji">📊</span>
           </div>
           <div class="challenge-content">
-            <h3>Decision-Makers Ignore Your Outreach?</h3>
-            <p>Without credibility and personalization, your outreach gets ignored. Reach the right people at the right time.</p>
+            <h3 data-en="No Clear Analytics" data-ar="لا تحليلات واضحة">No Clear Analytics</h3>
+            <p data-en="Drowning in data but lacking insights? We turn numbers into actionable growth strategies."
+              data-ar="تغرق في البيانات بدون رؤى؟ نحوّل الأرقام إلى استراتيجيات نمو قابلة للتنفيذ.">Drowning in data but
+              lacking insights? We turn numbers into actionable growth strategies.</p>
           </div>
         </div>
         <!-- Card 4 -->
         <div class="challenge-card reveal-card" tabindex="0">
           <div class="challenge-icon">
             <div class="icon-glow"></div>
-            <span class="icon-emoji">📱</span>
+            <span class="icon-emoji">🚀</span>
           </div>
           <div class="challenge-content">
-            <h3>Your Social Media Gets No Engagement?</h3>
-            <p>Audiences want personalized, eye-catching posts — not just random content lost in the feed.</p>
+            <h3 data-en="Slow Business Growth" data-ar="نمو تجاري بطيء">Slow Business Growth</h3>
+            <p data-en="Stalled growth is frustrating. Our performance marketing teams accelerate your entire funnel."
+              data-ar="النمو المتوقف أمر محبط. فرق التسويق الأداء لدينا تسرّع قمع المبيعات بالكامل.">Stalled growth is
+              frustrating. Our performance marketing teams accelerate your entire funnel.</p>
           </div>
         </div>
         <!-- Card 5 -->
         <div class="challenge-card reveal-card" tabindex="0">
           <div class="challenge-icon">
             <div class="icon-glow"></div>
-            <span class="icon-emoji">🌐</span>
+            <span class="icon-emoji">💬</span>
           </div>
           <div class="challenge-content">
-            <h3>Your Website Is Slow and Not Converting?</h3>
-            <p>Old websites drive customers away — you need a fast, persuasive design from the first click.</p>
+            <h3 data-en="Weak Brand Identity" data-ar="هوية علامة ضعيفة">Weak Brand Identity</h3>
+            <p data-en="Inconsistent branding confuses customers. We craft identities that are memorable and magnetic."
+              data-ar="العلامة التجارية غير المتسقة تربك العملاء. نبتكر هويات لا تُنسى وجذابة.">Inconsistent branding
+              confuses customers. We craft identities that are memorable and magnetic.</p>
           </div>
         </div>
         <!-- Card 6 -->
         <div class="challenge-card reveal-card" tabindex="0">
           <div class="challenge-icon">
             <div class="icon-glow"></div>
-            <span class="icon-emoji">📊</span>
+            <span class="icon-emoji">🔍</span>
           </div>
           <div class="challenge-content">
-            <h3>Running Ads Without Tracking Results?</h3>
-            <p>Without proper tracking and reporting, your budget is wasted. You need clear data showing where investment goes.</p>
+            <h3 data-en="Low Search Visibility" data-ar="ظهور منخفض في البحث">Low Search Visibility</h3>
+            <p data-en="If you're not on page one, you're invisible. Our SEO experts put you where customers look first."
+              data-ar="إن لم تكن في الصفحة الأولى فأنت غير مرئي. خبراء SEO لدينا يضعونك حيث يبحث العملاء أولاً.">If
+              you're not on page one, you're invisible. Our SEO experts put you where customers look first.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== WHY ARKANZAX ==================== -->
-  <section class="why-section" id="why-us">
+  <!-- ═══════════════════════════ WHY ARKANZAX ═══════════════════════════ -->
+  <section class="why-section">
     <div class="container">
       <div class="section-header text-center reveal-up">
-        <h2 class="section-title">Why Arkanzax?</h2>
-        <p class="section-subtitle">Smarter, Faster, and More Effective Than Traditional Agencies</p>
+        <span class="sub-badge" data-en="The Competitive Edge" data-ar="الميزة التنافسية">The Competitive Edge</span>
+        <h2 class="section-title" data-en="Why Choose Arkanzax?" data-ar="لماذا تختار أركانزاكس؟">Why Choose Arkanzax?
+        </h2>
+        <p class="section-subtitle" data-en="See how we stack up against traditional agencies and self-serve tools."
+          data-ar="انظر كيف نقارن بالوكالات التقليدية وأدوات الخدمة الذاتية.">See how we stack up against traditional
+          agencies and self-serve tools.</p>
       </div>
+
       <div class="why-table-wrapper reveal-up">
         <div class="why-table">
-          <!-- Header Row -->
           <div class="why-table-header">
             <div class="why-col-feature"></div>
-            <div class="why-col arkanzax-col">
-              <div class="col-header-badge arkanzax-badge">Arkanzax</div>
-            </div>
-            <div class="why-col agency-col">
-              <div class="col-header-badge agency-badge">Traditional Agencies</div>
-            </div>
-            <div class="why-col self-col">
-              <div class="col-header-badge self-badge">Self-Serve</div>
-            </div>
+            <div class="why-col"><span class="col-header-badge arkanzax-badge">Arkanzax</span></div>
+            <div class="why-col"><span class="col-header-badge agency-badge" data-en="Traditional Agency"
+                data-ar="وكالة تقليدية">Traditional Agency</span></div>
+            <div class="why-col"><span class="col-header-badge self-badge" data-en="Self-Serve Tools"
+                data-ar="أدوات ذاتية">Self-Serve Tools</span></div>
           </div>
-          <!-- Rows -->
           <div class="why-table-body">
             <div class="why-row">
-              <div class="why-feature-label">Lead Quality</div>
-              <div class="why-cell arkanzax-cell"><i class="fas fa-check-circle"></i> AI-powered, data-driven targeting</div>
-              <div class="why-cell agency-cell"><i class="fas fa-minus-circle"></i> Mixed, generic targeting</div>
-              <div class="why-cell self-cell"><i class="fas fa-times-circle"></i> Cheap but unqualified leads</div>
+              <div class="why-feature-label" data-en="AI-Driven Strategy" data-ar="استراتيجية ذكاء اصطناعي">AI-Driven
+                Strategy</div>
+              <div class="why-cell arkanzax-cell"><i class="fas fa-check-circle"></i> <span
+                  data-en="Full AI Integration" data-ar="تكامل كامل بالذكاء الاصطناعي">Full AI Integration</span></div>
+              <div class="why-cell agency-cell"><i class="fas fa-minus-circle"></i> <span data-en="Limited"
+                  data-ar="محدود">Limited</span></div>
+              <div class="why-cell self-cell"><i class="fas fa-times-circle"></i> <span data-en="None"
+                  data-ar="لا يوجد">None</span></div>
             </div>
             <div class="why-row">
-              <div class="why-feature-label">Speed &amp; Efficiency</div>
-              <div class="why-cell arkanzax-cell"><i class="fas fa-check-circle"></i> Real-time optimization</div>
-              <div class="why-cell agency-cell"><i class="fas fa-minus-circle"></i> Slow, manual processes</div>
-              <div class="why-cell self-cell"><i class="fas fa-times-circle"></i> Time-consuming</div>
+              <div class="why-feature-label" data-en="Real-Time Reporting" data-ar="تقارير فورية">Real-Time Reporting
+              </div>
+              <div class="why-cell arkanzax-cell"><i class="fas fa-check-circle"></i> <span data-en="Live Dashboards"
+                  data-ar="لوحات مراقبة مباشرة">Live Dashboards</span></div>
+              <div class="why-cell agency-cell"><i class="fas fa-minus-circle"></i> <span data-en="Monthly Reports"
+                  data-ar="تقارير شهرية">Monthly Reports</span></div>
+              <div class="why-cell self-cell"><i class="fas fa-check-circle"></i> <span data-en="Basic Reports"
+                  data-ar="تقارير أساسية">Basic Reports</span></div>
             </div>
             <div class="why-row">
-              <div class="why-feature-label">Cost-Effectiveness</div>
-              <div class="why-cell arkanzax-cell"><i class="fas fa-check-circle"></i> ROI-focused, no wasted budget</div>
-              <div class="why-cell agency-cell"><i class="fas fa-minus-circle"></i> High agency fees, hidden costs</div>
-              <div class="why-cell self-cell"><i class="fas fa-times-circle"></i> Lower cost but inefficient</div>
+              <div class="why-feature-label" data-en="Dedicated Team" data-ar="فريق مخصص">Dedicated Team</div>
+              <div class="why-cell arkanzax-cell"><i class="fas fa-check-circle"></i> <span data-en="Yes, always"
+                  data-ar="نعم، دائماً">Yes, always</span></div>
+              <div class="why-cell agency-cell"><i class="fas fa-minus-circle"></i> <span data-en="Shared resources"
+                  data-ar="موارد مشتركة">Shared resources</span></div>
+              <div class="why-cell self-cell"><i class="fas fa-times-circle"></i> <span data-en="No team"
+                  data-ar="لا فريق">No team</span></div>
             </div>
             <div class="why-row">
-              <div class="why-feature-label">Targeting</div>
-              <div class="why-cell arkanzax-cell"><i class="fas fa-check-circle"></i> Personalized, bilingual (EN+AR)</div>
-              <div class="why-cell agency-cell"><i class="fas fa-minus-circle"></i> Basic segmentation</div>
-              <div class="why-cell self-cell"><i class="fas fa-times-circle"></i> Generic, lacks localization</div>
+              <div class="why-feature-label" data-en="Cost Efficiency" data-ar="كفاءة التكلفة">Cost Efficiency</div>
+              <div class="why-cell arkanzax-cell"><i class="fas fa-check-circle"></i> <span data-en="High ROI"
+                  data-ar="عائد استثمار عالٍ">High ROI</span></div>
+              <div class="why-cell agency-cell"><i class="fas fa-times-circle"></i> <span data-en="Expensive"
+                  data-ar="مكلف">Expensive</span></div>
+              <div class="why-cell self-cell"><i class="fas fa-minus-circle"></i> <span data-en="Time-consuming"
+                  data-ar="يستغرق وقتاً">Time-consuming</span></div>
             </div>
             <div class="why-row">
-              <div class="why-feature-label">Scalability</div>
-              <div class="why-cell arkanzax-cell"><i class="fas fa-check-circle"></i> Grows with your business</div>
-              <div class="why-cell agency-cell"><i class="fas fa-minus-circle"></i> Limited by manpower</div>
-              <div class="why-cell self-cell"><i class="fas fa-times-circle"></i> Limited automation</div>
-            </div>
-            <div class="why-row">
-              <div class="why-feature-label">Data &amp; Insights</div>
-              <div class="why-cell arkanzax-cell"><i class="fas fa-check-circle"></i> Advanced analytics + AI reports</div>
-              <div class="why-cell agency-cell"><i class="fas fa-minus-circle"></i> Basic reporting only</div>
-              <div class="why-cell self-cell"><i class="fas fa-times-circle"></i> No actionable insights</div>
-            </div>
-            <div class="why-row">
-              <div class="why-feature-label">Innovation</div>
-              <div class="why-cell arkanzax-cell"><i class="fas fa-check-circle"></i> Creative + Technology + AI</div>
-              <div class="why-cell agency-cell"><i class="fas fa-minus-circle"></i> Disconnected services</div>
-              <div class="why-cell self-cell"><i class="fas fa-times-circle"></i> No advanced innovation</div>
+              <div class="why-feature-label" data-en="Scalability" data-ar="قابلية التوسع">Scalability</div>
+              <div class="why-cell arkanzax-cell"><i class="fas fa-check-circle"></i> <span data-en="Fully scalable"
+                  data-ar="قابل للتوسع بالكامل">Fully scalable</span></div>
+              <div class="why-cell agency-cell"><i class="fas fa-minus-circle"></i> <span data-en="Slow to scale"
+                  data-ar="يتوسع ببطء">Slow to scale</span></div>
+              <div class="why-cell self-cell"><i class="fas fa-minus-circle"></i> <span data-en="Platform-limited"
+                  data-ar="محدود بالمنصة">Platform-limited</span></div>
             </div>
           </div>
         </div>
@@ -335,396 +396,483 @@
     </div>
   </section>
 
-  <!-- ==================== MARQUEE TICKER ==================== -->
-  <div class="marquee-section">
+  <!-- ═══════════════════════════ MARQUEE 1 ═══════════════════════════ -->
+  <div class="marquee-section" aria-hidden="true">
     <div class="marquee-track">
-      <div class="marquee-content" id="marquee-1">
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Monitoring Business Analytics</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Marketing Solutions</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>SEO Strategy Development</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Search Engine Optimization</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Research &amp; Analysis</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>AI-Powered Campaigns</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Social Media Growth</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Lead Generation</span></div>
+      <div class="marquee-content">
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> SEO Optimization</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Paid Advertising</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Social Media Marketing</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Content Strategy</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Email Campaigns</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Brand Identity</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Analytics & Insights</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Conversion Rate Optimization</span>
         <!-- Duplicate for seamless loop -->
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Monitoring Business Analytics</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Marketing Solutions</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>SEO Strategy Development</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Search Engine Optimization</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Research &amp; Analysis</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>AI-Powered Campaigns</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Social Media Growth</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Lead Generation</span></div>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> SEO Optimization</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Paid Advertising</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Social Media Marketing</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Content Strategy</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Email Campaigns</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Brand Identity</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Analytics & Insights</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Conversion Rate Optimization</span>
       </div>
     </div>
   </div>
 
-  <!-- ==================== SERVICES ==================== -->
-  <section class="services-header-section">
-    <div class="services-bg-shapes">
+  <!-- ═══════════════════════════ SERVICES ═══════════════════════════ -->
+  <section class="services-header-section" id="services">
+    <div class="services-bg-shapes" aria-hidden="true">
       <div class="bg-circle c1"></div>
       <div class="bg-circle c2"></div>
       <div class="bg-circle c3"></div>
     </div>
-    <div class="container">
-      <div class="services-intro text-center reveal-up">
-        <span class="services-badge">Our Services</span>
-        <h2 class="services-title">Smart marketing and tech solutions designed to move your business faster</h2>
-        <div class="services-underline"></div>
-      </div>
+    <div class="container text-center">
+      <span class="services-badge" data-en="What We Offer" data-ar="ما نقدمه">What We Offer</span>
+      <h2 class="services-title reveal-up" data-en="Full-Stack Digital Marketing Services"
+        data-ar="خدمات التسويق الرقمي الشاملة">
+        Full-Stack Digital Marketing Services
+      </h2>
+      <p class="section-subtitle reveal-up" style="color:rgba(255,255,255,.6);"
+        data-en="From strategy to execution, every service is powered by AI and delivered by experts."
+        data-ar="من الاستراتيجية إلى التنفيذ، كل خدمة مدعومة بالذكاء الاصطناعي ومقدمة من خبراء.">
+        From strategy to execution, every service is powered by AI and delivered by experts.
+      </p>
+      <div class="services-underline" style="margin-top:24px;"></div>
     </div>
   </section>
 
-  <section class="services-grid-section" id="services">
+  <section class="services-grid-section">
     <div class="container">
       <div class="services-grid">
-        <!-- Service 1 -->
+
         <div class="service-card reveal-card">
-          <div class="service-icon" style="background: linear-gradient(135deg,#667eea,#764ba2);">
+          <div class="service-icon" style="background:linear-gradient(135deg,#3b9ef5,#1a6ec5);">
             <i class="fas fa-search"></i>
           </div>
-          <h3>SEO Strategy</h3>
-          <p>From keyword research and on-page optimization to link building &amp; technical SEO, we use proven strategies to improve your visibility and authority online.</p>
-          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          <h3 data-en="SEO & Content Marketing" data-ar="تحسين محركات البحث والمحتوى">SEO & Content Marketing</h3>
+          <p data-en="Dominate search rankings with our AI-powered SEO strategies and content that converts visitors into customers."
+            data-ar="احكم السيطرة على نتائج البحث باستخدام استراتيجياتنا لتحسين محركات البحث والمحتوى الذي يحوّل الزوار إلى عملاء.">
+            Dominate search rankings with our AI-powered SEO strategies and content that converts visitors into
+            customers.</p>
+          <a href="#" class="service-link" data-en="Learn More →" data-ar="اعرف المزيد ←">Learn More →</a>
         </div>
-        <!-- Service 2 -->
+
         <div class="service-card reveal-card">
-          <div class="service-icon" style="background: linear-gradient(135deg,#f093fb,#f5576c);">
+          <div class="service-icon" style="background:linear-gradient(135deg,#ec4899,#be185d);">
             <i class="fas fa-bullhorn"></i>
           </div>
-          <h3>Paid Advertising</h3>
-          <p>Data-driven PPC campaigns across Google, Meta, and LinkedIn that maximize your ROI and put your brand in front of the right audience at the right time.</p>
-          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          <h3 data-en="Paid Advertising (PPC)" data-ar="الإعلانات المدفوعة (PPC)">Paid Advertising (PPC)</h3>
+          <p data-en="Google Ads, Meta, TikTok and more — our campaigns are optimised in real-time to maximise your ad spend ROI."
+            data-ar="إعلانات Google وMeta وTikTok وأكثر — حملاتنا محسّنة في الوقت الفعلي لتعظيم عائد إنفاقك الإعلاني.">
+            Google Ads, Meta, TikTok and more — our campaigns are optimised in real-time to maximise your ad spend ROI.
+          </p>
+          <a href="#" class="service-link" data-en="Learn More →" data-ar="اعرف المزيد ←">Learn More →</a>
         </div>
-        <!-- Service 3 -->
+
         <div class="service-card reveal-card">
-          <div class="service-icon" style="background: linear-gradient(135deg,#4facfe,#00f2fe);">
-            <i class="fas fa-share-alt"></i>
+          <div class="service-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9);">
+            <i class="fab fa-instagram"></i>
           </div>
-          <h3>Social Media Management</h3>
-          <p>Engaging content strategies, community management, and influencer partnerships that build your brand presence across all major social platforms.</p>
-          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          <h3 data-en="Social Media Management" data-ar="إدارة وسائل التواصل الاجتماعي">Social Media Management</h3>
+          <p data-en="From strategy to daily posting, we manage your social presence on all platforms and grow your engaged audience."
+            data-ar="من الاستراتيجية إلى النشر اليومي، ندير حضورك على الشبكات الاجتماعية وننمي جمهورك المتفاعل.">From
+            strategy to daily posting, we manage your social presence on all platforms and grow your engaged audience.
+          </p>
+          <a href="#" class="service-link" data-en="Learn More →" data-ar="اعرف المزيد ←">Learn More →</a>
         </div>
-        <!-- Service 4 -->
+
         <div class="service-card reveal-card">
-          <div class="service-icon" style="background: linear-gradient(135deg,#43e97b,#38f9d7);">
+          <div class="service-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706);">
             <i class="fas fa-envelope-open-text"></i>
           </div>
-          <h3>Email Marketing</h3>
-          <p>Personalized email campaigns with AI-powered segmentation that nurture leads, improve retention, and drive consistent revenue for your business.</p>
-          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          <h3 data-en="Email Marketing Automation" data-ar="أتمتة التسويق عبر البريد الإلكتروني">Email Marketing
+            Automation</h3>
+          <p data-en="Nurture leads and retain customers with intelligent email sequences that deliver the right message at the right time."
+            data-ar="رعاية العملاء المحتملين والاحتفاظ بالعملاء من خلال تسلسلات بريد إلكتروني ذكية تقدّم الرسالة المناسبة في الوقت المناسب.">
+            Nurture leads and retain customers with intelligent email sequences that deliver the right message at the
+            right time.</p>
+          <a href="#" class="service-link" data-en="Learn More →" data-ar="اعرف المزيد ←">Learn More →</a>
         </div>
-        <!-- Service 5 -->
+
         <div class="service-card reveal-card">
-          <div class="service-icon" style="background: linear-gradient(135deg,#fa709a,#fee140);">
-            <i class="fas fa-code"></i>
-          </div>
-          <h3>Web Design &amp; Dev</h3>
-          <p>Fast, modern, mobile-first websites and landing pages designed for conversions — not just looks. We build experiences that turn visitors into customers.</p>
-          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <!-- Service 6 -->
-        <div class="service-card reveal-card">
-          <div class="service-icon" style="background: linear-gradient(135deg,#a18cd1,#fbc2eb);">
+          <div class="service-icon" style="background:linear-gradient(135deg,#10b981,#059669);">
             <i class="fas fa-chart-bar"></i>
           </div>
-          <h3>Analytics &amp; Reporting</h3>
-          <p>Advanced data analytics, custom dashboards, and AI-driven insights that give you a clear picture of your marketing performance and ROI.</p>
-          <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          <h3 data-en="Analytics & Reporting" data-ar="التحليلات والتقارير">Analytics & Reporting</h3>
+          <p data-en="Beautiful live dashboards and deep-dive reports that give you crystal-clear visibility into every marketing metric."
+            data-ar="لوحات مراقبة مباشرة جميلة وتقارير تفصيلية تمنحك وضوحاً تاماً لكل مقياس تسويقي.">Beautiful live
+            dashboards and deep-dive reports that give you crystal-clear visibility into every marketing metric.</p>
+          <a href="#" class="service-link" data-en="Learn More →" data-ar="اعرف المزيد ←">Learn More →</a>
         </div>
+
+        <div class="service-card reveal-card">
+          <div class="service-icon" style="background:linear-gradient(135deg,#ef4444,#dc2626);">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3 data-en="Branding & Creative Design" data-ar="العلامة التجارية والتصميم الإبداعي">Branding & Creative
+            Design</h3>
+          <p data-en="From logo to full brand identity, our creative team designs visuals that instantly communicate your brand's story."
+            data-ar="من الشعار إلى الهوية البصرية الكاملة، يصمم فريقنا الإبداعي مرئيات تنقل قصة علامتك التجارية فوراً.">
+            From logo to full brand identity, our creative team designs visuals that instantly communicate your brand's
+            story.</p>
+          <a href="#" class="service-link" data-en="Learn More →" data-ar="اعرف المزيد ←">Learn More →</a>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ==================== TESTIMONIALS ==================== -->
-  <section class="testimonials-section">
+  <!-- ═══════════════════════════ TESTIMONIALS ═══════════════════════════ -->
+  <section class="testimonials-section" id="testi-sec">
     <div class="container">
       <div class="section-header text-center reveal-up">
-        <span class="sub-badge">Testimonials</span>
-        <h2 class="section-title">Stories that keep us going</h2>
+        <span class="sub-badge" data-en="Client Love" data-ar="آراء عملائنا">Client Love</span>
+        <h2 class="section-title" data-en="What Our Clients Say" data-ar="ماذا يقول عملاؤنا">What Our Clients Say</h2>
+        <p class="section-subtitle" data-en="Real results, real people. Hear from the brands we've helped grow."
+          data-ar="نتائج حقيقية، أشخاص حقيقيون. اسمع من العلامات التجارية التي ساعدناها على النمو.">Real results, real
+          people. Hear from the brands we've helped grow.</p>
       </div>
+
       <div class="testimonials-slider-wrapper">
         <div class="testimonials-track" id="testimonials-track">
-          <!-- Testimonial 1 -->
+
           <div class="testi-card">
-            <div class="testi-stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p class="testi-text">"From keyword research and on-page optimization to link building &amp; technical SEO, we use proven strategies to improve your visibility and authority online."</p>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text"
+              data-en="Arkanzax transformed our digital presence. Our organic traffic tripled in just 4 months, and our ad ROI has never been better. Absolutely incredible team."
+              data-ar="غيّر أركانزاكس حضورنا الرقمي. تضاعف حركة الزيارات العضوية ثلاث مرات في 4 أشهر فقط، وعائد إعلاناتنا أفضل من أي وقت مضى. فريق رائع حقاً.">
+              Arkanzax transformed our digital presence. Our organic traffic tripled in just 4 months, and our ad ROI
+              has never been better. Absolutely incredible team.</p>
             <div class="testi-author">
-              <div class="author-avatar">
-                <span>MS</span>
-              </div>
+              <div class="author-avatar">SA</div>
               <div class="author-info">
-                <strong>Michel Smith</strong>
-                <span>Cloth Store Inc.</span>
+                <strong>Sarah Ahmed</strong>
+                <span data-en="CEO, NovaTech Solutions" data-ar="رئيس تنفيذي، نوفاتيك سولوشنز">CEO, NovaTech
+                  Solutions</span>
               </div>
             </div>
           </div>
-          <!-- Testimonial 2 -->
+
           <div class="testi-card">
-            <div class="testi-stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p class="testi-text">"Their caring, competent, and professional staff helped us find the perfect marketing strategy for our family business. Absolutely incredible results!"</p>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text"
+              data-en="The level of personalisation and data insights Arkanzax provides is unmatched. They feel like a genuine extension of our in-house marketing team."
+              data-ar="مستوى التخصيص والرؤى التحليلية التي يقدمها أركانزاكس لا مثيل له. يشعرون وكأنهم امتداد حقيقي لفريق التسويق الداخلي لدينا.">
+              The level of personalisation and data insights Arkanzax provides is unmatched. They feel like a genuine
+              extension of our in-house marketing team.</p>
             <div class="testi-author">
-              <div class="author-avatar" style="background: linear-gradient(135deg,#f093fb,#f5576c);">
-                <span>AK</span>
-              </div>
+              <div class="author-avatar">KM</div>
               <div class="author-info">
-                <strong>Abraham Khalil</strong>
-                <span>Tech Startup CEO</span>
+                <strong>Karim Mansour</strong>
+                <span data-en="Marketing Director, BrandForge" data-ar="مدير التسويق، براندفورج">Marketing Director,
+                  BrandForge</span>
               </div>
             </div>
           </div>
-          <!-- Testimonial 3 -->
+
           <div class="testi-card">
-            <div class="testi-stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-            </div>
-            <p class="testi-text">"Their staff genuinely cares about their clients and is both competent and professional. It's fantastic that they assisted us in locating the ideal audience."</p>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text"
+              data-en="We've worked with multiple agencies before, but Arkanzax's AI-driven approach delivered results we never thought possible. 5x ROAS in Q1 alone!"
+              data-ar="عملنا مع وكالات متعددة من قبل، لكن نهج أركانزاكس المدعوم بالذكاء الاصطناعي حقق نتائج لم نكن نتخيلها. 5x عائد على الإنفاق الإعلاني في الربع الأول وحده!">
+              We've worked with multiple agencies before, but Arkanzax's AI-driven approach delivered results we never
+              thought possible. 5x ROAS in Q1 alone!</p>
             <div class="testi-author">
-              <div class="author-avatar" style="background: linear-gradient(135deg,#43e97b,#38f9d7);">
-                <span>JW</span>
-              </div>
+              <div class="author-avatar">LR</div>
               <div class="author-info">
-                <strong>Jenny Wilson</strong>
-                <span>E-commerce Brand</span>
+                <strong>Lena Rossi</strong>
+                <span data-en="Founder, Luxe Collective" data-ar="مؤسسة، لوكس كوليكتيف">Founder, Luxe Collective</span>
               </div>
             </div>
           </div>
-          <!-- Testimonial 4 -->
+
           <div class="testi-card">
-            <div class="testi-stars">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p class="testi-text">"We can say with confidence that working with Arkanzax was the best business decision we made this year. Our leads tripled in just 3 months!"</p>
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text"
+              data-en="Outstanding service from day one. The team is proactive, creative, and incredibly responsive. Our social media engagement went up 400% in 6 months."
+              data-ar="خدمة متميزة من اليوم الأول. الفريق استباقي ومبدع وسريع الاستجابة بشكل لا يصدق. ارتفع تفاعلنا على وسائل التواصل الاجتماعي 400% في 6 أشهر.">
+              Outstanding service from day one. The team is proactive, creative, and incredibly responsive. Our social
+              media engagement went up 400% in 6 months.</p>
             <div class="testi-author">
-              <div class="author-avatar" style="background: linear-gradient(135deg,#667eea,#764ba2);">
-                <span>RH</span>
-              </div>
+              <div class="author-avatar">JW</div>
               <div class="author-info">
-                <strong>Rania Hassan</strong>
-                <span>Real Estate Developer</span>
+                <strong>James Wright</strong>
+                <span data-en="COO, PulseRetail" data-ar="المدير التشغيلي، بالس ريتيل">COO, PulseRetail</span>
               </div>
             </div>
           </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text"
+              data-en="Arkanzax's email automation sequences drove a 60% uplift in repeat purchases. Their strategy is sharp, and their execution is flawless."
+              data-ar="أتمتة البريد الإلكتروني من أركانزاكس رفعت مشتريات العملاء المتكررة بنسبة 60%. استراتيجيتهم دقيقة وتنفيذهم لا تشوبه شائبة.">
+              Arkanzax's email automation sequences drove a 60% uplift in repeat purchases. Their strategy is sharp, and
+              their execution is flawless.</p>
+            <div class="testi-author">
+              <div class="author-avatar">FH</div>
+              <div class="author-info">
+                <strong>Fatima Hassan</strong>
+                <span data-en="CMO, StyleHouse" data-ar="مديرة التسويق، ستايل هاوس">CMO, StyleHouse</span>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="testi-controls">
-          <button class="testi-btn" id="testi-prev" aria-label="Previous">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <div class="testi-dots" id="testi-dots"></div>
-          <button class="testi-btn" id="testi-next" aria-label="Next">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="testi-controls">
+        <button class="testi-btn" id="testi-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+        <div class="testi-dots" id="testi-dots"></div>
+        <button class="testi-btn" id="testi-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
       </div>
     </div>
   </section>
 
-  <!-- ==================== BLOG SECTION ==================== -->
+  <!-- ═══════════════════════════ BLOG ═══════════════════════════ -->
   <section class="blog-section" id="blog">
-    <div class="blog-particles" id="blog-particles"></div>
+    <div class="blog-particles"></div>
     <div class="container">
-      <div class="section-header reveal-up">
-        <span class="sub-badge light">News &amp; Blog</span>
-        <h2 class="section-title light">Latest Release News &amp; Articles</h2>
+      <div class="section-header text-center reveal-up">
+        <span class="sub-badge light" data-en="Latest Insights" data-ar="أحدث المقالات">Latest Insights</span>
+        <h2 class="section-title light" data-en="From Our Marketing Blog" data-ar="من مدونتنا التسويقية">From Our
+          Marketing Blog</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,.5);"
+          data-en="Stay ahead with the latest trends, tips, and strategies."
+          data-ar="ابق في الصدارة مع أحدث الاتجاهات والنصائح والاستراتيجيات.">Stay ahead with the latest trends, tips,
+          and strategies.</p>
       </div>
+
       <div class="blog-grid">
-        <!-- Blog Post 1 -->
+
         <article class="blog-card reveal-card">
           <div class="blog-img">
-            <div class="blog-img-placeholder">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <span class="blog-category">SEO</span>
+            <div class="blog-img-placeholder"><i class="fas fa-robot"></i></div>
+            <span class="blog-category" data-en="AI Marketing" data-ar="تسويق بالذكاء الاصطناعي">AI Marketing</span>
           </div>
           <div class="blog-body">
             <div class="blog-meta">
-              <span><i class="far fa-calendar"></i> Feb 10, 2025</span>
-              <span><i class="far fa-clock"></i> 5 min read</span>
+              <span><i class="fas fa-calendar-alt"></i> <span data-en="Jan 12, 2025" data-ar="12 يناير 2025">Jan 12,
+                  2025</span></span>
+              <span><i class="fas fa-clock"></i> <span data-en="5 min read" data-ar="5 دقائق للقراءة">5 min
+                  read</span></span>
             </div>
-            <h3>How AI is Revolutionizing SEO in 2025</h3>
-            <p>Discover how artificial intelligence is changing the landscape of search engine optimization and what it means for your business.</p>
-            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+            <h3 data-en="How AI is Revolutionising Digital Marketing in 2025"
+              data-ar="كيف يثور الذكاء الاصطناعي التسويق الرقمي في 2025">How AI is Revolutionising Digital Marketing in
+              2025</h3>
+            <p data-en="Discover how machine learning models are reshaping ad targeting, content creation, and customer journey mapping like never before."
+              data-ar="اكتشف كيف تُعيد نماذج التعلم الآلي تشكيل استهداف الإعلانات وإنشاء المحتوى ورسم رحلة العميل كما لم يحدث من قبل.">
+              Discover how machine learning models are reshaping ad targeting, content creation, and customer journey
+              mapping like never before.</p>
+            <a href="#" class="blog-link" data-en="Read Article →" data-ar="اقرأ المقال ←">Read Article →</a>
           </div>
         </article>
-        <!-- Blog Post 2 -->
+
         <article class="blog-card reveal-card">
           <div class="blog-img">
-            <div class="blog-img-placeholder" style="background: linear-gradient(135deg,#f093fb,#f5576c);">
-              <i class="fas fa-bullhorn"></i>
-            </div>
-            <span class="blog-category">Marketing</span>
+            <div class="blog-img-placeholder"><i class="fas fa-chart-pie"></i></div>
+            <span class="blog-category" data-en="Analytics" data-ar="التحليلات">Analytics</span>
           </div>
           <div class="blog-body">
             <div class="blog-meta">
-              <span><i class="far fa-calendar"></i> Jan 28, 2025</span>
-              <span><i class="far fa-clock"></i> 7 min read</span>
+              <span><i class="fas fa-calendar-alt"></i> <span data-en="Feb 3, 2025" data-ar="3 فبراير 2025">Feb 3,
+                  2025</span></span>
+              <span><i class="fas fa-clock"></i> <span data-en="7 min read" data-ar="7 دقائق للقراءة">7 min
+                  read</span></span>
             </div>
-            <h3>Top 10 Digital Marketing Trends to Watch</h3>
-            <p>Stay ahead of the competition with these emerging digital marketing trends that are shaping the future of online business growth.</p>
-            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+            <h3 data-en="The 7 KPIs Every Marketing Team Must Track"
+              data-ar="أهم 7 مؤشرات أداء يجب على كل فريق تسويق متابعتها">The 7 KPIs Every Marketing Team Must Track</h3>
+            <p data-en="Beyond vanity metrics: learn which performance indicators truly matter and how to interpret them for strategic decisions."
+              data-ar="ما وراء مقاييس المظهر: تعرّف على مؤشرات الأداء التي تهم فعلاً وكيفية تفسيرها لاتخاذ قرارات استراتيجية.">
+              Beyond vanity metrics: learn which performance indicators truly matter and how to interpret them for
+              strategic decisions.</p>
+            <a href="#" class="blog-link" data-en="Read Article →" data-ar="اقرأ المقال ←">Read Article →</a>
           </div>
         </article>
-        <!-- Blog Post 3 -->
+
         <article class="blog-card reveal-card">
           <div class="blog-img">
-            <div class="blog-img-placeholder" style="background: linear-gradient(135deg,#43e97b,#38f9d7);">
-              <i class="fas fa-users"></i>
-            </div>
-            <span class="blog-category">Lead Gen</span>
+            <div class="blog-img-placeholder"><i class="fas fa-hashtag"></i></div>
+            <span class="blog-category" data-en="Social Media" data-ar="وسائل التواصل">Social Media</span>
           </div>
           <div class="blog-body">
             <div class="blog-meta">
-              <span><i class="far fa-calendar"></i> Jan 15, 2025</span>
-              <span><i class="far fa-clock"></i> 6 min read</span>
+              <span><i class="fas fa-calendar-alt"></i> <span data-en="Feb 18, 2025" data-ar="18 فبراير 2025">Feb 18,
+                  2025</span></span>
+              <span><i class="fas fa-clock"></i> <span data-en="4 min read" data-ar="4 دقائق للقراءة">4 min
+                  read</span></span>
             </div>
-            <h3>The Ultimate Guide to B2B Lead Generation</h3>
-            <p>Learn proven strategies and tactics for generating high-quality B2B leads that convert into long-term, profitable customers.</p>
-            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+            <h3 data-en="TikTok Ads in 2025: What's Working Right Now"
+              data-ar="إعلانات تيك توك في 2025: ما الذي ينجح الآن">TikTok Ads in 2025: What's Working Right Now</h3>
+            <p data-en="TikTok ad formats are evolving fast. Here's the insider breakdown on which creative strategies are delivering results this year."
+              data-ar="تتطور تنسيقات إعلانات تيك توك بسرعة. إليك التحليل الداخلي للاستراتيجيات الإبداعية التي تحقق نتائج هذا العام.">
+              TikTok ad formats are evolving fast. Here's the insider breakdown on which creative strategies are
+              delivering results this year.</p>
+            <a href="#" class="blog-link" data-en="Read Article →" data-ar="اقرأ المقال ←">Read Article →</a>
           </div>
         </article>
+
       </div>
     </div>
   </section>
 
-  <!-- ==================== SECOND MARQUEE ==================== -->
-  <div class="marquee-section">
+  <!-- ═══════════════════════════ MARQUEE 2 ═══════════════════════════ -->
+  <div class="marquee-section" aria-hidden="true">
     <div class="marquee-track marquee-reverse">
-      <div class="marquee-content" id="marquee-2">
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Lead Generation Experts</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Content Marketing</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Paid Social Advertising</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Brand Strategy</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Conversion Rate Optimization</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Influencer Marketing</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Email Automation</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Data Analytics</span></div>
+      <div class="marquee-content">
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> ROI Growth</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Lead Generation</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Brand Awareness</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Customer Retention</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Market Expansion</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Funnel Optimisation</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> AI Automation</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Data Intelligence</span>
         <!-- Duplicate -->
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Lead Generation Experts</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Content Marketing</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Paid Social Advertising</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Brand Strategy</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Conversion Rate Optimization</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Influencer Marketing</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Email Automation</span></div>
-        <div class="marquee-item"><img src="assets/star.svg" alt=""> <span>Data Analytics</span></div>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> ROI Growth</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Lead Generation</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Brand Awareness</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Customer Retention</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Market Expansion</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Funnel Optimisation</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> AI Automation</span>
+        <span class="marquee-item"><img src="assets/star.svg" alt="" /> Data Intelligence</span>
       </div>
     </div>
   </div>
 
-  <!-- ==================== CTA SECTION ==================== -->
+  <!-- ═══════════════════════════ CTA ═══════════════════════════ -->
   <section class="cta-section" id="contact">
     <div class="cta-bg-overlay"></div>
     <div class="container">
       <div class="cta-inner reveal-up">
-        <span class="sub-badge">Join Our Community</span>
-        <h2 class="cta-title">Ready for a new era of marketing?</h2>
-        <p class="cta-description">Book a demo to unlock the future of digital marketing with AI-powered solutions.</p>
-        <form class="cta-form" id="cta-form">
+        <span class="sub-badge light" data-en="Start Today" data-ar="ابدأ اليوم">Start Today</span>
+        <h2 class="cta-title" data-en="Ready to Scale Your Marketing?" data-ar="هل أنت مستعد لتوسيع تسويقك؟">Ready to
+          Scale Your Marketing?</h2>
+        <p class="cta-description"
+          data-en="Join 500+ brands that trust Arkanzax to grow their business. Get a free strategy call and see your growth potential."
+          data-ar="انضم إلى أكثر من 500 علامة تجارية تثق بأركانزاكس لتنمية أعمالها. احصل على مكالمة استراتيجية مجانية وشاهد إمكانات نموك.">
+          Join 500+ brands that trust Arkanzax to grow their business. Get a free strategy call and see your growth
+          potential.
+        </p>
+
+        <form class="cta-form" id="cta-form" novalidate>
           <div class="form-group">
-            <input type="email" id="email-input" placeholder="Enter Your Email Address....." required>
-            <button type="submit" class="btn btn-cta">
-              Get Started <i class="fa-regular fa-arrow-right ms-1"></i>
-            </button>
+            <input type="email" id="email-input" placeholder="Enter your business email"
+              data-en-placeholder="Enter your business email" data-ar-placeholder="أدخل بريدك الإلكتروني التجاري"
+              aria-label="Email address" />
+            <button type="submit" class="btn-cta" data-en="Get Free Strategy" data-ar="احصل على استراتيجية مجانية">Get
+              Free Strategy</button>
           </div>
-          <p class="form-note">No spam, ever. Unsubscribe at any time.</p>
+          <p class="form-note" data-en="No spam, no commitment. Unsubscribe anytime."
+            data-ar="لا رسائل مزعجة، لا إلزام. ألغِ الاشتراك في أي وقت.">No spam, no commitment. Unsubscribe anytime.
+          </p>
         </form>
+
         <div class="cta-features">
-          <div class="cta-feature"><i class="fas fa-check"></i> Free 30-day trial</div>
-          <div class="cta-feature"><i class="fas fa-check"></i> No credit card required</div>
-          <div class="cta-feature"><i class="fas fa-check"></i> Cancel anytime</div>
+          <span class="cta-feature"><i class="fas fa-check-circle"></i> <span data-en="Free Strategy Call"
+              data-ar="مكالمة استراتيجية مجانية">Free Strategy Call</span></span>
+          <span class="cta-feature"><i class="fas fa-check-circle"></i> <span data-en="No Long Contracts"
+              data-ar="لا عقود طويلة">No Long Contracts</span></span>
+          <span class="cta-feature"><i class="fas fa-check-circle"></i> <span data-en="Results Guaranteed"
+              data-ar="نتائج مضمونة">Results Guaranteed</span></span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== FOOTER ==================== -->
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
   <footer class="site-footer">
     <div class="footer-top">
       <div class="container">
         <div class="footer-grid">
-          <!-- Brand -->
-          <div class="footer-col">
+
+          <!-- Brand Col -->
+          <div>
             <div class="footer-logo">
-              <img src="assets/logo.png" alt="Arkanzax Logo">
+              <img src="assets/logo.png" alt="Arkanzax" width="160" height="60" />
             </div>
-            <p class="footer-about">AI-powered marketing and SEO agency helping businesses grow faster with smarter digital strategies across Egypt and KSA.</p>
+            <p class="footer-about"
+              data-en="AI-powered marketing solutions that help brands grow faster, smarter, and more efficiently."
+              data-ar="حلول تسويقية مدعومة بالذكاء الاصطناعي تساعد العلامات التجارية على النمو بشكل أسرع وأذكى وأكثر كفاءة.">
+              AI-powered marketing solutions that help brands grow faster, smarter, and more efficiently.
+            </p>
             <div class="footer-social">
-              <a href="https://facebook.com/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-              <a href="https://linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-              <a href="https://instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="https://wa.me/+201033477682" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-              <a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
 
           <!-- Quick Links -->
-          <div class="footer-col">
-            <h4 class="footer-heading">Quick Links</h4>
-            <ul class="footer-links">
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#blog">Our Blogs</a></li>
-              <li><a href="#why-us">Why Arkanzax</a></li>
-            </ul>
+          <div>
+            <h4 class="footer-heading" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+            <nav class="footer-links">
+              <a href="#" data-en="Home" data-ar="الرئيسية">Home</a>
+              <a href="#services" data-en="Services" data-ar="الخدمات">Services</a>
+              <a href="#about" data-en="About Us" data-ar="من نحن">About Us</a>
+              <a href="#blog" data-en="Blog" data-ar="المدونة">Blog</a>
+              <a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+            </nav>
           </div>
 
-          <!-- Company -->
-          <div class="footer-col">
-            <h4 class="footer-heading">Company</h4>
-            <ul class="footer-links">
-              <li><a href="#">Our Clients</a></li>
-              <li><a href="#">FAQs</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
+          <!-- Services -->
+          <div>
+            <h4 class="footer-heading" data-en="Services" data-ar="خدماتنا">Services</h4>
+            <nav class="footer-links">
+              <a href="#" data-en="SEO & Content" data-ar="SEO والمحتوى">SEO & Content</a>
+              <a href="#" data-en="Paid Advertising" data-ar="الإعلانات المدفوعة">Paid Advertising</a>
+              <a href="#" data-en="Social Media" data-ar="وسائل التواصل">Social Media</a>
+              <a href="#" data-en="Email Marketing" data-ar="التسويق بالبريد">Email Marketing</a>
+              <a href="#" data-en="Brand Design" data-ar="تصميم العلامة">Brand Design</a>
+            </nav>
           </div>
 
           <!-- Contact -->
-          <div class="footer-col">
-            <h4 class="footer-heading">Contact Info</h4>
+          <div>
+            <h4 class="footer-heading" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h4>
             <div class="footer-contact">
               <div class="contact-item">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>6th of October, Giza, Egypt</span>
+                <span data-en="Dubai, United Arab Emirates" data-ar="دبي، الإمارات العربية المتحدة">Dubai, United Arab
+                  Emirates</span>
               </div>
               <div class="contact-item">
                 <i class="fas fa-envelope"></i>
                 <a href="mailto:info@arkanzax.com">info@arkanzax.com</a>
               </div>
               <div class="contact-item">
-                <i class="fab fa-whatsapp"></i>
-                <a href="https://wa.me/+201033477682">+20 103 347 7682</a>
-              </div>
-              <div class="contact-item">
-                <i class="fas fa-clock"></i>
-                <span>Open: 9 AM – 7 PM, Full week</span>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+1234567890">+1 (234) 567-890</a>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
 
-    <!-- Footer Bottom -->
     <div class="footer-bottom">
       <div class="container">
         <div class="footer-bottom-inner">
-          <p>Copyright &copy; 2025 <strong>Arkanzax</strong>. All rights reserved.</p>
+          <p data-en="© 2025 Arkanzax. All rights reserved." data-ar="© 2025 أركانزاكس. جميع الحقوق محفوظة.">© 2025
+            Arkanzax. All rights reserved.</p>
           <div class="footer-bottom-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <a href="#" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+            <a href="#" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+            <a href="#" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
           </div>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- ==================== SCROLL TO TOP ==================== -->
+  <!-- Scroll-to-Top Button -->
   <button class="scroll-top-btn" id="scroll-top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
@@ -732,4 +880,5 @@
   <!-- Main JS -->
   <script src="js/main.js"></script>
 </body>
+
 </html>
