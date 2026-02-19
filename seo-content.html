@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-en="SEO & Content Marketing | Arkanzax" data-ar="تحسين محركات البحث وتسويق المحتوى | أركانزاكس">SEO &
+        Content Marketing | Arkanzax</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        html[dir="rtl"] body {
+            font-family: 'Cairo', 'Outfit', sans-serif;
+        }
+
+        .inner-hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .inner-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(49, 165, 161, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .service-content {
+            padding: 100px 0;
+            background: var(--dark-3);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .content-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            color: var(--white);
+        }
+
+        .content-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .feature-list i {
+            color: var(--primary);
+        }
+
+        .content-image {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .content-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 900px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .feature-list {
+                display: inline-block;
+                text-align: left;
+            }
+
+            html[dir="rtl"] .feature-list {
+                text-align: right;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER (Same as index) -->
+    <header class="site-header" id="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-inner">
+                    <div class="header-contact-info">
+                        <a href="mailto:info@arkanzax.com"><i class="fas fa-envelope"></i> info@arkanzax.com</a>
+                        <a href="tel:+201033477682"><i class="fas fa-phone"></i> +20 1033 477 682</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-main" id="header-main">
+            <div class="container">
+                <nav class="nav-inner">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo.png" alt="Arkanzax Logo" width="160" height="52" />
+                    </a>
+                    <ul class="nav-list main-nav" role="list">
+                        <li><a href="index.html#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+                        <li><a href="index.html#about" data-en="About" data-ar="من نحن">About</a></li>
+                        <li><a href="index.html#testi-sec" data-en="Testimonials"
+                                data-ar="آراء العملاء">Testimonials</a></li>
+                        <li><a href="index.html#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
+                        <li><a href="index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+                    </ul>
+                    <div class="header-actions">
+                        <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">
+                            <span class="lang-flag">🇸🇦</span>
+                            <span id="lang-label">AR</span>
+                        </button>
+                        <a href="index.html#contact" class="btn btn-primary" data-en="Get Started"
+                            data-ar="ابدأ الآن">Get Started</a>
+                    </div>
+                    <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu"><i
+                            class="far fa-bars"></i></button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="inner-hero">
+            <div class="container">
+                <span class="hero-badge reveal-up">
+                    <i class="fas fa-search"></i>&nbsp;
+                    <span data-en="Our Services" data-ar="خدماتنا">Our Services</span>
+                </span>
+                <h1 class="hero-title reveal-up" data-en="SEO & Content Marketing"
+                    data-ar="تحسين محركات البحث وتسويق المحتوى">SEO & Content Marketing</h1>
+                <p class="hero-description reveal-up"
+                    data-en="Dominate search results and connect with your audience through powerful, data-driven content strategies."
+                    data-ar="سيطر على نتائج البحث وتواصل مع جمهورك من خلال استراتيجيات محتوى قوية ومدفوعة بالبيانات.">
+                    Dominate search results and connect with your audience through powerful, data-driven content
+                    strategies.
+                </p>
+            </div>
+        </section>
+
+        <section class="service-content">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="content-text reveal-left">
+                        <h2 data-en="Drive Organic Growth" data-ar="حقق نمواً عضويًا">Drive Organic Growth</h2>
+                        <p data-en="Our SEO strategy isn't just about keywords; it's about understanding user intent and delivering value. We combine technical SEO, high-quality content creation, and authoritative link building to ensure your brand stands out where it matters most."
+                            data-ar="استراتيجيتنا لتحسين محركات البحث لا تتعلق فقط بالكلمات الرئيسية؛ بل تتعلق بفهم نية المستخدم وتقديم القيمة. نحن نجمع بين تحسين محركات البحث التقني، وإنشاء محتوى عالي الجودة، وبناء روابط موثوقة لضمان تميز علامتك التجارية في أهم المواقع.">
+                            Our SEO strategy isn't just about keywords; it's about understanding user intent and
+                            delivering value. We combine technical SEO, high-quality content creation, and authoritative
+                            link building to ensure your brand stands out where it matters most.
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Comprehensive Keyword Research"
+                                    data-ar="بحث شامل عن الكلمات الرئيسية">Comprehensive Keyword Research</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Technical SEO Audits"
+                                    data-ar="تدقيق تقني لتحسين محركات البحث">Technical SEO Audits</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="On-Page & Off-Page Optimization"
+                                    data-ar="تحسين داخل الصفحة وخارجها">On-Page & Off-Page Optimization</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Data-Driven Content Strategy"
+                                    data-ar="استراتيجية محتوى مدفوعة بالبيانات">Data-Driven Content Strategy</span></li>
+                        </ul>
+                    </div>
+                    <div class="content-image reveal-right">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426"
+                            alt="SEO Analysis" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-inner reveal-up">
+                    <h2 data-en="Ready to Rank Higher?" data-ar="مستعد لتصنيف أعلى؟">Ready to Rank Higher?</h2>
+                    <p data-en="Get a free SEO audit and discover how we can help you grow your organic traffic."
+                        data-ar="احصل على تدقيق SEO مجاني واكتشف كيف يمكننا مساعدتك في تنمية زياراتك العضوية.">Get a
+                        free SEO audit and discover how we can help you grow your organic traffic.</p>
+                    <a href="index.html#contact" class="btn btn-primary" data-en="Get Free Audit"
+                        data-ar="احصل على تدقيق مجاني">Get Free Audit</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div>
+                        <div class="footer-logo"><img src="assets/logo.png" alt="Arkanzax" width="160" height="60" />
+                        </div>
+                        <p class="footer-about"
+                            data-en="AI-powered marketing solutions that help brands grow faster, smarter, and more efficiently."
+                            data-ar="حلول تسويقية مدعومة بالذكاء الاصطناعي تساعد العلامات التجارية على النمو بشكل أسرع وأذكى وأكثر كفاءة.">
+                            AI-powered marketing solutions that help brands grow faster, smarter, and more efficiently.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="footer-heading" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                        <nav class="footer-links">
+                            <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                            <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                            <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                        </nav>
+                    </div>
+                    <div>
+                        <h4 class="footer-heading" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h4>
+                        <div class="footer-contact">
+                            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span
+                                    data-en="6th of October, Giza, Egypt" data-ar="السادس من أكتوبر، الجيزة، مصر">6th of
+                                    October, Giza, Egypt</span></div>
+                            <div class="contact-item"><i class="fas fa-envelope"></i> <a
+                                    href="mailto:info@arkanzax.com">info@arkanzax.com</a></div>
+                            <div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+201033477682">+20 1033
+                                    477 682</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p data-en="© 2025 Arkanzax. All rights reserved." data-ar="© 2025 أركانزاكس. جميع الحقوق محفوظة.">©
+                    2025 Arkanzax. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
