@@ -252,9 +252,11 @@ function initLanguageToggle() {
     html.setAttribute('lang', isArabic ? 'ar' : 'en');
 
     // 2. Update button UI
-    if (label) label.textContent = isArabic ? 'EN' : 'AR';
+    if (label) label.textContent = isArabic ? 'English' : 'العربية';
     const flag = btn.querySelector('.lang-flag');
-    if (flag) flag.textContent = isArabic ? '🇬🇧' : '🇸🇦';
+    if (flag) {
+      flag.innerHTML = '<i class="fas fa-globe"></i>';
+    }
     btn.setAttribute('title', isArabic ? 'Switch to English' : 'التبديل إلى العربية');
 
     // 3. Swap all translatable text nodes
