@@ -114,51 +114,75 @@
 
 <body>
     <!-- HEADER -->
-    <header class="site-header" id="header">
-        <div class="header-top">
-            <div class="container">
-                <div class="header-top-inner">
-                    <div class="header-contact-info">
-                        <a href="mailto:info@arkanzax.com"><i class="fas fa-envelope"></i> info@arkanzax.com</a>
-                        <a href="tel:+201033477682"><i class="fas fa-phone"></i> +20 1033 477 682</a>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
+  <header class="site-header" id="header">
+
+    <!-- Top Bar -->
+    <div class="header-top">
+      <div class="container">
+        <div class="header-top-inner">
+          <div class="header-contact-info">
+            <a href="mailto:info@arkanzax.com"><i class="fas fa-envelope"></i> info@arkanzax.com</a>
+            <a href="tel:+201033477682"><i class="fas fa-phone"></i> +20 1033 477 682</a>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          </div>
         </div>
-        <div class="header-main" id="header-main">
-            <div class="container">
-                <nav class="nav-inner">
-                    <a href="index.html" class="logo">
-                        <img src="assets/logo.png" alt="Arkanzax Logo" width="160" height="52" />
-                    </a>
-                    <ul class="nav-list main-nav" role="list">
-                        <li><a href="index.html#services" data-en="Services" data-ar="الخدمات">Services</a></li>
-                        <li><a href="index.html#about" data-en="About" data-ar="من نحن">About</a></li>
-                        <li><a href="index.html#testi-sec" data-en="Testimonials"
-                                data-ar="آراء العملاء">Testimonials</a></li>
-                        <li><a href="index.html#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
-                        <li><a href="index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
-                    </ul>
-                    <div class="header-actions">
-                        <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">
-                            <span class="lang-flag">🇸🇦</span>
-                            <span id="lang-label">AR</span>
-                        </button>
-                        <a href="index.html#contact" class="btn btn-primary" data-en="Get Started"
-                            data-ar="ابدأ الآن">Get Started</a>
-                    </div>
-                    <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu"><i
-                            class="far fa-bars"></i></button>
-                </nav>
-            </div>
-        </div>
-    </header>
+      </div>
+    </div>
+
+    <!-- Main Nav -->
+    <div class="header-main" id="header-main">
+      <div class="container">
+        <nav class="nav-inner">
+          <!-- Logo -->
+          <a href="#" class="logo">
+            <img src="assets/logo.png" alt="Arkanzax Logo" width="160" height="52" />
+          </a>
+
+          <!-- Desktop Nav Links -->
+          <ul class="nav-list main-nav" role="list">
+            <li><a href="#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+            <li><a href="#about" data-en="About" data-ar="من نحن">About</a></li>
+            <li><a href="#testi-sec" data-en="Testimonials" data-ar="آراء العملاء">Testimonials</a></li>
+            <li><a href="#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
+            <li><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+          </ul>
+
+          <!-- Header Actions -->
+          <div class="header-actions">
+            <!-- Language Toggle -->
+            <button id="lang-toggle" class="lang-toggle" aria-label="Switch language" title="Switch language">
+              <span class="lang-flag">🇸🇦</span>
+              <span id="lang-label">AR</span>
+            </button>
+
+            <!-- CTA Button -->
+            <a href="#contact" class="btn btn-primary" data-en="Get Started" data-ar="ابدأ الآن">Get Started</a>
+          </div>
+
+          <!-- Mobile Toggle -->
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+            <i class="far fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div class="mobile-nav" id="mobile-nav">
+        <ul role="list">
+          <li><a href="#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+          <li><a href="#about" data-en="About" data-ar="من نحن">About</a></li>
+          <li><a href="#testi-sec" data-en="Testimonials" data-ar="آراء العملاء">Testimonials</a></li>
+          <li><a href="#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
+          <li><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
     <main>
         <section class="inner-hero">
