@@ -1851,12 +1851,20 @@ ul {
 
 @media (max-width: 900px) {
   .header-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.8rem;
+  }
+
+  .main-nav {
     display: none;
   }
 
-  .main-nav,
   .header-actions .btn-primary {
-    display: none;
+    display: block;
+    padding: 8px 16px;
+    font-size: 0.85rem;
   }
 
   .mobile-toggle {
@@ -1887,7 +1895,10 @@ ul {
   }
 
   .hero-image {
-    display: none;
+    display: block;
+    order: -1;
+    max-width: 80%;
+    margin: 0 auto;
   }
 
   .challenges-grid {
@@ -1949,7 +1960,10 @@ ul {
   }
 
   .stat-divider {
-    display: none;
+    display: block;
+    width: 1px;
+    height: 30px;
+    background: var(--dark-border);
   }
 
   .testi-card {
@@ -1962,20 +1976,39 @@ ul {
     gap: 16px;
   }
 
+  .why-table-wrapper {
+    overflow-x: auto;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .why-table-header,
   .why-row {
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 130px 180px 180px 180px;
+    width: max-content;
+    min-width: 100%;
   }
 
   .why-col:nth-child(3),
   .why-col:nth-child(4),
   .why-cell:nth-child(3),
   .why-cell:nth-child(4) {
-    display: none;
+    display: block;
   }
 
   .floating-card {
-    display: none;
+    display: block;
+    scale: 0.7;
+  }
+
+  .f-card-1 {
+    top: -20px;
+    right: 0;
+  }
+
+  .f-card-2 {
+    bottom: -20px;
+    left: 0;
   }
 }
 
