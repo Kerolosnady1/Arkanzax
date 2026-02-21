@@ -398,10 +398,175 @@ ul {
   display: none;
   background: none;
   border: none;
+  color: var(--white);
   font-size: 1.5rem;
-  color: rgba(255, 255, 255, .8);
   cursor: pointer;
-  padding: 4px;
+  padding: 8px;
+  transition: var(--transition);
+}
+
+.mobile-toggle:hover {
+  color: var(--primary);
+}
+
+/* Mega Menu */
+.nav-item-mega {
+  position: static;
+  /* Header-main is relative, so mega menu can be full width */
+}
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 12, 22, 0.98);
+  border-top: 1px solid rgba(49, 165, 161, .2);
+  border-bottom: 2px solid var(--primary);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, .6);
+  backdrop-filter: blur(20px);
+  padding: 40px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 1000;
+}
+
+.nav-item-mega:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mega-menu-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.mega-menu-header {
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, .05);
+  padding-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mega-menu-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
+  font-family: var(--font-heading);
+}
+
+.mega-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.client-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  background: #151928;
+  border: 1px solid rgba(255, 255, 255, .05);
+  transition: var(--transition);
+}
+
+.client-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  opacity: 0.8;
+}
+
+.client-card:hover {
+  border-color: rgba(49, 165, 161, .4);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+}
+
+.client-card:hover img {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.client-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.client-card:hover .client-card-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.client-card-info h4 {
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.client-card-info p {
+  color: var(--primary-light);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile Sub-menu Toggle */
+.mobile-nav .has-submenu>a {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-nav .has-submenu>a::after {
+  content: '\f107';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  transition: transform 0.3s ease;
+}
+
+.mobile-nav .has-submenu.active>a::after {
+  transform: rotate(180deg);
+}
+
+.mobile-submenu {
+  display: none;
+  padding-left: 20px;
+  background: rgba(255, 255, 255, .02);
+  margin: 4px 0;
+  border-radius: var(--radius-sm);
+}
+
+.mobile-nav .has-submenu.active .mobile-submenu {
+  display: block;
+}
+
+/* RTL Adjustments */
+html[dir="rtl"] .mega-menu {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .mobile-submenu {
+  padding-left: 0;
+  padding-right: 20px;
 }
 
 /* Mobile Nav */

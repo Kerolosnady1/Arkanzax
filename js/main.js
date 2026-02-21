@@ -48,7 +48,15 @@ function initMobileMenu() {
 
   // Close on link click
   mobileNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+      const parentLi = link.closest('li');
+      if (parentLi && parentLi.classList.contains('has-submenu')) {
+        // Toggle submenu
+        e.preventDefault();
+        parentLi.classList.toggle('active');
+        return;
+      }
+
       mobileNav.classList.remove('open');
       toggle.innerHTML = '<i class="far fa-bars"></i>';
       toggle.setAttribute('aria-expanded', 'false');
@@ -61,6 +69,8 @@ function initMobileMenu() {
     if (header && !header.contains(e.target)) {
       mobileNav.classList.remove('open');
       toggle.innerHTML = '<i class="far fa-bars"></i>';
+      // Reset all submenus
+      mobileNav.querySelectorAll('.has-submenu').forEach(li => li.classList.remove('active'));
     }
   });
 }
