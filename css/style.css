@@ -358,19 +358,26 @@ ul {
 .nav-list li a {
   color: rgba(255, 255, 255, .8);
   font-weight: 500;
-  font-size: 0.95rem;
-  padding: 8px 14px;
+  font-size: 0.9rem;
+  padding: 8px 12px;
   border-radius: var(--radius-sm);
   transition: var(--transition);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
+  white-space: pre-line;
+  min-width: 80px;
 }
 
 .nav-list li a::after {
   content: '';
   position: absolute;
-  bottom: 4px;
-  left: 14px;
-  right: 14px;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
   height: 2px;
   background: var(--primary);
   border-radius: 2px;
@@ -391,7 +398,49 @@ ul {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
+}
+
+.lang-toggle {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.lang-toggle:hover {
+  border-color: var(--primary);
+  background: rgba(49, 165, 161, 0.05);
+}
+
+.btn-invoice {
+  background: transparent !important;
+  color: var(--accent-blue) !important;
+  border: 1px solid var(--accent-blue) !important;
+  padding: 8px 20px !important;
+  font-size: 0.85rem !important;
+  height: auto !important;
+}
+
+.btn-invoice:hover {
+  background: rgba(59, 158, 245, 0.1) !important;
+  transform: translateY(-2px);
+}
+
+.nav-inner .btn-primary {
+  background: linear-gradient(135deg, var(--primary), #2cb5b0);
+  border: none;
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(49, 165, 161, 0.3);
 }
 
 .mobile-toggle {
