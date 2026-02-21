@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCTAForm();
   initLanguageToggle();
   initCardHoverEffects();
+  initInvoiceModal();
 });
 
 
@@ -401,3 +402,67 @@ function initCardHoverEffects() {
   });
   obs.observe(hero);
 })();
+
+// ─── 11. Invoice Modal ───────────────────────────────────────
+function initInvoiceModal() {
+  const modalOverlay = document.getElementById('invoice-modal-overlay');
+  const openBtns = document.querySelectorAll('.btn-invoice-open');
+  const closeBtn = document.getElementById('modal-close');
+  const form = document.getElementById('invoice-form');
+  const successDiv = document.getElementById('invoice-success');
+
+  if (!modalOverlay || !openBtns.length) return;
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+    // Reset form after delay
+    setTimeout(() => {
+      if (form) form.style.display = 'flex';
+      if (successDiv) successDiv.style.display = 'none';
+    }, 400);
+  }
+
+  openBtns.forEach(btn => btn.addEventListener('click', openModal));
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeModal();
+  });
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('.invoice-submit');
+      const name = document.getElementById('inv-name').value;
+      const email = document.getElementById('inv-email').value;
+      const details = document.getElementById('inv-details').value;
+
+      if (!name || !email) return;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+
+      // Simulate API call and open mailto
+      setTimeout(() => {
+        const subject = encodeURIComponent("Invoice Request - Arkanzax");
+        const body = encodeURIComponent(`Hello Arkanzax Team,\n\nI would like to request an invoice.\n\nName: ${name}\nEmail: ${email}\nDetails: ${details}\n\nPlease contact me and send the invoice PDF.\n\nBest regards,\n${name}`);
+
+        // Open mailto link
+        window.location.href = `mailto:info@arkanzax.com?subject=${subject}&body=${body}`;
+
+        // Show success message
+        form.style.display = 'none';
+        successDiv.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send Request';
+      }, 1000);
+    });
+  }
+}

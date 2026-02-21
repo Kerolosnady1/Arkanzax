@@ -97,6 +97,10 @@
               <span id="lang-label">AR</span>
             </button>
 
+            <!-- Get Invoice Button -->
+            <button class="btn btn-invoice btn-invoice-open" data-en="Get Invoice" data-ar="طلب فاتورة">Get
+              Invoice</button>
+
             <!-- CTA Button -->
             <a href="index.html#contact" class="btn btn-primary" data-en="Get Started" data-ar="ابدأ الآن">Get
               Started</a>
@@ -117,6 +121,8 @@
           <li><a href="index.html#testi-sec" data-en="Testimonials" data-ar="آراء العملاء">Testimonials</a></li>
           <li><a href="index.html#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
           <li><a href="index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+          <li><a href="javascript:void(0)" class="btn-invoice-open" style="color:var(--accent-blue);"
+              data-en="Get Invoice" data-ar="طلب فاتورة">Get Invoice</a></li>
         </ul>
       </div>
     </div>
@@ -241,6 +247,55 @@
       </div>
     </div>
   </footer>
+  <!-- ═══════════════════════════ INVOICE MODAL ═══════════════════════════ -->
+  <div class="invoice-modal-overlay" id="invoice-modal-overlay">
+    <div class="invoice-modal">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+
+      <div id="invoice-form-container">
+        <div class="modal-header">
+          <i class="fas fa-file-invoice-dollar"></i>
+          <h2 data-en="Request Your Invoice" data-ar="طلب فاتورتك">Request Your Invoice</h2>
+          <p data-en="Fill in your details and we'll contact you shortly." data-ar="أدخل بياناتك وسنتواصل معك قريباً.">
+            Fill in your details and we'll contact you shortly.</p>
+        </div>
+
+        <form class="invoice-form" id="invoice-form">
+          <div class="form-field">
+            <label for="inv-name" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+            <input type="text" id="inv-name" placeholder="John Doe" required />
+          </div>
+          <div class="form-field">
+            <label for="inv-email" data-en="Business Email" data-ar="البريد الإلكتروني للعمل">Business Email</label>
+            <input type="email" id="inv-email" placeholder="john@company.com" required />
+          </div>
+          <div class="form-field">
+            <label for="inv-details" data-en="Additional Details (Optional)"
+              data-ar="تفاصيل إضافية (اختياري)">Additional Details (Optional)</label>
+            <textarea id="inv-details" rows="3" placeholder="Project name, invoice amount, etc."></textarea>
+          </div>
+          <button type="submit" class="invoice-submit" data-en="Send Request" data-ar="إرسال الطلب">Send
+            Request</button>
+        </form>
+      </div>
+
+      <!-- Success Content -->
+      <div class="invoice-success" id="invoice-success">
+        <i class="fas fa-check-circle"></i>
+        <h3 data-en="Request Sent Successfully!" data-ar="تم إرسال الطلب بنجاح!">Request Sent Successfully!</h3>
+        <p data-en="We have received your request and will contact you at your email address shortly."
+          data-ar="لقد تلقينا طلبك وسنتواصل معك على بريدك الإلكتروني قريباً.">We have received your request and will
+          contact you at your email address shortly.</p>
+        <div style="margin-top: 20px;">
+          <a href="assets/invoice-sample.pdf" class="btn-download" download>
+            <i class="fas fa-download"></i>
+            <span data-en="Download Sample Invoice" data-ar="تحميل نموذج الفاتورة">Download Sample Invoice</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 
