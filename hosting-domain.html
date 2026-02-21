@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-en="Hosting & Domain | Arkanzax" data-ar="الاستضافة والنطاق | أركانزاكس">
+        Hosting & Domain | Arkanzax</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        html[dir="rtl"] body {
+            font-family: 'Cairo', 'Outfit', sans-serif;
+        }
+
+        .inner-hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .inner-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(59, 158, 245, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .pricing-section {
+            padding: 100px 0;
+            background: var(--dark-3);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pricing-card {
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.recommended {
+            border-color: var(--primary);
+            transform: scale(1.05);
+            z-index: 1;
+        }
+
+        .pricing-card.recommended:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .recommended-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-bottom-left-radius: var(--radius-md);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .pricing-price {
+            margin-bottom: 30px;
+        }
+
+        .price-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-light);
+        }
+
+        .price-currency {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-left: 5px;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: var(--text-gray);
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 40px;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .pricing-features i {
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 992px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+                gap: 40px;
+            }
+
+            .pricing-card.recommended {
+                transform: scale(1);
+            }
+
+            .pricing-card.recommended:hover {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="site-header" id="header">
+
+        <!-- Top Bar -->
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-inner">
+                    <div class="header-contact-info">
+                        <a href="mailto:info@arkanzax.com"><i class="fas fa-envelope"></i> info@arkanzax.com</a>
+                        <a href="tel:+201033477682"><i class="fas fa-phone"></i> +20 1033 477 682</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+                        <a title="WhatsApp" href="https://wa.me/+201033477682"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Nav -->
+        <div class="header-main" id="header-main">
+            <div class="container">
+                <nav class="nav-inner">
+                    <!-- Logo -->
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo.png" alt="Arkanzax Logo" width="160" height="52" />
+                    </a>
+
+                    <!-- Desktop Nav Links -->
+                    <ul class="nav-list main-nav" role="list">
+                        <li><a href="index.html#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+                        <li><a href="index.html#about" data-en="About" data-ar="من نحن">About</a></li>
+                        <li><a href="index.html#testi-sec" data-en="Testimonials"
+                                data-ar="آراء العملاء">Testimonials</a></li>
+                        <li class="nav-item-mega">
+                            <a href="javascript:void(0)" data-en="Other Clients" data-ar="عملاء آخرون">Other Clients</a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-inner">
+                                    <div class="mega-menu-header">
+                                        <h3 data-en="Our Previous Work" data-ar="أعمالنا السابقة">Our Previous Work</h3>
+                                    </div>
+                                    <div class="mega-menu-grid">
+                                        <div class="client-card">
+                                            <img src="assets/clients/client-1.jpg" alt="Good Life Products">
+                                            <div class="client-card-info">
+                                                <h4 data-en="Turath Pharma" data-ar="تراث فارما">Turath Pharma</h4>
+                                                <p data-en="Product Catalog" data-ar="كتالوج المنتجات">Product Catalog
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="client-card">
+                                            <img src="assets/clients/client-2.jpg" alt="Good Life Experience">
+                                            <div class="client-card-info">
+                                                <h4 data-en="Turath Pharma" data-ar="تراث فارما">Turath Pharma</h4>
+                                                <p data-en="Brand Experience" data-ar="تجربة العلامة التجارية">Brand
+                                                    Experience</p>
+                                            </div>
+                                        </div>
+                                        <div class="client-card">
+                                            <img src="assets/clients/client-3.jpg" alt="Turath Pharma Home">
+                                            <div class="client-card-info">
+                                                <h4 data-en="Turath Pharma" data-ar="تراث فارما">Turath Pharma</h4>
+                                                <p data-en="related products" data-ar="المنتجات ذات الصلة">Related
+                                                    Products</p>
+                                            </div>
+                                        </div>
+                                        <div class="client-card">
+                                            <img src="assets/clients/client-4.jpg" alt="Turath Pharma Products">
+                                            <div class="client-card-info">
+                                                <h4 data-en="Good Life" data-ar="جود لايف">Good Life</h4>
+                                                <p data-en="E-commerce Products" data-ar="منتجات التجارة الإلكترونية">
+                                                    E-commerce Products</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="index.html#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
+                        <li><a href="index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+                    </ul>
+
+                    <!-- Header Actions -->
+                    <div class="header-actions">
+                        <!-- Language Toggle -->
+                        <button id="lang-toggle" class="lang-toggle" aria-label="Switch language"
+                            title="Switch language">
+                            <span class="lang-flag"><i class="fas fa-globe"></i></span>
+                            <span id="lang-label">AR</span>
+                        </button>
+
+                        <!-- Get Invoice Button -->
+                        <button class="btn btn-invoice btn-invoice-open" data-en="Get Invoice" data-ar="طلب فاتورة">Get
+                            Invoice</button>
+
+                        <!-- CTA Button -->
+                        <a href="index.html#contact" class="btn btn-primary" data-en="Get Started"
+                            data-ar="ابدأ الآن">Get
+                            Started</a>
+                    </div>
+
+                    <!-- Mobile Toggle -->
+                    <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Mobile Nav -->
+            <div class="mobile-nav" id="mobile-nav">
+                <ul role="list">
+                    <li><a href="index.html#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+                    <li><a href="index.html#about" data-en="About" data-ar="من نحن">About</a></li>
+                    <li><a href="index.html#testi-sec" data-en="Testimonials" data-ar="آراء العملاء">Testimonials</a>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="javascript:void(0)" data-en="Other Clients" data-ar="عملاء آخرون">Other Clients</a>
+                        <ul class="mobile-submenu">
+                            <li><a href="javascript:void(0)">Good Life - Projects</a></li>
+                            <li><a href="javascript:void(0)">Turath Pharma - Projects</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
+                    <li><a href="index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+                    <li><a href="javascript:void(0)" class="btn-invoice-open" style="color:var(--accent-blue);"
+                            data-en="Get Invoice" data-ar="طلب فاتورة">Get Invoice</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="inner-hero">
+            <div class="container">
+                <span class="hero-badge reveal-up">
+                    <i class="fas fa-server"></i>&nbsp;
+                    <span data-en="Hosting & Domain" data-ar="الاستضافة والنطاق">Hosting & Domain</span>
+                </span>
+                <h1 class="hero-title reveal-up" data-en="Powerful Server & Hosting Options"
+                    data-ar="خيارات قوية للخوادم والاستضافة">Powerful Server & Hosting Options</h1>
+                <p class="hero-description reveal-up"
+                    data-en="Choose the perfect hosting plan for your business needs, from basic personal sites to high-traffic e-commerce platforms."
+                    data-ar="اختر خطة الاستضافة المثالية لاحتياجات عملك، من المواقع الشخصية البسيطة إلى منصات التجارة الإلكترونية عالية الحركة.">
+                    Choose the perfect hosting plan for your business needs, from basic personal sites to high-traffic
+                    e-commerce platforms.
+                </p>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <div class="container">
+                <div class="section-header text-center reveal-up">
+                    <h2 class="section-title" data-en="Our Hosting Plans" data-ar="خطط الاستضافة لدينا">Our Hosting
+                        Plans</h2>
+                    <p class="section-subtitle"
+                        data-en="Transparent pricing with no hidden fees. All plans include 24/7 support."
+                        data-ar="تسعير شفاف بدون رسوم مخفية. جميع الخطط تشمل دعم على مدار الساعة.">Transparent pricing
+                        with no
+                        hidden fees. All plans include 24/7 support.</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Option 1 -->
+                    <div class="pricing-card reveal-card">
+                        <div class="pricing-header">
+                            <h3 data-en="Option 1" data-ar="الخيار الأول">Option 1</h3>
+                            <div class="pricing-price">
+                                <span class="price-value">100</span>
+                                <span class="price-currency">USD</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Storage: 10 GB"
+                                    data-ar="المساحة: 10 جيجابايت">Storage: 10 GB</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Email Accounts: 5 mailboxes"
+                                    data-ar="حسابات البريد: 5 صناديق">Email Accounts: 5 mailboxes</span></li>
+                            <li><i class="fas fa-redo"></i> <span data-en="Annual Renewal: 60 USD / year"
+                                    data-ar="التجديد السنوي: 60 دولار / سنة">Annual Renewal: 60 USD / year</span></li>
+                        </ul>
+                        <a href="index.html#contact" class="btn btn-outline-white" data-en="Choose Plan"
+                            data-ar="اختر الخطة">Choose Plan</a>
+                    </div>
+
+                    <!-- Option 2 -->
+                    <div class="pricing-card reveal-card">
+                        <div class="pricing-header">
+                            <h3 data-en="Option 2" data-ar="الخيار الثاني">Option 2</h3>
+                            <div class="pricing-price">
+                                <span class="price-value">60</span>
+                                <span class="price-currency">USD</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Storage: 10 GB"
+                                    data-ar="المساحة: 10 جيجابايت">Storage: 10 GB</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Email Accounts: 5 mailboxes"
+                                    data-ar="حسابات البريد: 5 صناديق">Email Accounts: 5 mailboxes</span></li>
+                            <li><i class="fas fa-redo"></i> <span data-en="Annual Renewal: 60 USD / year"
+                                    data-ar="التجديد السنوي: 60 دولار / سنة">Annual Renewal: 60 USD / year</span></li>
+                        </ul>
+                        <a href="index.html#contact" class="btn btn-outline-white" data-en="Choose Plan"
+                            data-ar="اختر الخطة">Choose Plan</a>
+                    </div>
+
+                    <!-- Option 3 (Recommended) -->
+                    <div class="pricing-card recommended reveal-card">
+                        <div class="recommended-badge" data-en="Recommended" data-ar="موصى به">Recommended</div>
+                        <div class="pricing-header">
+                            <h3 data-en="Option 3" data-ar="الخيار الثالث">Option 3</h3>
+                            <p style="color:var(--primary-light); font-size: 0.85rem; margin-bottom: 10px;"
+                                data-en="(Recommended for E-commerce)" data-ar="(موصى به للتجارة الإلكترونية)">
+                                (Recommended for E-commerce)</p>
+                            <div class="pricing-price">
+                                <span class="price-value">100</span>
+                                <span class="price-currency">USD</span>
+                            </div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Storage: 25 GB"
+                                    data-ar="المساحة: 25 جيجابايت">Storage: 25 GB</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Email Accounts: Unlimited mailboxes"
+                                    data-ar="حسابات البريد: غير محدود">Email Accounts: Unlimited mailboxes</span></li>
+                            <li><i class="fas fa-redo"></i> <span data-en="Annual Renewal: 100 USD / year"
+                                    data-ar="التجديد السنوي: 100 دولار / سنة">Annual Renewal: 100 USD / year</span></li>
+                        </ul>
+                        <a href="index.html#contact" class="btn btn-primary" data-en="Choose Plan"
+                            data-ar="اختر الخطة">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-inner reveal-up">
+                    <h2 data-en="Need a Custom Solution?" data-ar="هل تحتاج إلى حل مخصص؟">Need a Custom Solution?</h2>
+                    <p data-en="Contact us for tailored hosting packages and dedicated server options for your enterprise enterprise software."
+                        data-ar="اتصل بنا للحصول على حزم استضافة مخصصة وخيارات خوادم مخصصة لمؤسستك.">Contact us for
+                        tailored hosting
+                        packages and dedicated server options for your enterprise enterprise software.</p>
+                    <a href="index.html#contact" class="btn btn-primary" data-en="Get a Quote"
+                        data-ar="احصل على عرض">Get a
+                        Quote</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+
+                    <!-- Brand Col -->
+                    <div>
+                        <div class="footer-logo">
+                            <img src="assets/logo.png" alt="Arkanzax" width="160" height="60" />
+                        </div>
+                        <p class="footer-about"
+                            data-en="AI-powered marketing solutions that help brands grow faster, smarter, and more efficiently."
+                            data-ar="حلول تسويقية مدعومة بالذكاء الاصطناعي تساعد العلامات التجارية على النمو بشكل أسرع وأذكى وأكثر كفاءة.">
+                            AI-powered marketing solutions that help brands grow faster, smarter, and more efficiently.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+                            <a title="WhatsApp" href="https://wa.me/+201033477682"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 class="footer-heading" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                        <nav class="footer-links">
+                            <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                            <a href="index.html#services" data-en="Services" data-ar="الخدمات">Services</a>
+                            <a href="index.html#about" data-en="About Us" data-ar="من نحن">About Us</a>
+                            <a href="index.html#blog" data-en="Blog" data-ar="المدونة">Blog</a>
+                            <a href="index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+                        </nav>
+                    </div>
+
+                    <!-- Services -->
+                    <div>
+                        <h4 class="footer-heading" data-en="Services" data-ar="خدماتنا">Services</h4>
+                        <nav class="footer-links">
+                            <a href="seo-content.html" data-en="SEO & Content" data-ar="SEO والمحتوى">SEO & Content</a>
+                            <a href="paid-ads.html" data-en="Paid Advertising" data-ar="الإعلانات المدفوعة">Paid
+                                Advertising</a>
+                            <a href="social-media.html" data-en="Social Media" data-ar="وسائل التواصل">Social Media</a>
+                            <a href="email-marketing.html" data-en="Email Marketing" data-ar="التسويق بالبريد">Email
+                                Marketing</a>
+                            <a href="branding-design.html" data-en="Brand Design" data-ar="تصميم العلامة">Brand
+                                Design</a>
+                            <a href="hosting-domain.html" data-en="Hosting & Domain" data-ar="الاستضافة والنطاق">Hosting
+                                & Domain</a>
+                        </nav>
+                    </div>
+
+                    <!-- Contact -->
+                    <div>
+                        <h4 class="footer-heading" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h4>
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-en="6th of October, Giza, Egypt" data-ar="السادس من أكتوبر، الجيزة، مصر">6th
+                                    of October,
+                                    Giza, Egypt</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info@arkanzax.com">info@arkanzax.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+201033477682">+20 1033 477 682</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p data-en="© 2025 Arkanzax. All rights reserved." data-ar="© 2025 أركانزاكس. جميع الحقوق محفوظة.">©
+                        2025
+                        Arkanzax. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+                        <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+                        <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════ INVOICE MODAL ═══════════════════════════ -->
+    <div class="invoice-modal-overlay" id="invoice-modal-overlay">
+        <div class="invoice-modal">
+            <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+
+            <div id="invoice-form-container">
+                <div class="modal-header">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h2 data-en="Request Your Invoice" data-ar="طلب فاتورتك">Request Your Invoice</h2>
+                    <p data-en="Fill in your details and we'll contact you shortly."
+                        data-ar="أدخل بياناتك وسنتواصل معك قريباً.">
+                        Fill in your details and we'll contact you shortly.</p>
+                </div>
+
+                <form class="invoice-form" id="invoice-form">
+                    <div class="form-field">
+                        <label for="inv-name" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                        <input type="text" id="inv-name" placeholder="John Doe" required />
+                    </div>
+                    <div class="form-field">
+                        <label for="inv-email" data-en="Business Email" data-ar="البريد الإلكتروني للعمل">Business
+                            Email</label>
+                        <input type="email" id="inv-email" placeholder="john@company.com" required />
+                    </div>
+                    <div class="form-field">
+                        <label for="inv-details" data-en="Additional Details (Optional)"
+                            data-ar="تفاصيل إضافية (اختياري)">Additional Details (Optional)</label>
+                        <textarea id="inv-details" rows="3" placeholder="Project name, invoice amount, etc."></textarea>
+                    </div>
+                    <button type="submit" class="invoice-submit" data-en="Send Request" data-ar="إرسال الطلب">Send
+                        Request</button>
+                </form>
+            </div>
+
+            <!-- Success Content -->
+            <div class="invoice-success" id="invoice-success">
+                <i class="fas fa-check-circle"></i>
+                <h3 data-en="Request Sent Successfully!" data-ar="تم إرسال الطلب بنجاح!">Request Sent Successfully!</h3>
+                <p data-en="We have received your request and will contact you at your email address shortly."
+                    data-ar="لقد تلقينا طلبك وسنتواصل معك على بريدك الإلكتروني قريباً.">We have received your request
+                    and will
+                    contact you at your email address shortly.</p>
+                <div style="margin-top: 20px;">
+                    <a href="assets/invoice-sample.pdf" class="btn-download" download>
+                        <i class="fas fa-download"></i>
+                        <span data-en="Download Sample Invoice" data-ar="تحميل نموذج الفاتورة">Download Sample
+                            Invoice</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
