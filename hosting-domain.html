@@ -157,6 +157,331 @@
                 transform: translateY(-10px);
             }
         }
+
+        /* Promo Section Styles (Integrated Redesign) */
+        .promo-section {
+            padding: 100px 0;
+            background: #0a0f1e;
+            position: relative;
+            overflow: visible;
+        }
+
+        .promo-split {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        /* Left Side: Hero Text */
+        .promo-info {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .promo-info-title {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: var(--white);
+            font-family: var(--font-heading);
+        }
+
+        .promo-info-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .btn-promo-claim {
+            background: #6c63ff;
+            color: var(--white);
+            padding: 18px 45px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 25px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-promo-claim:hover {
+            background: #5a52d5;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(108, 99, 255, 0.4);
+        }
+
+        .promo-info-guarantee {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .promo-info-guarantee i {
+            font-size: 1.1rem;
+            color: var(--white);
+        }
+
+        /* Right Side: Cards Stack */
+        .promo-cards-wrap {
+            flex: 1;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .promo-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+        }
+
+        .promo-card {
+            background: #6c63ff;
+            border-radius: 20px;
+            padding: 30px;
+            color: var(--white);
+            position: relative;
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            overflow: hidden;
+        }
+
+        .promo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(108, 99, 255, 0.3);
+        }
+
+        .promo-card .arrow-icon {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .promo-card h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: var(--font-heading);
+        }
+
+        .promo-card p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            max-width: 500px;
+            line-height: 1.5;
+        }
+
+        /* Pricing Display */
+        .promo-pricing {
+            margin-top: auto;
+        }
+
+        .promo-pricing .from-text {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .promo-pricing .price-wrap {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .promo-pricing .old-price {
+            text-decoration: line-through;
+            opacity: 0.6;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .promo-pricing .period {
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
+        /* Domain Search Area */
+        .promo-card.domain-card {
+            background: #6157ff;
+            /* Slightly different shade if needed, but mostly same */
+        }
+
+        .domain-badge {
+            background: rgba(0, 0, 0, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        /* Redesigned Search Bar inside card */
+        .card-search-wrapper {
+            background: var(--white);
+            border-radius: 50px;
+            display: flex;
+            padding: 6px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .card-search-wrapper i {
+            margin-left: 20px;
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        .card-search-input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 12px 15px;
+            font-size: 1.1rem;
+            color: #333;
+            outline: none;
+        }
+
+        .btn-card-search {
+            background: #0d1b35;
+            /* Dark button from image */
+            color: var(--white);
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-card-search:hover {
+            background: #1a2a4b;
+            transform: scale(1.02);
+        }
+
+        /* Percentage Sticker */
+        .promo-sticker {
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%) rotate(15.7deg);
+            background: #ccff00;
+            /* Neon Lime Green */
+            color: #000;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            font-weight: 900;
+            border-radius: 12px;
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(204, 255, 0, 0.3);
+        }
+
+        html[dir="rtl"] .promo-split {
+            flex-direction: row-reverse;
+        }
+
+        html[dir="rtl"] .promo-card .arrow-icon {
+            right: auto;
+            left: 30px;
+            transform: rotate(45deg);
+        }
+
+        html[dir="rtl"] .card-search-wrapper i {
+            margin-left: 0;
+            margin-right: 20px;
+        }
+
+        html[dir="rtl"] .promo-sticker {
+            right: auto;
+            left: -30px;
+            transform: translateY(-50%) rotate(-15.7deg);
+        }
+
+        @media (max-width: 1100px) {
+            .promo-split {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            html[dir="rtl"] .promo-split {
+                flex-direction: column;
+            }
+
+            .promo-info {
+                max-width: 100%;
+            }
+
+            .promo-info-guarantee {
+                justify-content: center;
+            }
+
+            .promo-cards-wrap {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .promo-sticker {
+                width: 70px;
+                height: 70px;
+                font-size: 2.5rem;
+                right: -10px;
+            }
+
+            html[dir="rtl"] .promo-sticker {
+                right: auto;
+                left: -10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .promo-card {
+                padding: 30px;
+            }
+
+            .promo-card h2 {
+                font-size: 1.8rem;
+            }
+
+            .promo-sticker {
+                display: none;
+                /* Hide on small screens to avoid overflow issues */
+            }
+
+            .card-search-wrapper {
+                flex-direction: column;
+                border-radius: 20px;
+                padding: 10px;
+            }
+
+            .btn-card-search {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
     </style>
 </head>
 
@@ -319,6 +644,86 @@ Clients" data-ar="عملاء
                     Choose the perfect hosting plan for your business needs, from basic personal sites to high-traffic
                     e-commerce platforms.
                 </p>
+            </div>
+        </section>
+
+        <!-- Integrated Promo Section -->
+        <section class="promo-section">
+            <div class="container">
+                <div class="promo-split">
+                    <!-- Left: Hero Content -->
+                    <div class="promo-info reveal-up">
+                        <h2 class="promo-info-title" data-en="Launch your website today with 85% off"
+                            data-ar="أطلق موقعك الإلكتروني اليوم مع خصم 85%">Launch your website today with 85% off</h2>
+                        <p class="promo-info-subtitle"
+                            data-en="Build, host, and grow online for just $ 1.99/month + 2 months free"
+                            data-ar="قم ببناء واستضافة وتنمية أعمالك عبر الإنترنت مقابل 1.99 دولار فقط شهرياً + شهرين مجاناً">
+                            Build, host, and grow online for just $ 1.99/month + 2 months free
+                        </p>
+
+                        <a href="index.html#contact" class="btn-promo-claim" data-en="Claim deal"
+                            data-ar="احصل على العرض">Claim deal</a>
+
+                        <div class="promo-info-guarantee">
+                            <i class="fas fa-check-shield"></i>
+                            <span data-en="30-day money-back guarantee"
+                                data-ar="ضمان استرداد الأموال لمدة 30 يوماً">30-day
+                                money-back guarantee</span>
+                        </div>
+                    </div>
+
+                    <!-- Right: Interactive Cards -->
+                    <div class="promo-cards-wrap">
+                        <div class="promo-stack">
+                            <!-- Percentage Sticker -->
+                            <div class="promo-sticker">%</div>
+
+                            <!-- Card 1: Plans and Prices -->
+                            <a href="#pricing" class="promo-card reveal-up">
+                                <i class="fas fa-arrow-right arrow-icon" style="transform: rotate(-45deg);"></i>
+                                <h3 data-en="Plans and prices" data-ar="الخطط والأسعار"
+                                    style="font-size:1.6rem; margin-bottom:10px;">Plans and prices</h3>
+                                <p data-en="Explore packages full of built-in tools, services, and bonus features."
+                                    data-ar="استكشف الباقات المليئة بالأدوات والخدمات والميزات الإضافية المضمنة."
+                                    style="font-size:0.95rem; margin-bottom:20px;">
+                                    Explore packages full of built-in tools, services, and bonus features.
+                                </p>
+                                <div class="promo-pricing">
+                                    <span class="from-text" data-en="From" data-ar="من">From</span>
+                                    <div class="price-wrap">
+                                        <span class="old-price">12.99</span>
+                                        <span>$ 1.99<span class="period" data-en="/month"
+                                                data-ar="/شهرياً">/month</span></span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- Card 2: Find a Domain -->
+                            <div class="promo-card domain-card reveal-up">
+                                <h3 data-en="Find a domain" data-ar="ابحث عن نطاق"
+                                    style="font-size:1.6rem; margin-bottom:10px;">Find a domain</h3>
+                                <p data-en="A first impression lasts forever. Make yours count with the perfect domain name."
+                                    data-ar="الانطباع الأول يدوم للأبد. اجعل انطباعك مؤثراً مع اسم النطاق المثالي."
+                                    style="font-size:0.95rem; margin-bottom:20px;">
+                                    A first impression lasts forever. Make yours count with the perfect domain name.
+                                </p>
+
+                                <div class="domain-badge">
+                                    <span data-en="com - $ 0.01/1st yr" data-ar="com - 0.01 دولار/للسنة الأولى">com - $
+                                        0.01/1st yr</span>
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+
+                                <div class="card-search-wrapper">
+                                    <i class="fas fa-search"></i>
+                                    <input type="text" class="card-search-input" placeholder="bringyouridea"
+                                        data-en-placeholder="bringyouridea" data-ar-placeholder="اكتب فكرتك هنا">
+                                    <button class="btn-card-search" data-en="Search" data-ar="بحث">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
