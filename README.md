@@ -1,6 +1,6 @@
-# Arkanzax Website — Premium Marketing Agency
+# Arkanzax Website — Premium Software House
 
-A high-performance, bilingual (English/Arabic), multi-page marketing agency website. Built with a premium dark theme, fluid animations, and a focus on visual excellence.
+A high-performance, bilingual (English/Arabic), multi-page software house website. Built with a premium dark theme, fluid animations, and a focus on visual excellence.
 
 ---
 
@@ -32,11 +32,11 @@ Arkanzax/
 ├── seo-content.html        # Service: SEO & Content
 ├── paid-ads.html           # Service: Paid Advertising
 ├── social-media.html       # Service: Social Media
-├── email-marketing.html    # Service: Email Marketing
+├── email-marketing.html    # Service: Service Automation
 ├── analytics.html          # Service: Analytics & Reporting
 ├── branding-design.html    # Service: Branding & Design
 ├── blog-ai.html            # Blog: AI Revolution 2025
-├── blog-kpis.html          # Blog: 7 Essential Marketing KPIs
+├── blog-kpis.html          # Blog: 7 Essential Software KPIs
 ├── blog-tiktok.html        # Blog: TikTok Ads Strategy
 ├── privacy.html            # Legal: Privacy Policy
 ├── terms.html              # Legal: Terms of Service
