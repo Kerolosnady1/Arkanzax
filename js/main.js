@@ -53,6 +53,14 @@ function initMobileMenu() {
     overlay.classList.toggle('active', isOpen);
     document.body.classList.toggle('no-scroll', isOpen);
 
+    if (isOpen) {
+      // Reset scroll position to top whenever menu is opened
+      mobileNav.scrollTop = 0;
+    } else {
+      // Reset submenus when menu closes to ensure a clean state
+      mobileNav.querySelectorAll('.has-submenu').forEach(li => li.classList.remove('active'));
+    }
+
     toggle.innerHTML = isOpen
       ? '<i class="fas fa-xmark"></i>'
       : '<i class="fas fa-bars"></i>';
@@ -63,18 +71,25 @@ function initMobileMenu() {
   overlay.addEventListener('click', () => toggleMenu(true));
 
   // Close on link click
-  mobileNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const parentLi = link.closest('li');
-      if (parentLi && parentLi.classList.contains('has-submenu')) {
-        // Toggle submenu
-        e.preventDefault();
-        parentLi.classList.toggle('active');
-        return;
-      }
+  mobileNav.addEventListener('click', (e) => {
+    // Check if clicked on a toggle-able submenu header (the LI itself or its primary link)
+    const hasSubmenuLi = e.target.closest('.has-submenu');
+    const clickedLink = e.target.closest('a');
 
+    if (hasSubmenuLi && clickedLink && clickedLink.parentElement === hasSubmenuLi) {
+      // Toggle submenu only if clicking the parent link of the submenu
+      e.preventDefault();
+      e.stopPropagation();
+      hasSubmenuLi.classList.toggle('active');
+      return;
+    }
+
+    if (!clickedLink) return;
+
+    // If it's a regular link (not in a submenu or a final submenu link), close the menu
+    if (clickedLink.getAttribute('href') !== 'javascript:void(0)') {
       toggleMenu(true);
-    });
+    }
   });
 
   // Close on Escape key

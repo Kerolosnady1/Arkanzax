@@ -492,6 +492,11 @@ ul {
   z-index: 1000;
 }
 
+.no-scroll {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
 .nav-item-mega:hover .mega-menu {
   opacity: 1;
   visibility: visible;
@@ -617,10 +622,74 @@ ul {
 .mobile-submenu li a {
   font-size: 0.85rem !important;
   opacity: 0.8;
-  padding: 8px 16px !important;
+  padding: 10px 16px !important;
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
 }
 
-.mobile-nav .has-submenu.active .mobile-submenu {
+/* Mobile Client Cards in Submenu */
+.mobile-client-card {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  padding: 12px !important;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-md);
+  margin-bottom: 8px;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-decoration: none !important;
+}
+
+.mobile-client-card:hover {
+  background: rgba(49, 165, 161, 0.1);
+  border-color: rgba(49, 165, 161, 0.3);
+}
+
+.mobile-client-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.mobile-client-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mobile-client-info h4 {
+  font-size: 0.85rem;
+  color: var(--white);
+  margin: 0;
+}
+
+.mobile-client-info p {
+  font-size: 0.7rem;
+  color: var(--text-gray);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.mobile-submenu li a::before {
+  content: '\f105';
+  /* FontAwesome angle-right */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.75rem;
+  color: var(--primary);
+  opacity: 0.6;
+}
+
+/* Remove chevron for cards */
+.mobile-submenu li a.mobile-client-card::before {
+  display: none;
+}
+
+.mobile-nav .has-submenu.active>.mobile-submenu {
   display: block;
   animation: slideDown 0.3s ease-out;
 }
@@ -670,7 +739,7 @@ html[dir="rtl"] .mobile-submenu {
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
+  height: 100dvh;
   width: 300px;
   max-width: 85%;
   background: rgba(10, 10, 20, 0.98);
@@ -682,6 +751,9 @@ html[dir="rtl"] .mobile-submenu {
   flex-direction: column;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.05);
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-nav.open {
@@ -689,13 +761,10 @@ html[dir="rtl"] .mobile-submenu {
 }
 
 .mobile-nav ul {
-  padding: 80px 24px 40px;
+  padding: 80px 24px 20px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  overflow-y: auto;
-  flex: 1;
-  /* Allow the list to take up available space and scroll */
 }
 
 .mobile-nav ul li a {
@@ -709,6 +778,21 @@ html[dir="rtl"] .mobile-submenu {
 .mobile-nav ul li a:hover {
   background: rgba(49, 165, 161, .12);
   color: var(--primary-light);
+}
+
+.sidebar-actions {
+  padding: 20px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+  /* Push to bottom if content is short */
+}
+
+.sidebar-actions .btn {
+  width: 100%;
+  justify-content: center;
+  padding: 14px;
 }
 
 /* -------------------------
