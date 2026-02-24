@@ -41,8 +41,8 @@ function initMobileMenu() {
   toggle.addEventListener('click', () => {
     const isOpen = mobileNav.classList.toggle('open');
     toggle.innerHTML = isOpen
-      ? '<i class="far fa-times"></i>'
-      : '<i class="far fa-bars"></i>';
+      ? '<i class="fas fa-times"></i>'
+      : '<i class="fas fa-bars"></i>';
     toggle.setAttribute('aria-expanded', isOpen);
   });
 
@@ -58,7 +58,7 @@ function initMobileMenu() {
       }
 
       mobileNav.classList.remove('open');
-      toggle.innerHTML = '<i class="far fa-bars"></i>';
+      toggle.innerHTML = '<i class="fas fa-bars"></i>';
       toggle.setAttribute('aria-expanded', 'false');
     });
   });

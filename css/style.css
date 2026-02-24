@@ -634,7 +634,7 @@ html[dir="rtl"] .mobile-submenu {
 }
 
 .mobile-nav.open {
-  max-height: 400px;
+  max-height: 800px;
 }
 
 .mobile-nav ul {
@@ -2109,11 +2109,31 @@ html[dir="rtl"] .mobile-submenu {
 
   .header-actions .lang-toggle,
   .header-actions .btn-invoice {
+    display: flex;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    height: 34px;
+  }
+
+  .header-actions .btn-invoice {
     display: none;
+    /* Keep Invoice hidden on very small screens if needed, but restore it for now */
+  }
+
+  /* Specifically restore both as requested but make them compact */
+  .header-actions .lang-toggle {
+    display: flex;
+    padding: 4px 10px;
+    gap: 5px;
+  }
+
+  .header-actions .btn-invoice {
+    display: flex;
+    padding: 4px 10px;
   }
 
   .header-actions {
-    gap: 8px;
+    gap: 6px;
   }
 
   .site-header {
