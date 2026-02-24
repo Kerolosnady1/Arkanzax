@@ -2219,7 +2219,7 @@ html[dir="rtl"] .mobile-submenu {
   .site-header {
     background: rgba(10, 10, 20, 0.98);
     backdrop-filter: blur(10px);
-    z-index: 2000;
+    z-index: 3001;
   }
 
   .site-header {
@@ -2492,7 +2492,7 @@ html[dir="rtl"] .service-card::after {
   inset: 0;
   background: rgba(10, 10, 20, 0.9);
   backdrop-filter: blur(10px);
-  z-index: 2000;
+  z-index: 5000;
   display: flex;
   align-items: center;
   justify-content: center;
