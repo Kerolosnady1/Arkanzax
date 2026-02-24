@@ -41,7 +41,7 @@ function initMobileMenu() {
   toggle.addEventListener('click', () => {
     const isOpen = mobileNav.classList.toggle('open');
     toggle.innerHTML = isOpen
-      ? '<i class="fas fa-times"></i>'
+      ? '<i class="fas fa-xmark"></i>'
       : '<i class="fas fa-bars"></i>';
     toggle.setAttribute('aria-expanded', isOpen);
   });
