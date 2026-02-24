@@ -611,12 +611,12 @@ ul {
 }
 
 .mobile-submenu {
-  display: none;
-  padding: 5px 0 10px 20px;
+  display: none !important;
+  padding: 10px 0 15px 15px;
   background: rgba(255, 255, 255, .03);
-  margin: 5px 0 10px;
+  margin: 5px 0 15px;
   border-radius: var(--radius-sm);
-  border-left: 1px solid rgba(49, 165, 161, 0.3);
+  border-left: 2px solid rgba(49, 165, 161, 0.4);
 }
 
 .mobile-submenu li a {
@@ -690,8 +690,8 @@ ul {
 }
 
 .mobile-nav .has-submenu.active>.mobile-submenu {
-  display: block;
-  animation: slideDown 0.3s ease-out;
+  display: block !important;
+  animation: slideDown 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 @keyframes slideDown {

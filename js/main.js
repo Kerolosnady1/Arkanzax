@@ -70,24 +70,37 @@ function initMobileMenu() {
   toggle.addEventListener('click', () => toggleMenu());
   overlay.addEventListener('click', () => toggleMenu(true));
 
-  // Close on link click
+  // Handle sidebar clicks
   mobileNav.addEventListener('click', (e) => {
-    // Check if clicked on a toggle-able submenu header (the LI itself or its primary link)
-    const hasSubmenuLi = e.target.closest('.has-submenu');
     const clickedLink = e.target.closest('a');
+    if (!clickedLink) return;
 
-    if (hasSubmenuLi && clickedLink && clickedLink.parentElement === hasSubmenuLi) {
-      // Toggle submenu only if clicking the parent link of the submenu
+    const parentLi = clickedLink.parentElement;
+
+    // Toggle Submenu if it's a parent link
+    if (parentLi && parentLi.classList.contains('has-submenu') && clickedLink.getAttribute('href') === 'javascript:void(0)') {
       e.preventDefault();
       e.stopPropagation();
-      hasSubmenuLi.classList.toggle('active');
+
+      const wasActive = parentLi.classList.contains('active');
+
+      // Close other open submenus first (for a cleaner accordion feel if desired)
+      mobileNav.querySelectorAll('.has-submenu').forEach(li => {
+        if (li !== parentLi) li.classList.remove('active');
+      });
+
+      // Toggle current
+      if (wasActive) {
+        parentLi.classList.remove('active');
+      } else {
+        parentLi.classList.add('active');
+      }
       return;
     }
 
-    if (!clickedLink) return;
-
-    // If it's a regular link (not in a submenu or a final submenu link), close the menu
-    if (clickedLink.getAttribute('href') !== 'javascript:void(0)') {
+    // If it's a regular navigation link, close the entire menu
+    const href = clickedLink.getAttribute('href');
+    if (href && href !== '#' && href !== 'javascript:void(0)') {
       toggleMenu(true);
     }
   });
