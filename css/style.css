@@ -607,14 +607,34 @@ ul {
 
 .mobile-submenu {
   display: none;
-  padding-left: 20px;
-  background: rgba(255, 255, 255, .02);
-  margin: 4px 0;
+  padding: 5px 0 10px 20px;
+  background: rgba(255, 255, 255, .03);
+  margin: 5px 0 10px;
   border-radius: var(--radius-sm);
+  border-left: 1px solid rgba(49, 165, 161, 0.3);
+}
+
+.mobile-submenu li a {
+  font-size: 0.85rem !important;
+  opacity: 0.8;
+  padding: 8px 16px !important;
 }
 
 .mobile-nav .has-submenu.active .mobile-submenu {
   display: block;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* RTL Adjustments */
@@ -674,6 +694,8 @@ html[dir="rtl"] .mobile-submenu {
   flex-direction: column;
   gap: 8px;
   overflow-y: auto;
+  flex: 1;
+  /* Allow the list to take up available space and scroll */
 }
 
 .mobile-nav ul li a {
