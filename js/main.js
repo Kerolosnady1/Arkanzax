@@ -53,12 +53,15 @@ function initMobileMenu() {
     overlay.classList.toggle('active', isOpen);
     document.body.classList.toggle('no-scroll', isOpen);
 
+    // Reset ALL submenus whenever the menu state changes (open OR close)
+    mobileNav.querySelectorAll('.has-submenu').forEach(li => {
+      li.classList.remove('is-open');
+      const link = li.querySelector('a');
+      if (link) link.setAttribute('aria-expanded', 'false');
+    });
+
     if (isOpen) {
-      // Reset scroll position to top whenever menu is opened
       mobileNav.scrollTop = 0;
-    } else {
-      // Reset submenus when menu closes to ensure a clean state
-      mobileNav.querySelectorAll('.has-submenu').forEach(li => li.classList.remove('active'));
     }
 
     toggle.innerHTML = isOpen
@@ -82,18 +85,19 @@ function initMobileMenu() {
       e.preventDefault();
       e.stopPropagation();
 
-      const wasActive = parentLi.classList.contains('active');
+      const wasOpen = parentLi.classList.contains('is-open');
 
-      // Close other open submenus first (for a cleaner accordion feel if desired)
+      // Close other open submenus first
       mobileNav.querySelectorAll('.has-submenu').forEach(li => {
-        if (li !== parentLi) li.classList.remove('active');
+        li.classList.remove('is-open');
+        const l = li.querySelector('a');
+        if (l) l.setAttribute('aria-expanded', 'false');
       });
 
       // Toggle current
-      if (wasActive) {
-        parentLi.classList.remove('active');
-      } else {
-        parentLi.classList.add('active');
+      if (!wasOpen) {
+        parentLi.classList.add('is-open');
+        clickedLink.setAttribute('aria-expanded', 'true');
       }
       return;
     }
@@ -103,6 +107,13 @@ function initMobileMenu() {
     if (href && href !== '#' && href !== 'javascript:void(0)') {
       toggleMenu(true);
     }
+  });
+
+  // Initial reset to be absolutely sure submenus start closed
+  mobileNav.querySelectorAll('.has-submenu').forEach(li => {
+    li.classList.remove('is-open');
+    const link = li.querySelector('a');
+    if (link) link.setAttribute('aria-expanded', 'false');
   });
 
   // Close on Escape key

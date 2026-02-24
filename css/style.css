@@ -606,7 +606,7 @@ ul {
   transition: transform 0.3s ease;
 }
 
-.mobile-nav .has-submenu.active>a::after {
+.mobile-nav .has-submenu.is-open>a::after {
   transform: rotate(180deg);
 }
 
@@ -689,7 +689,7 @@ ul {
   display: none;
 }
 
-.mobile-nav .has-submenu.active>.mobile-submenu {
+.mobile-nav .has-submenu.is-open>.mobile-submenu {
   display: block !important;
   animation: slideDown 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
