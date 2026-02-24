@@ -658,11 +658,13 @@ html[dir="rtl"] .mobile-submenu {
    ------------------------- */
 .hero-section {
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   background: linear-gradient(135deg, #0a0f1e 0%, #0d1b35 40%, #0a1628 70%, #061020 100%);
   position: relative;
   display: flex;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 120px;
+  padding-bottom: 60px;
   overflow: hidden;
 }
 
@@ -2081,8 +2083,22 @@ html[dir="rtl"] .mobile-submenu {
     font-size: 0.85rem;
   }
 
+  .header-top {
+    display: none;
+  }
+
+  .site-header {
+    background: rgba(10, 10, 20, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-inner {
+    padding: 12px 0;
+  }
+
   .mobile-toggle {
     display: block;
+    margin-right: -8px;
   }
 
   .mobile-nav {
@@ -2111,8 +2127,8 @@ html[dir="rtl"] .mobile-submenu {
   .hero-image {
     display: block;
     order: -1;
-    max-width: 80%;
-    margin: 0 auto;
+    max-width: 90%;
+    margin: 0 auto 40px;
   }
 
   .challenges-grid {

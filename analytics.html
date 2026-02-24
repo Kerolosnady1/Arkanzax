@@ -35,8 +35,19 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+      background: radial-gradient(circle at 50% 50%, rgba(59, 158, 245, 0.1) 0%, transparent 70%);
       pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .inner-hero {
+        padding: 120px 0 60px;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
     }
 
     .service-content {
