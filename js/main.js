@@ -38,13 +38,29 @@ function initMobileMenu() {
   const mobileNav = document.getElementById('mobile-nav');
   if (!toggle || !mobileNav) return;
 
-  toggle.addEventListener('click', () => {
-    const isOpen = mobileNav.classList.toggle('open');
+  // Create overlay if not exists
+  let overlay = document.querySelector('.mobile-nav-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'mobile-nav-overlay';
+    document.body.appendChild(overlay);
+  }
+
+  function toggleMenu(forceClose = false) {
+    const isOpen = forceClose ? false : !mobileNav.classList.contains('open');
+
+    mobileNav.classList.toggle('open', isOpen);
+    overlay.classList.toggle('active', isOpen);
+    document.body.classList.toggle('no-scroll', isOpen);
+
     toggle.innerHTML = isOpen
       ? '<i class="fas fa-xmark"></i>'
       : '<i class="fas fa-bars"></i>';
     toggle.setAttribute('aria-expanded', isOpen);
-  });
+  }
+
+  toggle.addEventListener('click', () => toggleMenu());
+  overlay.addEventListener('click', () => toggleMenu(true));
 
   // Close on link click
   mobileNav.querySelectorAll('a').forEach(link => {
@@ -57,20 +73,14 @@ function initMobileMenu() {
         return;
       }
 
-      mobileNav.classList.remove('open');
-      toggle.innerHTML = '<i class="fas fa-bars"></i>';
-      toggle.setAttribute('aria-expanded', 'false');
+      toggleMenu(true);
     });
   });
 
-  // Close on outside click
-  document.addEventListener('click', (e) => {
-    const header = document.getElementById('header');
-    if (header && !header.contains(e.target)) {
-      mobileNav.classList.remove('open');
-      toggle.innerHTML = '<i class="far fa-bars"></i>';
-      // Reset all submenus
-      mobileNav.querySelectorAll('.has-submenu').forEach(li => li.classList.remove('active'));
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+      toggleMenu(true);
     }
   });
 }
