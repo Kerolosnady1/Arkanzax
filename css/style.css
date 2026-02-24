@@ -345,6 +345,10 @@ ul {
   gap: 24px;
 }
 
+.logo {
+  flex-shrink: 0;
+}
+
 .logo img {
   height: 52px;
   width: auto;
@@ -668,6 +672,13 @@ html[dir="rtl"] .mobile-submenu {
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 80vh;
+    padding-top: 100px;
+  }
+}
+
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
@@ -797,6 +808,15 @@ html[dir="rtl"] .mobile-submenu {
   position: relative;
   z-index: 2;
   filter: drop-shadow(0 20px 60px rgba(0, 0, 0, .5));
+}
+
+@media (max-width: 768px) {
+  .hero-main-img {
+    max-height: 50vh;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 .hero-shape {
@@ -2085,6 +2105,15 @@ html[dir="rtl"] .mobile-submenu {
 
   .header-top {
     display: none;
+  }
+
+  .header-actions .lang-toggle,
+  .header-actions .btn-invoice {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 8px;
   }
 
   .site-header {

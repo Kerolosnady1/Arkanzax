@@ -253,8 +253,16 @@ Clients" data-ar="عملاء
           </li>
           <li><a href="index.html#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
           <li><a href="index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
-          <li><a href="javascript:void(0)" class="btn-invoice-open" style="color:var(--accent-blue);"
-              data-en="Get Invoice" data-ar="طلب فاتورة">Get Invoice</a></li>
+          <li class="mobile-only-actions"
+            style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 15px; align-items: center; padding-left: 16px;">
+            <button class="lang-toggle" aria-label="Switch language"
+              style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 8px 15px; border-radius: 50px; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+              <i class="fas fa-globe"></i> <span>AR</span>
+            </button>
+            <a href="javascript:void(0)" class="btn-invoice-open"
+              style="color:var(--accent-blue); font-weight: 600; font-size: 0.9rem;" data-en="Get Invoice"
+              data-ar="طلب فاتورة">Get Invoice</a>
+          </li>
         </ul>
       </div>
     </div>
