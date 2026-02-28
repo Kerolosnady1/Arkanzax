@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-en="E-commerce Mobility | Arkanzax" data-ar="التجارة الإلكترونية المتنقلة | أركانزاكس">E-commerce
+    Mobility | Arkanzax</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    html[dir="rtl"] body {
+      font-family: 'Cairo', 'Outfit', sans-serif;
+    }
+
+    /* inner-hero styles now in style.css */
+
+    .service-content {
+      padding: 100px 0;
+      background: var(--dark-3);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .content-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+      color: var(--white);
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .feature-list i {
+      color: #ec4899;
+    }
+
+    .content-image {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .content-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header" id="header">
+    <div class="header-top">
+      <div class="container">
+        <div class="header-top-inner">
+          <div class="header-contact-info">
+            <a href="mailto:info@arkanzax.com"><i class="fas fa-envelope"></i> info@arkanzax.com</a>
+            <a href="tel:+201033477682"><i class="fas fa-phone"></i> +20 1033 477 682</a>
+          </div>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a title="WhatsApp" href="https://wa.me/+201033477682"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-main" id="header-main">
+      <div class="container">
+        <nav class="nav-inner">
+          <a href="index.html" class="logo">
+            <img src="assets/logo.png" alt="Arkanzax Logo" width="160" height="52" />
+          </a>
+          <ul class="nav-list main-nav" role="list">
+            <li><a href="index.html#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+            <li><a href="hosting-domain.html" data-en="Hosting & Domain" data-ar="الاستضافة والنطاق">Hosting
+                & Domain</a></li>
+            <li><a href="index.html#about" data-en="About" data-ar="من نحن">About</a></li>
+            <li class="nav-item-mega">
+              <a href="product-pms.html" class="active" data-en="Products" data-ar="منتجاتنا">Products</a>
+              <div class="mega-menu">
+                <div class="mega-menu-inner">
+                  <div class="mega-menu-header">
+                    <h3 data-en="Core Software Products" data-ar="منتجات البرمجيات الأساسية">Core
+                      Software Products</h3>
+                  </div>
+                  <div class="mega-menu-grid grid-3">
+                    <a href="product-pms.html" class="client-card">
+                      <img src="assets/clients/client-3.jpg" alt="Property Management System">
+                      <div class="client-card-info">
+                        <h4 data-en="Property Management" data-ar="إدارة العقارات">Property
+                          Management</h4>
+                        <p data-en="Complete PMS Solution" data-ar="حل كامل لإدارة العقارات">
+                          Complete PMS Solution</p>
+                      </div>
+                    </a>
+                    <a href="product-marketing.html" class="client-card">
+                      <img src="assets/clients/client-4.jpg" alt="Marketing Tools SMEs">
+                      <div class="client-card-info">
+                        <h4 data-en="Marketing for SMEs" data-ar="تسويق للشركات الصغيرة">
+                          Marketing for SMEs</h4>
+                        <p data-en="Growth Tools & Automation" data-ar="أدوات النمو والأتمتة">
+                          Growth Tools & Automation</p>
+                      </div>
+                    </a>
+                    <a href="product-ecommerce.html" class="client-card">
+                      <img src="assets/clients/client-1.jpg" alt="E-commerce Mobility">
+                      <div class="client-card-info">
+                        <h4 data-en="E-commerce Mobility" data-ar="تجارة إلكترونية متنقلة">
+                          E-commerce Mobility</h4>
+                        <p data-en="Mobile-First Shopping" data-ar="تسوق عبر الجوال أولاً">
+                          Mobile-First Shopping</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="index.html#testi-sec" data-en="Testimonials" data-ar="آراء العملاء">Testimonials</a></li>
+            <li class="nav-item-mega">
+              <a href="javascript:void(0)" data-en="Other Clients" data-ar="عملاء آخرون">Other Clients</a>
+              <div class="mega-menu">
+                <div class="mega-menu-inner">
+                  <div class="mega-menu-header">
+                    <h3 data-en="Our Previous Work" data-ar="أعمالنا السابقة">Our Previous Work</h3>
+                  </div>
+                  <div class="mega-menu-grid">
+                    <div class="client-card">
+                      <img src="assets/clients/client-1.jpg" alt="Good Life Platform">
+                      <div class="client-card-info">
+                        <h4 data-en="Good Life" data-ar="جود لايف">Good Life</h4>
+                        <p data-en="E-commerce Platform" data-ar="منصة التجارة الإلكترونية">E-commerce Platform</p>
+                      </div>
+                    </div>
+                    <div class="client-card">
+                      <img src="assets/clients/client-2.jpg" alt="Good Life Experience">
+                      <div class="client-card-info">
+                        <h4 data-en="Good Life" data-ar="جود لايف">Good Life</h4>
+                        <p data-en="Digital Experience App" data-ar="تطبيق التجربة الرقمية">Digital Experience App</p>
+                      </div>
+                    </div>
+                    <div class="client-card">
+                      <img src="assets/clients/client-3.jpg" alt="Turath Pharma Portal">
+                      <div class="client-card-info">
+                        <h4 data-en="Turath Pharma" data-ar="تراث فارما">Turath Pharma</h4>
+                        <p data-en="Enterprise Web Portal" data-ar="بوابة الويب للمؤسسة">Enterprise Web Portal</p>
+                      </div>
+                    </div>
+                    <div class="client-card">
+                      <img src="assets/clients/client-4.jpg" alt="Turath Pharma Inventory">
+                      <div class="client-card-info">
+                        <h4 data-en="Turath Pharma" data-ar="تراث فارما">Turath Pharma</h4>
+                        <p data-en="Inventory Management System" data-ar="نظام إدارة المخازن">Inventory Management
+                          System</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="index.html#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
+            <li><a href="index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+          </ul>
+
+          <div class="header-actions">
+            <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">
+              <span class="lang-flag"><i class="fas fa-globe"></i></span>
+              <span id="lang-label">AR</span>
+            </button>
+            <button class="btn btn-invoice btn-invoice-open" data-en="Get Invoice" data-ar="طلب فاتورة">
+              <i class="fas fa-file-invoice"></i> <span id="invoice-label">Get Invoice</span>
+            </button>
+            <a href="index.html#contact" class="btn btn-primary" data-en="Get Started" data-ar="ابدأ الآن">Get
+              Started</a>
+          </div>
+
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Secondary Product Header -->
+    <div class="product-sub-header">
+      <div class="container">
+        <nav class="product-sub-nav">
+          <a href="product-pms.html" class="product-sub-link">
+            <i class="fas fa-building"></i>
+            <span data-en="Property Management" data-ar="إدارة العقارات">Property Management</span>
+          </a>
+          <a href="product-marketing.html" class="product-sub-link">
+            <i class="fas fa-bullhorn"></i>
+            <span data-en="Marketing Tools" data-ar="أدوات التسويق">Marketing Tools</span>
+          </a>
+          <a href="product-ecommerce.html" class="product-sub-link active">
+            <i class="fas fa-mobile-alt"></i>
+            <span data-en="E-commerce Mobility" data-ar="التجارة الإلكترونية">E-commerce Mobility</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="inner-hero">
+      <div class="container">
+        <span class="hero-badge reveal-up" style="border-color: #ec4899; color: #ec4899;">
+          <i class="fas fa-shopping-bag"></i>&nbsp;
+          <span data-en="Mobile First" data-ar="الجوال أولاً">Mobile First</span>
+        </span>
+        <h1 class="hero-title reveal-up" data-en="E-commerce Mobility" data-ar="التجارة الإلكترونية المتنقلة">
+          E-commerce Mobility</h1>
+        <p class="hero-description reveal-up"
+          data-en="High-performance mobile commerce solutions that convert visitors into buyers. Ultra-fast, app-like experiences for the modern shopper."
+          data-ar="حلول تجارة متنقلة عالية الأداء تحول الزوار إلى مشترين. تجارب فائقة السرعة تشبه التطبيقات للمتسوق المعاصر.">
+          High-performance mobile commerce solutions that convert visitors into buyers. Ultra-fast, app-like
+          experiences for the modern shopper.
+        </p>
+      </div>
+    </section>
+
+    <section class="service-content">
+      <div class="container">
+        <div class="content-grid">
+          <div class="content-text reveal-left">
+            <h2 data-en="The Future of Retail is Mobile" data-ar="مستقبل التجزئة هو الجوال">The Future of
+              Retail is Mobile</h2>
+            <p data-en="More than 70% of online shopping happens on mobile. Our E-commerce Mobility platform ensures your brand provides a frictionless, high-speed experience that rivals native applications."
+              data-ar="أكثر من 70% من التسوق عبر الإنترنت يتم عبر الجوال. تضمن منصة التجارة الإلكترونية المتنقلة الخاصة بنا أن توفر علامتك التجارية تجربة سلسة وعالية السرعة تنافس التطبيقات الأصلية.">
+              More than 70% of online shopping happens on mobile. Our E-commerce Mobility platform ensures
+              your brand provides a frictionless, high-speed experience that rivals native applications.
+            </p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check-circle"></i> <span data-en="Progressive Web App (PWA) Support"
+                  data-ar="دعم تطبيقات الويب المتقدمة (PWA)">Progressive Web App (PWA) Support</span>
+              </li>
+              <li><i class="fas fa-check-circle"></i> <span data-en="One-Tap Mobile Checkout"
+                  data-ar="الدفع بلمسة واحدة عبر الجوال">One-Tap Mobile Checkout</span></li>
+              <li><i class="fas fa-check-circle"></i> <span data-en="AI-Powered Product Personalization"
+                  data-ar="تخصيص المنتجات المدعوم بالذكاء الاصطناعي">AI-Powered Product
+                  Personalization</span></li>
+              <li><i class="fas fa-check-circle"></i> <span data-en="Lightning-Fast Storefront Technology"
+                  data-ar="تقنية متجر فائقة السرعة">Lightning-Fast Storefront Technology</span></li>
+            </ul>
+          </div>
+          <div class="content-image reveal-right">
+            <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=2000"
+              alt="Mobile Shopping Experience" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-inner reveal-up">
+          <h2 data-en="Don't Lose the Mobile Shopper" data-ar="لا تفقد متسوق الجوال">Don't Lose the Mobile
+            Shopper</h2>
+          <p data-en="Optimize your storefront for the device your customers use most."
+            data-ar="قم بتحسين متجرك للجهاز الذي يستخدمه عملاؤك أكثر من غيره.">
+            Optimize your storefront for the device your customers use most.
+          </p>
+          <a href="index.html#contact" class="btn btn-primary" data-en="Upgrade Your Store"
+            data-ar="ترقية متجرك">Upgrade Your Store</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-grid">
+
+            <!-- Brand Col -->
+            <div>
+              <div class="footer-logo">
+                <img src="assets/logo.png" alt="Arkanzax" width="160" height="60" />
+              </div>
+              <p class="footer-about"
+                data-en="AI-powered software house solutions that help brands grow faster, smarter, and more efficiently."
+                data-ar="حلول برمجية مدعومة بالذكاء الاصطناعي تساعد العلامات التجارية على النمو بشكل أسرع وأذكى وأكثر كفاءة.">
+                AI-powered software house solutions that help brands grow faster, smarter, and more efficiently.
+              </p>
+              <div class="footer-social">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+                <a title="WhatsApp" href="https://wa.me/+201033477682"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+              <h4 class="footer-heading" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+              <nav class="footer-links">
+                <a href="#" data-en="Home" data-ar="الرئيسية">Home</a>
+                <a href="#services" data-en="Services" data-ar="الخدمات">Services</a>
+                <a href="#about" data-en="About Us" data-ar="من نحن">About Us</a>
+                <a href="#blog" data-en="Blog" data-ar="المدونة">Blog</a>
+                <a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+              </nav>
+            </div>
+
+            <!-- Services -->
+            <div>
+              <h4 class="footer-heading" data-en="Services" data-ar="خدماتنا">Services</h4>
+              <nav class="footer-links">
+                <a href="seo-content.html" data-en="Web Dev & SEO" data-ar="تطوير الويب وSEO">Web Dev & SEO</a>
+                <a href="paid-ads.html" data-en="Cloud Infrastructure" data-ar="البنية التحتية السحابية">Cloud
+                  Infrastructure</a>
+                <a href="social-media.html" data-en="Mobile App Dev" data-ar="تطوير تطبيقات الجوال">Mobile App Dev</a>
+                <a href="email-marketing.html" data-en="API Integration" data-ar="تكامل الـ API">API Integration</a>
+                <a href="analytics.html" data-en="AI & Data Engineering" data-ar="الذكاء الاصطناعي وهندسة البيانات">AI &
+                  Data Engineering</a>
+                <a href="branding-design.html" data-en="UI/UX Design" data-ar="تصميم تجربة وواجهة المستخدم">UI/UX
+                  Design</a>
+                <a href="hosting-domain.html" data-en="Hosting & Domain" data-ar="الاستضافة والنطاق">Hosting &
+                  Domain</a>
+                <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.05);">
+                  <span
+                    style="font-size: 0.75rem; text-transform: uppercase; color: var(--primary); letter-spacing: 1px; font-weight: 700; margin-bottom: 8px; display: block;"
+                    data-en="Our Products" data-ar="منتجاتنا">Our Products</span>
+                  <a href="product-pms.html" data-en="Property Management" data-ar="نظام إدارة العقارات">Property
+                    Management</a>
+                  <a href="product-marketing.html" data-en="Marketing Tools SMEs" data-ar="أدوات تسويق">Marketing Tools
+                    SMEs</a>
+                  <a href="product-ecommerce.html" data-en="E-commerce Mobility" data-ar="تجارة متنقلة">E-commerce
+                    Mobility</a>
+                </div>
+              </nav>
+            </div>
+
+            <!-- Contact -->
+            <div>
+              <h4 class="footer-heading" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h4>
+              <div class="footer-contact">
+                <div class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span data-en="6th of October, Giza, Egypt" data-ar="السادس من أكتوبر، الجيزة، مصر">6th of October,
+                    Giza, Egypt</span>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <a href="mailto:info@arkanzax.com">info@arkanzax.com</a>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-phone"></i>
+                  <a href="tel:+201033477682">+20 1033 477 682</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-inner">
+            <p data-en="© 2025 Arkanzax. All rights reserved." data-ar="© 2025 أركانزاكس. جميع الحقوق محفوظة.">© 2025
+              Arkanzax. All rights reserved.</p>
+            <div class="footer-bottom-links">
+              <a href="privacy.html" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+              <a href="terms.html" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+              <a href="cookies.html" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <!-- ═══════════════════════════ INVOICE MODAL ═══════════════════════════ -->
+  <div class="invoice-modal-overlay" id="invoice-modal-overlay">
+    <div class="invoice-modal">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+
+      <div id="invoice-form-container">
+        <div class="modal-header">
+          <i class="fas fa-file-invoice-dollar"></i>
+          <h2 data-en="Request Your Invoice" data-ar="طلب فاتورتك">Request Your Invoice</h2>
+          <p data-en="Fill in your details and we'll contact you shortly." data-ar="أدخل بياناتك وسنتواصل معك قريباً.">
+            Fill in your details and we'll contact you shortly.</p>
+        </div>
+
+        <form class="invoice-form" id="invoice-form">
+          <div class="form-field">
+            <label for="inv-name" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+            <input type="text" id="inv-name" placeholder="John Doe" required />
+          </div>
+          <div class="form-field">
+            <label for="inv-email" data-en="Business Email" data-ar="البريد الإلكتروني للعمل">Business Email</label>
+            <input type="email" id="inv-email" placeholder="john@company.com" required />
+          </div>
+          <div class="form-field">
+            <label for="inv-details" data-en="Additional Details (Optional)"
+              data-ar="تفاصيل إضافية (اختياري)">Additional Details (Optional)</label>
+            <textarea id="inv-details" rows="3" placeholder="Project name, invoice amount, etc."></textarea>
+          </div>
+          <button type="submit" class="invoice-submit" data-en="Send Request" data-ar="إرسال الطلب">Send
+            Request</button>
+        </form>
+      </div>
+
+      <!-- Success Content -->
+      <div class="invoice-success" id="invoice-success">
+        <i class="fas fa-check-circle"></i>
+        <h3 data-en="Request Sent Successfully!" data-ar="تم إرسال الطلب بنجاح!">Request Sent Successfully!</h3>
+        <p data-en="We have received your request and will contact you at your email address shortly."
+          data-ar="لقد تلقينا طلبك وسنتواصل معك على بريدك الإلكتروني قريباً.">We have received your request and will
+          contact you at your email address shortly.</p>
+        <div style="margin-top: 20px;">
+          <a href="assets/invoice-sample.pdf" class="btn-download" download>
+            <i class="fas fa-download"></i>
+            <span data-en="Download Sample Invoice" data-ar="تحميل نموذج الفاتورة">Download Sample Invoice</span>
+          </a>
+        </div>
+      </div>
+</body>
+
+</html>

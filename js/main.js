@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLanguageToggle();
   initCardHoverEffects();
   initInvoiceModal();
+  initHeroProducts();
 });
 
 
@@ -524,4 +525,34 @@ function initInvoiceModal() {
       }, 1000);
     });
   }
+}
+
+// ─── 12. Hero Products Dropdown ──────────────────────────────
+function initHeroProducts() {
+  const btn = document.getElementById('hero-products-btn');
+  const dropdown = document.getElementById('hero-products-dropdown');
+  if (!btn || !dropdown) return;
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dropdown.classList.toggle('active');
+    btn.classList.toggle('active');
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.remove('active');
+      btn.classList.remove('active');
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      dropdown.classList.remove('active');
+      btn.classList.remove('active');
+    }
+  });
 }
