@@ -34,27 +34,163 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(59, 158, 245, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle at 50% 50%, rgba(108, 99, 255, 0.12) 0%, transparent 70%);
             pointer-events: none;
         }
 
+        /* Domain search */
+        .domain-search-bar {
+            max-width: 700px;
+            margin: 32px auto 0;
+            background: var(--white);
+            border-radius: 50px;
+            display: flex;
+            padding: 6px;
+            align-items: center;
+        }
+
+        .domain-search-bar i {
+            margin-left: 20px;
+            color: #333;
+            font-size: 1.2rem;
+        }
+
+        .domain-search-bar input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 14px 15px;
+            font-size: 1.1rem;
+            color: #333;
+            outline: none;
+        }
+
+        .domain-search-bar button {
+            background: #6c63ff;
+            color: var(--white);
+            border: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .domain-search-bar button:hover {
+            background: #5a52d5;
+            transform: scale(1.03);
+        }
+
+        html[dir="rtl"] .domain-search-bar i {
+            margin-left: 0;
+            margin-right: 20px;
+        }
+
+        .tld-row {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tld-row span {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .tld-row strong {
+            color: var(--white);
+        }
+
+        /* Help cards */
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .help-card {
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
+            border-radius: 16px;
+            padding: 36px 24px;
+            text-align: center;
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .help-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(49, 165, 161, 0.15);
+        }
+
+        .help-card i {
+            font-size: 2.5rem;
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .help-card h4 {
+            color: var(--white);
+            margin-bottom: 8px;
+            font-size: 1.15rem;
+        }
+
+        .help-card p {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        /* Service tabs */
+        .svc-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 48px;
+        }
+
+        .svc-tab {
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
+            color: var(--text-gray);
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .svc-tab:hover,
+        .svc-tab.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* Pricing */
         .pricing-section {
-            padding: 100px 0;
-            background: var(--dark-3);
+            padding: 80px 0;
         }
 
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-top: 50px;
+            margin-top: 40px;
         }
 
         .pricing-card {
             background: var(--dark-card);
             border: 1px solid var(--dark-border);
-            border-radius: var(--radius-lg);
-            padding: 40px;
+            border-radius: 16px;
+            padding: 36px;
             transition: var(--transition);
             display: flex;
             flex-direction: column;
@@ -63,427 +199,109 @@
         }
 
         .pricing-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             border-color: var(--primary);
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 12px 30px rgba(49, 165, 161, 0.15);
         }
 
-        .pricing-card.recommended {
+        .pricing-card.popular {
             border-color: var(--primary);
-            transform: scale(1.05);
-            z-index: 1;
         }
 
-        .pricing-card.recommended:hover {
-            transform: translateY(-10px) scale(1.05);
-        }
-
-        .recommended-badge {
+        .popular-badge {
             position: absolute;
             top: 0;
             right: 0;
             background: var(--primary);
             color: var(--white);
-            padding: 8px 20px;
-            font-size: 0.75rem;
+            padding: 6px 18px;
+            font-size: 0.7rem;
             font-weight: 700;
-            border-bottom-left-radius: var(--radius-md);
+            border-bottom-left-radius: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .pricing-header h3 {
-            font-size: 1.8rem;
+        .pricing-card h3 {
+            font-size: 1.5rem;
             color: var(--white);
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
 
-        .pricing-price {
-            margin-bottom: 30px;
-        }
-
-        .price-value {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary-light);
-        }
-
-        .price-currency {
-            font-size: 1rem;
+        .pricing-card .plan-sub {
             color: var(--text-gray);
-            margin-left: 5px;
-        }
-
-        .price-period {
-            font-size: 1rem;
-            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 20px;
         }
 
         .pricing-features {
             list-style: none;
             padding: 0;
-            margin-bottom: 40px;
+            margin-bottom: 28px;
             flex-grow: 1;
         }
 
         .pricing-features li {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
+            gap: 10px;
+            margin-bottom: 14px;
             color: var(--text-dark);
             font-weight: 500;
+            font-size: 0.92rem;
         }
 
         .pricing-features i {
             color: var(--primary);
-            font-size: 1.1rem;
+            font-size: 1rem;
+            min-width: 18px;
         }
 
-        @media (max-width: 768px) {
+        .pricing-features .fa-times-circle {
+            color: #e74c3c;
+        }
+
+        /* Service panel (hidden by default) */
+        .svc-panel {
+            display: none;
+        }
+
+        .svc-panel.active {
+            display: block;
+        }
+
+        @media (max-width:900px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width:768px) {
             .inner-hero {
                 padding: 120px 0 60px;
             }
 
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-                margin-left: auto;
-                margin-right: auto;
-                gap: 40px;
-            }
-
-            .pricing-card.recommended {
-                transform: scale(1);
-            }
-
-            .pricing-card.recommended:hover {
-                transform: translateY(-10px);
-            }
-        }
-
-        /* Promo Section Styles (Integrated Redesign) */
-        .promo-section {
-            padding: 100px 0;
-            background: #0a0f1e;
-            position: relative;
-            overflow: visible;
-        }
-
-        .promo-split {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 60px;
-        }
-
-        /* Left Side: Hero Text */
-        .promo-info {
-            flex: 1;
-            max-width: 600px;
-        }
-
-        .promo-info-title {
-            font-size: clamp(2.5rem, 5vw, 3.8rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            color: var(--white);
-            font-family: var(--font-heading);
-        }
-
-        .promo-info-subtitle {
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .btn-promo-claim {
-            background: #6c63ff;
-            color: var(--white);
-            padding: 18px 45px;
-            border-radius: 12px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 25px;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-promo-claim:hover {
-            background: #5a52d5;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(108, 99, 255, 0.4);
-        }
-
-        .promo-info-guarantee {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-        }
-
-        .promo-info-guarantee i {
-            font-size: 1.1rem;
-            color: var(--white);
-        }
-
-        /* Right Side: Cards Stack */
-        .promo-cards-wrap {
-            flex: 1;
-            max-width: 500px;
-            position: relative;
-        }
-
-        .promo-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            position: relative;
-        }
-
-        .promo-card {
-            background: #6c63ff;
-            border-radius: 20px;
-            padding: 30px;
-            color: var(--white);
-            position: relative;
-            text-decoration: none;
-            transition: var(--transition);
-            display: block;
-            overflow: hidden;
-        }
-
-        .promo-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(108, 99, 255, 0.3);
-        }
-
-        .promo-card .arrow-icon {
-            position: absolute;
-            top: 25px;
-            right: 30px;
-            font-size: 1.5rem;
-            opacity: 0.8;
-        }
-
-        .promo-card h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            font-family: var(--font-heading);
-        }
-
-        .promo-card p {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 30px;
-            max-width: 500px;
-            line-height: 1.5;
-        }
-
-        /* Pricing Display */
-        .promo-pricing {
-            margin-top: auto;
-        }
-
-        .promo-pricing .from-text {
-            display: block;
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-bottom: 5px;
-        }
-
-        .promo-pricing .price-wrap {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 2rem;
-            font-weight: 800;
-        }
-
-        .promo-pricing .old-price {
-            text-decoration: line-through;
-            opacity: 0.6;
-            font-weight: 600;
-            font-size: 1.5rem;
-        }
-
-        .promo-pricing .period {
-            font-size: 1rem;
-            font-weight: 500;
-            opacity: 0.8;
-        }
-
-        /* Domain Search Area */
-        .promo-card.domain-card {
-            background: #6157ff;
-            /* Slightly different shade if needed, but mostly same */
-        }
-
-        .domain-badge {
-            background: rgba(0, 0, 0, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-        }
-
-        /* Redesigned Search Bar inside card */
-        .card-search-wrapper {
-            background: var(--white);
-            border-radius: 50px;
-            display: flex;
-            padding: 6px;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .card-search-wrapper i {
-            margin-left: 20px;
-            color: #333;
-            font-size: 1.2rem;
-        }
-
-        .card-search-input {
-            flex: 1;
-            border: none;
-            background: transparent;
-            padding: 12px 15px;
-            font-size: 1.1rem;
-            color: #333;
-            outline: none;
-        }
-
-        .btn-card-search {
-            background: #0d1b35;
-            /* Dark button from image */
-            color: var(--white);
-            border: none;
-            padding: 12px 35px;
-            border-radius: 50px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .btn-card-search:hover {
-            background: #1a2a4b;
-            transform: scale(1.02);
-        }
-
-        /* Percentage Sticker */
-        .promo-sticker {
-            position: absolute;
-            right: -30px;
-            top: 50%;
-            transform: translateY(-50%) rotate(15.7deg);
-            background: #ccff00;
-            /* Neon Lime Green */
-            color: #000;
-            width: 100px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5rem;
-            font-weight: 900;
-            border-radius: 12px;
-            z-index: 10;
-            box-shadow: 0 10px 30px rgba(204, 255, 0, 0.3);
-        }
-
-        html[dir="rtl"] .promo-split {
-            flex-direction: row-reverse;
-        }
-
-        html[dir="rtl"] .promo-card .arrow-icon {
-            right: auto;
-            left: 30px;
-            transform: rotate(45deg);
-        }
-
-        html[dir="rtl"] .card-search-wrapper i {
-            margin-left: 0;
-            margin-right: 20px;
-        }
-
-        html[dir="rtl"] .promo-sticker {
-            right: auto;
-            left: -30px;
-            transform: translateY(-50%) rotate(-15.7deg);
-        }
-
-        @media (max-width: 1100px) {
-            .promo-split {
-                flex-direction: column;
-                text-align: center;
-                gap: 40px;
-            }
-
-            html[dir="rtl"] .promo-split {
-                flex-direction: column;
-            }
-
-            .promo-info {
-                max-width: 100%;
-            }
-
-            .promo-info-guarantee {
-                justify-content: center;
-            }
-
-            .promo-cards-wrap {
-                max-width: 100%;
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .promo-sticker {
-                width: 70px;
-                height: 70px;
-                font-size: 2.5rem;
-                right: -10px;
-            }
-
-            html[dir="rtl"] .promo-sticker {
-                right: auto;
-                left: -10px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .promo-card {
-                padding: 30px;
-            }
-
-            .promo-card h2 {
-                font-size: 1.8rem;
-            }
-
-            .promo-sticker {
-                display: none;
-                /* Hide on small screens to avoid overflow issues */
-            }
-
-            .card-search-wrapper {
+            .domain-search-bar {
                 flex-direction: column;
                 border-radius: 20px;
                 padding: 10px;
             }
 
-            .btn-card-search {
+            .domain-search-bar button {
                 width: 100%;
                 margin-top: 10px;
+            }
+
+            .svc-tabs {
+                gap: 6px;
+            }
+
+            .svc-tab {
+                padding: 8px 14px;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -529,39 +347,50 @@ Domain" data-ar="الاستضافة
 والنطاق">Hosting &
                                 Domain</a></li>
                         <li><a href="index.html#about" data-en="About" data-ar="من نحن">About</a></li>
-            <li class="nav-item-mega">
-              <a href="product-pms.html" data-en="Products" data-ar="منتجاتنا">Products</a>
-              <div class="mega-menu">
-                <div class="mega-menu-inner">
-                  <div class="mega-menu-header">
-                    <h3 data-en="Core Software Products" data-ar="منتجات البرمجيات الأساسية">Core Software Products</h3>
-                  </div>
-                  <div class="mega-menu-grid grid-3">
-                    <a href="javascript:void(0)" class="client-card">
-                      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600" alt="Property Management System" style="height:120px; object-fit:cover;">
-                      <div class="client-card-info" >
-                        <h4 data-en="Property Management" data-ar="إدارة العقارات">Property Management</h4>
-                        <p data-en="Complete PMS Solution" data-ar="حل كامل لإدارة العقارات">Complete PMS Solution</p>
-                      </div>
-                    </a>
-                    <a href="javascript:void(0)" class="client-card">
-                      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Marketing Tools SMEs" style="height:120px; object-fit:cover;">
-                      <div class="client-card-info" >
-                        <h4 data-en="Marketing for SMEs" data-ar="تسويق للشركات الصغيرة">Marketing for SMEs</h4>
-                        <p data-en="Growth Tools & Automation" data-ar="أدوات النمو والأتمتة">Growth Tools & Automation</p>
-                      </div>
-                    </a>
-                    <a href="javascript:void(0)" class="client-card">
-                      <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=600" alt="E-commerce Mobility" style="height:120px; object-fit:cover;">
-                      <div class="client-card-info" >
-                        <h4 data-en="E-commerce Mobility" data-ar="تجارة إلكترونية متنقلة">E-commerce Mobility</h4>
-                        <p data-en="Mobile-First Shopping" data-ar="تسوق عبر الجوال أولاً">Mobile-First Shopping</p>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
+                        <li class="nav-item-mega">
+                            <a href="product-pms.html" data-en="Products" data-ar="منتجاتنا">Products</a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-inner">
+                                    <div class="mega-menu-header">
+                                        <h3 data-en="Core Software Products" data-ar="منتجات البرمجيات الأساسية">Core
+                                            Software Products</h3>
+                                    </div>
+                                    <div class="mega-menu-grid grid-3">
+                                        <a href="javascript:void(0)" class="client-card">
+                                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600"
+                                                alt="Property Management System"
+                                                style="height:120px; object-fit:cover;">
+                                            <div class="client-card-info">
+                                                <h4 data-en="Property Management" data-ar="إدارة العقارات">Property
+                                                    Management</h4>
+                                                <p data-en="Complete PMS Solution" data-ar="حل كامل لإدارة العقارات">
+                                                    Complete PMS Solution</p>
+                                            </div>
+                                        </a>
+                                        <a href="javascript:void(0)" class="client-card">
+                                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600"
+                                                alt="Marketing Tools SMEs" style="height:120px; object-fit:cover;">
+                                            <div class="client-card-info">
+                                                <h4 data-en="Marketing for SMEs" data-ar="تسويق للشركات الصغيرة">
+                                                    Marketing for SMEs</h4>
+                                                <p data-en="Growth Tools & Automation" data-ar="أدوات النمو والأتمتة">
+                                                    Growth Tools & Automation</p>
+                                            </div>
+                                        </a>
+                                        <a href="javascript:void(0)" class="client-card">
+                                            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=600"
+                                                alt="E-Commerce Product" style="height:120px; object-fit:cover;">
+                                            <div class="client-card-info">
+                                                <h4 data-en="E-Commerce Product"
+                                                    data-ar="منتج منتج التجارة الإلكترونية">E-Commerce Product</h4>
+                                                <p data-en="Complete Commerce Suite" data-ar="منصة تجارة متكاملة">
+                                                    Complete Commerce Suite</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                         <li><a href="index.html#testi-sec" data-en="Testimonials"
                                 data-ar="آراء العملاء">Testimonials</a></li>
                         <li class="nav-item-mega">
@@ -579,12 +408,13 @@ Clients" data-ar="عملاء
                                             <img src="assets/clients/client-1.jpg" alt="Good Life Platform">
                                             <div class="client-card-info">
                                                 <h4 data-en="Good Life" data-ar="جود لايف">Good Life</h4>
-                                                <p data-en="E-commerce Platform" data-ar="منصة التجارة الإلكترونية">
+                                                <p data-en="E-commerce Platform"
+                                                    data-ar="منصة منتج التجارة الإلكترونية">
                                                     E-commerce Platform</p>
                                             </div>
                                         </div>
                                         <div class="client-card">
-                                            <img src="assets/clients/client-2.jpg" alt="Good Life Experience">
+                                            <img src="assets/clients/client-4.jpg" alt="Good Life Experience">
                                             <div class="client-card-info">
                                                 <h4 data-en="Good Life" data-ar="جود لايف">Good Life</h4>
                                                 <p data-en="Digital Experience App" data-ar="تطبيق التجربة الرقمية">
@@ -611,8 +441,8 @@ Clients" data-ar="عملاء
                                 </div>
                             </div>
                         </li>
-                                  
-          <li><a href="index.html#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
+
+                        <li><a href="index.html#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
                         <li><a href="index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
                     </ul>
 
@@ -642,279 +472,783 @@ Clients" data-ar="عملاء
                 </nav>
             </div>
 
-            <!-- Mobile Nav -->
-            <div class="mobile-nav" id="mobile-nav">
-                <ul role="list">
-                    <li><a href="index.html#services" data-en="Services" data-ar="الخدمات">Services</a></li>
-                    <li><a href="hosting-domain.html" class="active" data-en="Hosting & Domain"
-                            data-ar="الاستضافة والنطاق">Hosting & Domain</a>
-              <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.05);">
-                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--primary); letter-spacing: 1px; font-weight: 700; margin-bottom: 8px; display: block;" data-en="Our Products" data-ar="منتجاتنا">Our Products</span>
-                <a href="product-pms.html" data-en="Property Management" data-ar="نظام إدارة العقارات">Property Management</a>
-                <a href="product-marketing.html" data-en="Marketing Tools SMEs" data-ar="أدوات تسويق">Marketing Tools SMEs</a>
-                <a href="product-ecommerce.html" data-en="E-commerce Mobility" data-ar="تجارة متنقلة">E-commerce Mobility</a>
-              </div></li>
-                    <li><a href="index.html#about" data-en="About" data-ar="من نحن">About</a></li>
-            <li class="nav-item-mega">
-              <a href="product-pms.html" data-en="Products" data-ar="منتجاتنا">Products</a>
-              <div class="mega-menu">
-                <div class="mega-menu-inner">
-                  <div class="mega-menu-header">
-                    <h3 data-en="Core Software Products" data-ar="منتجات البرمجيات الأساسية">Core Software Products</h3>
-                  </div>
-                  <div class="mega-menu-grid grid-3">
-                    <a href="javascript:void(0)" class="client-card">
-                      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600" alt="Property Management System" style="height:120px; object-fit:cover;">
-                      <div class="client-card-info" >
-                        <h4 data-en="Property Management" data-ar="إدارة العقارات">Property Management</h4>
-                        <p data-en="Complete PMS Solution" data-ar="حل كامل لإدارة العقارات">Complete PMS Solution</p>
-                      </div>
-                    </a>
-                    <a href="javascript:void(0)" class="client-card">
-                      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Marketing Tools SMEs" style="height:120px; object-fit:cover;">
-                      <div class="client-card-info" >
-                        <h4 data-en="Marketing for SMEs" data-ar="تسويق للشركات الصغيرة">Marketing for SMEs</h4>
-                        <p data-en="Growth Tools & Automation" data-ar="أدوات النمو والأتمتة">Growth Tools & Automation</p>
-                      </div>
-                    </a>
-                    <a href="javascript:void(0)" class="client-card">
-                      <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=600" alt="E-commerce Mobility" style="height:120px; object-fit:cover;">
-                      <div class="client-card-info" >
-                        <h4 data-en="E-commerce Mobility" data-ar="تجارة إلكترونية متنقلة">E-commerce Mobility</h4>
-                        <p data-en="Mobile-First Shopping" data-ar="تسوق عبر الجوال أولاً">Mobile-First Shopping</p>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-                    <li><a href="index.html#testi-sec" data-en="Testimonials" data-ar="آراء العملاء">Testimonials</a>
-                    </li>
-                    
-          <li><a href="index.html#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
-                    <li><a href="index.html#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
-                </ul>
-            
-        <div class="sidebar-actions">
-          <button class="btn btn-invoice btn-invoice-open" data-en="Get Invoice" data-ar="طلب فاتورة">
-            <i class="fas fa-file-invoice"></i> <span id="invoice-label">Get Invoice</span>
-          </button>
-          <a href="index.html#contact" class="btn btn-primary" data-en="Get Started" data-ar="ابدأ الآن">Get Started</a>
-        </div>
-</div>
         </div>
     </header>
 
     <main>
+        <!-- ═══════ HERO + DOMAIN SEARCH ═══════ -->
         <section class="inner-hero">
             <div class="container">
                 <span class="hero-badge reveal-up">
-                    <i class="fas fa-server"></i>&nbsp;
-                    <span data-en="Hosting & Domain" data-ar="الاستضافة والنطاق">Hosting & Domain</span>
+                    <i class="fas fa-cloud"></i>&nbsp;
+                    <span data-en="Cloud Hosting Portal" data-ar="بوابة الاستضافة السحابية">Cloud Hosting Portal</span>
                 </span>
-                <h1 class="hero-title reveal-up" data-en="Powerful Server & Hosting Options"
-                    data-ar="خيارات قوية للخوادم والاستضافة">Powerful Server & Hosting Options</h1>
+                <h1 class="hero-title reveal-up" data-en="Find Your New Domain Name"
+                    data-ar="ابحث عن اسم النطاق الجديد">Find Your New Domain Name</h1>
                 <p class="hero-description reveal-up"
-                    data-en="Choose the perfect hosting plan for your business needs, from basic personal sites to high-traffic e-commerce platforms."
-                    data-ar="اختر خطة الاستضافة المثالية لاحتياجات عملك، من المواقع الشخصية البسيطة إلى منصات التجارة الإلكترونية عالية الحركة.">
-                    Choose the perfect hosting plan for your business needs, from basic personal sites to high-traffic
-                    e-commerce platforms.
+                    data-en="Register domains, order hosting, and manage your online presence — all in one place."
+                    data-ar="سجل النطاقات واطلب الاستضافة وأدر تواجدك عبر الإنترنت — كل شيء في مكان واحد.">
+                    Register domains, order hosting, and manage your online presence — all in one place.
                 </p>
+                <div class="domain-search-bar reveal-up">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="youridea.com" data-en-placeholder="youridea.com"
+                        data-ar-placeholder="فكرتك.com">
+                    <button data-en="Search" data-ar="بحث">Search</button>
+                </div>
+                <div class="tld-row reveal-up">
+                    <span><strong>.com</strong> $15.00/yr</span>
+                    <span><strong>.xyz</strong> $3.00/yr</span>
+                    <span><strong>.net</strong> $16.00/yr</span>
+                    <span><strong>.org</strong> $15.50/yr</span>
+                </div>
             </div>
         </section>
 
-        <!-- Integrated Promo Section -->
-        <section class="promo-section">
+        <!-- ═══════ HOW CAN WE HELP ═══════ -->
+        <section style="background: var(--dark-3); padding: 80px 0;">
             <div class="container">
-                <div class="promo-split">
-                    <!-- Left: Hero Content -->
-                    <div class="promo-info reveal-up">
-                        <h2 class="promo-info-title" data-en="Launch your website today with 85% off"
-                            data-ar="أطلق موقعك الإلكتروني اليوم مع خصم 85%">Launch your website today with 85% off</h2>
-                        <p class="promo-info-subtitle"
-                            data-en="Build, host, and grow online for just $ 1.99/month + 2 months free"
-                            data-ar="قم ببناء واستضافة وتنمية أعمالك عبر الإنترنت مقابل 1.99 دولار فقط شهرياً + شهرين مجاناً">
-                            Build, host, and grow online for just $ 1.99/month + 2 months free
-                        </p>
-
-                        <a href="index.html#contact" class="btn-promo-claim" data-en="Claim deal"
-                            data-ar="احصل على العرض">Claim deal</a>
-
-                        <div class="promo-info-guarantee">
-                            <i class="fas fa-check-shield"></i>
-                            <span data-en="30-day money-back guarantee"
-                                data-ar="ضمان استرداد الأموال لمدة 30 يوماً">30-day
-                                money-back guarantee</span>
-                        </div>
-                    </div>
-
-                    <!-- Right: Interactive Cards -->
-                    <div class="promo-cards-wrap">
-                        <div class="promo-stack">
-                            <!-- Percentage Sticker -->
-                            <div class="promo-sticker">%</div>
-
-                            <!-- Card 1: Plans and Prices -->
-                            <a href="#pricing" class="promo-card reveal-up">
-                                <i class="fas fa-arrow-right arrow-icon" style="transform: rotate(-45deg);"></i>
-                                <h3 data-en="Plans and prices" data-ar="الخطط والأسعار"
-                                    style="font-size:1.6rem; margin-bottom:10px;">Plans and prices</h3>
-                                <p data-en="Explore packages full of built-in tools, services, and bonus features."
-                                    data-ar="استكشف الباقات المليئة بالأدوات والخدمات والميزات الإضافية المضمنة."
-                                    style="font-size:0.95rem; margin-bottom:20px;">
-                                    Explore packages full of built-in tools, services, and bonus features.
-                                </p>
-                                <div class="promo-pricing">
-                                    <span class="from-text" data-en="From" data-ar="من">From</span>
-                                    <div class="price-wrap">
-                                        <span class="old-price">12.99</span>
-                                        <span>$ 1.99<span class="period" data-en="/month"
-                                                data-ar="/شهرياً">/month</span></span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Card 2: Find a Domain -->
-                            <div class="promo-card domain-card reveal-up">
-                                <h3 data-en="Find a domain" data-ar="ابحث عن نطاق"
-                                    style="font-size:1.6rem; margin-bottom:10px;">Find a domain</h3>
-                                <p data-en="A first impression lasts forever. Make yours count with the perfect domain name."
-                                    data-ar="الانطباع الأول يدوم للأبد. اجعل انطباعك مؤثراً مع اسم النطاق المثالي."
-                                    style="font-size:0.95rem; margin-bottom:20px;">
-                                    A first impression lasts forever. Make yours count with the perfect domain name.
-                                </p>
-
-                                <div class="domain-badge">
-                                    <span data-en="com - $ 0.01/1st yr" data-ar="com - 0.01 دولار/للسنة الأولى">com - $
-                                        0.01/1st yr</span>
-                                    <i class="fas fa-info-circle"></i>
-                                </div>
-
-                                <div class="card-search-wrapper">
-                                    <i class="fas fa-search"></i>
-                                    <input type="text" class="card-search-input" placeholder="bringyouridea"
-                                        data-en-placeholder="bringyouridea" data-ar-placeholder="اكتب فكرتك هنا">
-                                    <button class="btn-card-search" data-en="Search" data-ar="بحث">Search</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="section-header text-center reveal-up" style="margin-bottom:48px;">
+                    <h2 class="section-title" data-en="How Can We Help Today?" data-ar="كيف يمكننا مساعدتك اليوم؟">How
+                        Can We Help Today?</h2>
+                </div>
+                <div class="help-grid">
+                    <a href="index.html#contact" class="help-card reveal-card">
+                        <i class="fas fa-globe" style="color:#6c63ff;"></i>
+                        <h4 data-en="Buy A Domain" data-ar="شراء نطاق">Buy A Domain</h4>
+                        <p data-en="Register your perfect domain name" data-ar="سجّل اسم النطاق المثالي لك">Register
+                            your perfect domain name</p>
+                    </a>
+                    <a href="#services" class="help-card reveal-card">
+                        <i class="fas fa-server" style="color:var(--primary);"></i>
+                        <h4 data-en="Order Hosting" data-ar="طلب استضافة">Order Hosting</h4>
+                        <p data-en="Browse our hosting packages" data-ar="تصفح باقات الاستضافة لدينا">Browse our hosting
+                            packages</p>
+                    </a>
+                    <a href="index.html#contact" class="help-card reveal-card">
+                        <i class="fas fa-credit-card" style="color:#2ecc71;"></i>
+                        <h4 data-en="Make Payment" data-ar="إجراء دفعة">Make Payment</h4>
+                        <p data-en="Pay invoices and manage billing" data-ar="ادفع الفواتير وأدر الفوترة">Pay invoices
+                            and manage billing</p>
+                    </a>
+                    <a href="index.html#contact" class="help-card reveal-card">
+                        <i class="fas fa-headset" style="color:#e74c3c;"></i>
+                        <h4 data-en="Get Support" data-ar="الحصول على الدعم">Get Support</h4>
+                        <p data-en="Open a ticket or contact our team" data-ar="افتح تذكرة أو تواصل مع فريقنا">Open a
+                            ticket or contact our team</p>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="pricing-section">
+        <!-- ═══════ SERVICES (TABBED) ═══════ -->
+        <section id="services" class="pricing-section" style="background:var(--dark-2);">
             <div class="container">
-                <div class="section-header text-center reveal-up">
-                    <h2 class="section-title" data-en="Our Hosting Plans" data-ar="خطط الاستضافة لدينا">Our Hosting
-                        Plans</h2>
-                    <p class="section-subtitle"
-                        data-en="Transparent pricing with no hidden fees. All plans include 24/7 support."
-                        data-ar="تسعير شفاف بدون رسوم مخفية. جميع الخطط تشمل دعم على مدار الساعة.">Transparent pricing
-                        with no
-                        hidden fees. All plans include 24/7 support.</p>
+                <div class="section-header text-center reveal-up" style="margin-bottom:20px;">
+                    <h2 class="section-title" data-en="Our Hosting Services" data-ar="خدمات الاستضافة لدينا">Our Hosting
+                        Services</h2>
+                    <p class="section-subtitle" data-en="Choose a category below to view plans and pricing."
+                        data-ar="اختر فئة أدناه لعرض الخطط والأسعار.">Choose a category below to view plans and pricing.
+                    </p>
+                </div>
+                <div class="svc-tabs reveal-up">
+                    <button class="svc-tab active" data-panel="shared"><i class="fas fa-server"></i>&nbsp;
+                        Shared</button>
+                    <button class="svc-tab" data-panel="wordpress"><i class="fab fa-wordpress"></i>&nbsp;
+                        WordPress</button>
+                    <button class="svc-tab" data-panel="aspnet"><i class="fab fa-microsoft"></i>&nbsp; ASP.NET</button>
+                    <button class="svc-tab" data-panel="linuxreseller"><i class="fab fa-linux"></i>&nbsp; Linux
+                        Reseller</button>
+                    <button class="svc-tab" data-panel="email"><i class="fas fa-envelope"></i>&nbsp; Email</button>
+                    <button class="svc-tab" data-panel="winreseller"><i class="fab fa-windows"></i>&nbsp; Win
+                        Reseller</button>
+                    <button class="svc-tab" data-panel="linuxvps"><i class="fas fa-hdd"></i>&nbsp; Linux VPS</button>
+                    <button class="svc-tab" data-panel="linuxcloud"><i class="fas fa-cloud"></i>&nbsp; Linux
+                        Cloud</button>
                 </div>
 
-                <div class="pricing-grid">
-                    <!-- Option 1 -->
-                    <div class="pricing-card reveal-card">
-                        <div class="pricing-header">
-                            <h3 data-en="Option 1" data-ar="الخيار الأول">Option 1</h3>
-                            <div class="pricing-price">
-                                <span class="price-value">100</span>
-                                <span class="price-currency">USD</span>
+                <!-- SHARED HOSTING -->
+                <div class="svc-panel active" id="panel-shared">
+                    <div class="pricing-grid">
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <div class="pricing-header">
+                                    <h3>Starter</h3>
+                                    <p class="plan-sub" data-en="Shared Hosting" data-ar="استضافة مشتركة">Shared Hosting
+                                    </p>
+                                </div>
+                                <div class="pricing-price">
+                                    <span class="price-value">$1.99</span>
+                                    <span class="price-currency">USD</span>
+                                    <span class="price-period">/mo</span>
+                                </div>
                             </div>
-                        </div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-check-circle"></i> <span data-en="Storage: 10 GB"
-                                    data-ar="المساحة: 10 جيجابايت">Storage: 10 GB</span></li>
-                            <li><i class="fas fa-check-circle"></i> <span data-en="Email Accounts: 5 mailboxes"
-                                    data-ar="حسابات البريد: 5 صناديق">Email Accounts: 5 mailboxes</span></li>
-                            <li><i class="fas fa-redo"></i> <span data-en="Annual Renewal: 60 USD / year"
-                                    data-ar="التجديد السنوي: 60 دولار / سنة">Annual Renewal: 60 USD / year</span></li>
-                        </ul>
-                        <a href="index.html#contact" class="btn btn-outline-white" data-en="Choose Plan"
-                            data-ar="اختر الخطة">Choose Plan</a>
-                    </div>
 
-                    <!-- Option 2 -->
-                    <div class="pricing-card reveal-card">
-                        <div class="pricing-header">
-                            <h3 data-en="Option 2" data-ar="الخيار الثاني">Option 2</h3>
-                            <div class="pricing-price">
-                                <span class="price-value">60</span>
-                                <span class="price-currency">USD</span>
-                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 1 Website</li>
+                                <li><i class="fas fa-check-circle"></i> 5 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-times-circle"></i> No FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> PHP Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
                         </div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-check-circle"></i> <span data-en="Storage: 10 GB"
-                                    data-ar="المساحة: 10 جيجابايت">Storage: 10 GB</span></li>
-                            <li><i class="fas fa-check-circle"></i> <span data-en="Email Accounts: 5 mailboxes"
-                                    data-ar="حسابات البريد: 5 صناديق">Email Accounts: 5 mailboxes</span></li>
-                            <li><i class="fas fa-redo"></i> <span data-en="Annual Renewal: 60 USD / year"
-                                    data-ar="التجديد السنوي: 60 دولار / سنة">Annual Renewal: 60 USD / year</span></li>
-                        </ul>
-                        <a href="index.html#contact" class="btn btn-outline-white" data-en="Choose Plan"
-                            data-ar="اختر الخطة">Choose Plan</a>
-                    </div>
+                        <div class="pricing-card popular reveal-card">
+                            <span class="popular-badge">Popular</span>
+                            <div class="pricing-header">
+                                <div class="pricing-header">
+                                    <h3>Business</h3>
+                                    <p class="plan-sub" data-en="Shared Hosting" data-ar="استضافة مشتركة">Shared Hosting
+                                    </p>
+                                </div>
+                                <div class="pricing-price">
+                                    <span class="price-value">$8.99</span>
+                                    <span class="price-currency">USD</span>
+                                    <span class="price-period">/mo</span>
+                                </div>
+                            </div>
 
-                    <!-- Option 3 (Recommended) -->
-                    <div class="pricing-card recommended reveal-card">
-                        <div class="recommended-badge" data-en="Recommended" data-ar="موصى به">Recommended</div>
-                        <div class="pricing-header">
-                            <h3 data-en="Option 3" data-ar="الخيار الثالث">Option 3</h3>
-                            <p style="color:var(--primary-light); font-size: 0.85rem; margin-bottom: 10px;"
-                                data-en="(Recommended for E-commerce)" data-ar="(موصى به للتجارة الإلكترونية)">
-                                (Recommended for E-commerce)</p>
-                            <div class="pricing-price">
-                                <span class="price-value">100</span>
-                                <span class="price-currency">USD</span>
-                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 5 Websites</li>
+                                <li><i class="fas fa-check-circle"></i> 50 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-check-circle"></i> FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> PHP Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-primary" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
                         </div>
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-check-circle"></i> <span data-en="Storage: 25 GB"
-                                    data-ar="المساحة: 25 جيجابايت">Storage: 25 GB</span></li>
-                            <li><i class="fas fa-check-circle"></i> <span data-en="Email Accounts: Unlimited mailboxes"
-                                    data-ar="حسابات البريد: غير محدود">Email Accounts: Unlimited mailboxes</span></li>
-                            <li><i class="fas fa-redo"></i> <span data-en="Annual Renewal: 100 USD / year"
-                                    data-ar="التجديد السنوي: 100 دولار / سنة">Annual Renewal: 100 USD / year</span></li>
-                        </ul>
-                        <a href="index.html#contact" class="btn btn-primary" data-en="Choose Plan"
-                            data-ar="اختر الخطة">Choose Plan</a>
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <div class="pricing-header">
+                                    <h3>Premium</h3>
+                                    <p class="plan-sub" data-en="Shared Hosting" data-ar="استضافة مشتركة">Shared Hosting
+                                    </p>
+                                </div>
+                                <div class="pricing-price">
+                                    <span class="price-value">$15.99</span>
+                                    <span class="price-currency">USD</span>
+                                    <span class="price-period">/mo</span>
+                                </div>
+                            </div>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> Unlimited Websites</li>
+                                <li><i class="fas fa-check-circle"></i> 90 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-check-circle"></i> FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> PHP Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Domain Registration Info -->
-                <div class="domain-info-box reveal-up" style="margin-top: 60px; text-align: center;">
-                    <div
-                        style="background: rgba(49, 165, 161, 0.05); border: 1px dashed var(--primary); padding: 30px; border-radius: var(--radius-md); display: inline-block; max-width: 800px; width: 100%;">
-                        <i class="fas fa-globe"
-                            style="font-size: 2rem; color: var(--primary-light); margin-bottom: 20px;"></i>
-                        <h3 style="color: var(--white); margin-bottom: 15px; font-family: var(--font-heading);"
-                            data-en="Domain Registration" data-ar="تسجيل النطاق">Domain Registration</h3>
-                        <p style="font-size: 1.1rem; color: var(--text-gray); line-height: 1.6;"
-                            data-en="Domain registeration: 20 - 25 USD (depending on availability and extension)"
-                            data-ar="تسجيل النطاق: 20 - 25 دولار أمريكي (حسب التوفر والامتداد)">Domain registeration: 20
-                            - 25 USD (depending on availability and extension)</p>
+                <!-- WORDPRESS HOSTING -->
+                <div class="svc-panel" id="panel-wordpress">
+                    <div class="pricing-grid">
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <div class="pricing-header">
+                                    <h3>Startup</h3>
+                                    <p class="plan-sub" data-en="WordPress Hosting" data-ar="استضافة ووردبريس">WordPress
+                                        Hosting
+                                    </p>
+                                </div>
+                                <div class="pricing-price">
+                                    <span class="price-value">$2.99</span>
+                                    <span class="price-currency">USD</span>
+                                    <span class="price-period">/mo</span>
+                                </div>
+                            </div>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 5 Websites</li>
+                                <li><i class="fas fa-check-circle"></i> 5 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-times-circle"></i> No FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> PHP Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                        <div class="pricing-card popular reveal-card">
+                            <span class="popular-badge">Popular</span>
+                            <div class="pricing-header">
+                                <div class="pricing-header">
+                                    <h3>GrowBig</h3>
+                                    <p class="plan-sub" data-en="WordPress Hosting" data-ar="استضافة ووردبريس">WordPress
+                                        Hosting
+                                    </p>
+                                </div>
+                                <div class="pricing-price">
+                                    <span class="price-value">$8.99</span>
+                                    <span class="price-currency">USD</span>
+                                    <span class="price-period">/mo</span>
+                                </div>
+                            </div>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 15 Websites</li>
+                                <li><i class="fas fa-check-circle"></i> 50 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-check-circle"></i> FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> PHP Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-primary" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <div class="pricing-header">
+                                    <h3>GoGeek</h3>
+                                    <p class="plan-sub" data-en="WordPress Hosting" data-ar="استضافة ووردبريس">WordPress
+                                        Hosting
+                                    </p>
+                                </div>
+                                <div class="pricing-price">
+                                    <span class="price-value">$15.99</span>
+                                    <span class="price-currency">USD</span>
+                                    <span class="price-period">/mo</span>
+                                </div>
+                            </div>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> Unlimited Websites</li>
+                                <li><i class="fas fa-check-circle"></i> 150 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-check-circle"></i> FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> PHP Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ASP.NET HOSTING -->
+                <div class="svc-panel" id="panel-aspnet">
+                    <div class="pricing-grid">
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <div class="pricing-header">
+                                    <h3>Economy</h3>
+                                    <p class="plan-sub" data-en="Windows ASP.NET Hosting" data-ar="استضافة ASP.NET">
+                                        Windows
+                                        ASP.NET Hosting</p>
+                                </div>
+                                <div class="pricing-price">
+                                    <span class="price-value">$3.99</span>
+                                    <span class="price-currency">USD</span>
+                                    <span class="price-period">/mo</span>
+                                </div>
+                            </div>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 1 Website</li>
+                                <li><i class="fas fa-check-circle"></i> 5 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-times-circle"></i> No FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> ASP.NET Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                        <div class="pricing-card popular reveal-card">
+                            <span class="popular-badge">Popular</span>
+                            <div class="pricing-header">
+                                <div class="pricing-header">
+                                    <h3>Deluxe</h3>
+                                    <p class="plan-sub" data-en="Windows ASP.NET Hosting" data-ar="استضافة ASP.NET">
+                                        Windows
+                                        ASP.NET Hosting</p>
+                                </div>
+                                <div class="pricing-price">
+                                    <span class="price-value">$10.99</span>
+                                    <span class="price-currency">USD</span>
+                                    <span class="price-period">/mo</span>
+                                </div>
+                            </div>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 5 Websites</li>
+                                <li><i class="fas fa-check-circle"></i> 50 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-check-circle"></i> FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> ASP.NET Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-primary" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <div class="pricing-header">
+                                    <h3>Ultimate</h3>
+                                    <p class="plan-sub" data-en="Windows ASP.NET Hosting" data-ar="استضافة ASP.NET">
+                                        Windows
+                                        ASP.NET Hosting</p>
+                                </div>
+                                <div class="pricing-price">
+                                    <span class="price-value">$25.99</span>
+                                    <span class="price-currency">USD</span>
+                                    <span class="price-period">/mo</span>
+                                </div>
+                            </div>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> Unlimited Websites</li>
+                                <li><i class="fas fa-check-circle"></i> 90 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-check-circle"></i> FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> ASP.NET Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINUX RESELLER HOSTING -->
+                <div class="svc-panel" id="panel-linuxreseller">
+                    <div class="pricing-grid">
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <h3>Bronze</h3>
+                                <p class="plan-sub" data-en="Linux Reseller Hosting" data-ar="استضافة موزع لينكس">Linux
+                                    Reseller Hosting</p>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-value">$9.80</span>
+                                <span class="price-currency">USD</span>
+                                <span class="price-period">/mo</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 25 Customers</li>
+                                <li><i class="fas fa-check-circle"></i> 30 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-times-circle"></i> No FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> PHP Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                        <div class="pricing-card popular reveal-card">
+                            <span class="popular-badge">Popular</span>
+                            <div class="pricing-header">
+                                <h3>Silver</h3>
+                                <p class="plan-sub" data-en="Linux Reseller Hosting" data-ar="استضافة موزع لينكس">Linux
+                                    Reseller Hosting</p>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-value">$13.73</span>
+                                <span class="price-currency">USD</span>
+                                <span class="price-period">/mo</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 75 Customers</li>
+                                <li><i class="fas fa-check-circle"></i> 75 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-times-circle"></i> No FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> PHP Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-primary" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <h3>Gold</h3>
+                                <p class="plan-sub" data-en="Linux Reseller Hosting" data-ar="استضافة موزع لينكس">Linux
+                                    Reseller Hosting</p>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-value">$18.13</span>
+                                <span class="price-currency">USD</span>
+                                <span class="price-period">/mo</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> Unlimited Customers</li>
+                                <li><i class="fas fa-check-circle"></i> 150 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-check-circle"></i> FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> PHP Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EMAIL HOSTING -->
+                <div class="svc-panel" id="panel-email">
+                    <div class="pricing-grid">
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <div class="pricing-header">
+                                    <h3>Business Email</h3>
+                                    <p class="plan-sub" data-en="Email Hosting" data-ar="استضافة البريد الإلكتروني">
+                                        Email
+                                        Hosting</p>
+                                </div>
+                                <div class="pricing-price">
+                                    <span class="price-value">$3.45</span>
+                                    <span class="price-currency">USD</span>
+                                    <span class="price-period">/mo</span>
+                                </div>
+                            </div>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 1 Website</li>
+                                <li><i class="fas fa-check-circle"></i> 5 GB Storage</li>
+                                <li><i class="fas fa-check-circle"></i> 500 Mail Accounts</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-times-circle"></i> No FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                        <div class="pricing-card popular reveal-card">
+                            <span class="popular-badge">Popular</span>
+                            <div class="pricing-header">
+                                <div class="pricing-header">
+                                    <h3>Enterprise Email</h3>
+                                    <p class="plan-sub" data-en="Email Hosting" data-ar="استضافة البريد الإلكتروني">
+                                        Email
+                                        Hosting</p>
+                                </div>
+                                <div class="pricing-price">
+                                    <span class="price-value">$14.99</span>
+                                    <span class="price-currency">USD</span>
+                                    <span class="price-period">/mo</span>
+                                </div>
+                            </div>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 25 Websites</li>
+                                <li><i class="fas fa-check-circle"></i> 70 GB Storage</li>
+                                <li><i class="fas fa-check-circle"></i> 2,500 Mail Accounts</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-check-circle"></i> FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-primary" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <div class="pricing-header">
+                                    <h3>Premium Email</h3>
+                                    <p class="plan-sub" data-en="Email Hosting" data-ar="استضافة البريد الإلكتروني">
+                                        Email
+                                        Hosting</p>
+                                </div>
+                                <div class="pricing-price">
+                                    <span class="price-value">$24.99</span>
+                                    <span class="price-currency">USD</span>
+                                    <span class="price-period">/mo</span>
+                                </div>
+                            </div>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> Unlimited Websites</li>
+                                <li><i class="fas fa-check-circle"></i> 150 GB Storage</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Mail Accounts</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-check-circle"></i> FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WINDOWS RESELLER HOSTING -->
+                <div class="svc-panel" id="panel-winreseller">
+                    <div class="pricing-grid">
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <h3>Bronze</h3>
+                                <p class="plan-sub" data-en="Windows Reseller Hosting" data-ar="استضافة موزع ويندوز">
+                                    Windows
+                                    Reseller Hosting</p>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-value">$12.80</span>
+                                <span class="price-currency">USD</span>
+                                <span class="price-period">/mo</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 25 Customers</li>
+                                <li><i class="fas fa-check-circle"></i> 30 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-times-circle"></i> No FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> ASP.NET Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                        <div class="pricing-card popular reveal-card">
+                            <span class="popular-badge">Popular</span>
+                            <div class="pricing-header">
+                                <h3>Silver</h3>
+                                <p class="plan-sub" data-en="Windows Reseller Hosting" data-ar="استضافة موزع ويندوز">
+                                    Windows
+                                    Reseller Hosting</p>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-value">$16.73</span>
+                                <span class="price-currency">USD</span>
+                                <span class="price-period">/mo</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 75 Customers</li>
+                                <li><i class="fas fa-check-circle"></i> 75 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-times-circle"></i> No FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> ASP.NET Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-primary" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <h3>Gold</h3>
+                                <p class="plan-sub" data-en="Windows Reseller Hosting" data-ar="استضافة موزع ويندوز">
+                                    Windows
+                                    Reseller Hosting</p>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-value">$21.13</span>
+                                <span class="price-currency">USD</span>
+                                <span class="price-period">/mo</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> Unlimited Customers</li>
+                                <li><i class="fas fa-check-circle"></i> 150 GB Web Space</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> FREE SSL Certificate</li>
+                                <li><i class="fas fa-check-circle"></i> FREE Domain</li>
+                                <li><i class="fas fa-check-circle"></i> ASP.NET Support</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINUX VPS HOSTING -->
+                <div class="svc-panel" id="panel-linuxvps">
+                    <div class="pricing-grid">
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <h3>Launch</h3>
+                                <p class="plan-sub" data-en="Linux VPS Hosting" data-ar="استضافة VPS لينكس">Linux VPS
+                                    Hosting</p>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-value">$4.99</span>
+                                <span class="price-currency">USD</span>
+                                <span class="price-period">/mo</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 100 GB Disk Space</li>
+                                <li><i class="fas fa-check-circle"></i> 1 CPU Core</li>
+                                <li><i class="fas fa-check-circle"></i> 1 GB RAM</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> 1 IP Address</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                        <div class="pricing-card popular reveal-card">
+                            <span class="popular-badge">Popular</span>
+                            <div class="pricing-header">
+                                <h3>Enhance</h3>
+                                <p class="plan-sub" data-en="Linux VPS Hosting" data-ar="استضافة VPS لينكس">Linux VPS
+                                    Hosting</p>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-value">$11.99</span>
+                                <span class="price-currency">USD</span>
+                                <span class="price-period">/mo</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 100 GB Disk Space</li>
+                                <li><i class="fas fa-check-circle"></i> 2 CPU Cores</li>
+                                <li><i class="fas fa-check-circle"></i> 4 GB RAM</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> 1 IP Address</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-primary" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <h3>Grow</h3>
+                                <p class="plan-sub" data-en="Linux VPS Hosting" data-ar="استضافة VPS لينكس">Linux VPS
+                                    Hosting</p>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-value">$24.99</span>
+                                <span class="price-currency">USD</span>
+                                <span class="price-period">/mo</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 200 GB Disk Space</li>
+                                <li><i class="fas fa-check-circle"></i> 4 CPU Cores</li>
+                                <li><i class="fas fa-check-circle"></i> 8 GB RAM</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> 1 IP Address</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINUX CLOUD HOSTING -->
+                <div class="svc-panel" id="panel-linuxcloud">
+                    <div class="pricing-grid">
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <h3>Startup</h3>
+                                <p class="plan-sub" data-en="Linux Cloud Hosting" data-ar="استضافة سحابية لينكس">Linux
+                                    Cloud Hosting</p>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-value">$8.99</span>
+                                <span class="price-currency">USD</span>
+                                <span class="price-period">/mo</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 75 GB Disk Space</li>
+                                <li><i class="fas fa-check-circle"></i> 1 CPU Core</li>
+                                <li><i class="fas fa-check-circle"></i> 1 GB RAM</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> 1 IP Address</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                        <div class="pricing-card popular reveal-card">
+                            <span class="popular-badge">Popular</span>
+                            <div class="pricing-header">
+                                <h3>Professional</h3>
+                                <p class="plan-sub" data-en="Linux Cloud Hosting" data-ar="استضافة سحابية لينكس">Linux
+                                    Cloud Hosting</p>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-value">$16.99</span>
+                                <span class="price-currency">USD</span>
+                                <span class="price-period">/mo</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 150 GB Disk Space</li>
+                                <li><i class="fas fa-check-circle"></i> 2 CPU Cores</li>
+                                <li><i class="fas fa-check-circle"></i> 4 GB RAM</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> 1 IP Address</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-primary" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
+                        <div class="pricing-card reveal-card">
+                            <div class="pricing-header">
+                                <h3>Enterprise</h3>
+                                <p class="plan-sub" data-en="Linux Cloud Hosting" data-ar="استضافة سحابية لينكس">Linux
+                                    Cloud Hosting</p>
+                            </div>
+                            <div class="pricing-price">
+                                <span class="price-value">$28.99</span>
+                                <span class="price-currency">USD</span>
+                                <span class="price-period">/mo</span>
+                            </div>
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 250 GB Disk Space</li>
+                                <li><i class="fas fa-check-circle"></i> 4 CPU Cores</li>
+                                <li><i class="fas fa-check-circle"></i> 8 GB RAM</li>
+                                <li><i class="fas fa-check-circle"></i> Unlimited Bandwidth</li>
+                                <li><i class="fas fa-check-circle"></i> 1 IP Address</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7/365 Support</li>
+                            </ul>
+                            <a href="index.html#contact" class="btn btn-outline-white" data-en="Order Now"
+                                data-ar="اطلب الآن">Order Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ═══════ CTA ═══════ -->
         <section class="cta-section">
             <div class="container">
                 <div class="cta-inner reveal-up">
                     <h2 data-en="Need a Custom Solution?" data-ar="هل تحتاج إلى حل مخصص؟">Need a Custom Solution?</h2>
-                    <p data-en="Contact us for tailored hosting packages and dedicated server options for your enterprise enterprise software."
+                    <p data-en="Contact us for tailored hosting packages and dedicated server options for your enterprise."
                         data-ar="اتصل بنا للحصول على حزم استضافة مخصصة وخيارات خوادم مخصصة لمؤسستك.">Contact us for
-                        tailored hosting
-                        packages and dedicated server options for your enterprise enterprise software.</p>
+                        tailored hosting packages and dedicated server options for your enterprise.</p>
                     <a href="index.html#contact" class="btn btn-primary" data-en="Get a Quote"
-                        data-ar="احصل على عرض">Get a
-                        Quote</a>
+                        data-ar="احصل على عرض">Get a Quote</a>
                 </div>
             </div>
         </section>
+
+        <!-- Tab switching script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var tabs = document.querySelectorAll('.svc-tab');
+                var panels = document.querySelectorAll('.svc-panel');
+                tabs.forEach(function (tab) {
+                    tab.addEventListener('click', function () {
+                        tabs.forEach(function (t) { t.classList.remove('active'); });
+                        panels.forEach(function (p) { p.classList.remove('active'); });
+                        tab.classList.add('active');
+                        var panel = document.getElementById('panel-' + tab.getAttribute('data-panel'));
+                        if (panel) panel.classList.add('active');
+                    });
+                });
+            });
+        </script>
     </main>
 
     <footer class="site-footer">

@@ -1,0 +1,805 @@
+    <!DOCTYPE html>
+    <html lang="en" >
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <title>Shopping Cart - Sovlow</title>
+                
+            <link rel="shortcut icon" href="/templates/lagom/assets/img/favicons/favicon.ico">
+        <link rel="icon" sizes="16x16 32x32 64x64" href="/templates/lagom/assets/img/favicons/favicon.ico">
+        <link rel="icon" type="image/png" sizes="196x196" href="/templates/lagom/assets/img/favicons/favicon-192.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="/templates/lagom/assets/img/favicons/favicon-160.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/templates/lagom/assets/img/favicons/favicon-96.png">
+        <link rel="icon" type="image/png" sizes="64x64" href="/templates/lagom/assets/img/favicons/favicon-64.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/templates/lagom/assets/img/favicons/favicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/templates/lagom/assets/img/favicons/favicon-16.png">
+        <link rel="apple-touch-icon" href="/templates/lagom/assets/img/favicons/favicon-57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/templates/lagom/assets/img/favicons/favicon-114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/templates/lagom/assets/img/favicons/favicon-72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/templates/lagom/assets/img/favicons/favicon-144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/templates/lagom/assets/img/favicons/favicon-60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/templates/lagom/assets/img/favicons/favicon-120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/templates/lagom/assets/img/favicons/favicon-76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/templates/lagom/assets/img/favicons/favicon-152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/templates/lagom/assets/img/favicons/favicon-180.png">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="msapplication-TileImage" content="/templates/lagom/assets/img/favicons/favicon-144.png">
+        <meta name="msapplication-config" content="/templates/lagom/assets/img/favicons/browserconfig.xml">
+                                                                <link href="/templates/lagom/core/styles/depth/assets/css/theme.css?v=1.5.2" rel="stylesheet">
+                                                                                
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        var csrfToken = '799e853d8fbb68814b32f90fb343e34b30bfd36b',
+            markdownGuide = 'Markdown Guide',
+            locale = 'en',
+            saved = 'saved',
+            saving = 'autosaving',
+            whmcsBaseUrl = "",
+            requiredText = 'Required',
+            recaptchaSiteKey = "";
+    </script>
+
+    <script src="/templates/lagom/assets/js/scripts.min.js?v=1.5.2"></script>
+    <script src="/templates/lagom/assets/js/core.min.js?v=1.5.2"></script>
+
+    
+    
+        
+    
+<!-- Dynamic Template Compatibility -->
+<!-- Please update your theme to include or have a comment on the following to negate dynamic inclusion -->
+<link rel="stylesheet" type="text/css" href="/assets/css/fontawesome-all.min.css" />
+
+</head>
+    <body class="lagom   lagom-not-portal lagom-layout-condensed lagom-layout-banner page-products" data-phone-cc-input="1">
+        
+                    
+
+                
+    <div class="app-nav app-nav-condensed hidden-print">
+        <section id="header">
+            <div class="container">
+                <button type="button" class="navbar-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                                                            <a href="/index.php" class="logo"><img src="/templates/lagom/assets/img/logo/logo_big.png" alt="Sovlow"/></a>
+                                                
+                <ul class="top-nav">
+                    <li>
+                        <a href="/cart.php?a=view">
+                            <i class="lm lm-basket"></i>
+                        </a>
+                    </li>
+                                            
+            <li menuItemName="level_1_65" class=" account " id="Secondary_Navbar-level_1_65">
+            <a href="https://sovlow.com/privacy-policy/" target="_self">
+                                                    <span>Privacy Policy</span>
+                                                
+                               
+            </a>
+                    </li>
+            <li menuItemName="level_1_66" class=" account " id="Secondary_Navbar-level_1_66">
+            <a href="https://sovlow.com/terms-and-conditions/" target="_self">
+                                                    <span>Terms of Service</span>
+                                                
+                               
+            </a>
+                    </li>
+            <li menuItemName="level_1_67" class=" account " id="Secondary_Navbar-level_1_67">
+            <a href="https://sovlow.com/refund-policy-page/" target="_self">
+                                                    <span>Refund Policy</span>
+                                                
+                               
+            </a>
+                    </li>
+                    </ul>
+            </div>
+        </section>    
+             
+    <section id="main-menu">
+        <nav id="nav" class="navbar navbar-default navbar-main " role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    Menu
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="navbar-collapse" id="primary-nav">
+                    <ul class="nav navbar-nav">                       
+                            
+            <li menuItemName="level_1_1" class="  " id="Primary_Navbar-level_1_1">
+            <a href="https://cloud.sovlow.com/index.php" target="_self">
+                                                    <span>Home</span>
+                                                
+                               
+            </a>
+                    </li>
+            <li menuItemName="level_1_3" class="dropdown  " id="Primary_Navbar-level_1_3">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" target="_self">
+                                                    <span>Services</span>
+                                                
+                <b class="ls ls-caret"></b>               
+            </a>
+                            <ul class="dropdown-menu " >
+                                                                                    <li menuItemName="level_2_5" class="active " id="Primary_Navbar-level_1_3-level_2_5">
+                            <a href="https://cloud.sovlow.com/cart.php?gid=1" target="_self">
+                                                                Shared Hosting
+                                                            </a>
+                        </li>
+                                            <li menuItemName="level_2_7" class=" " id="Primary_Navbar-level_1_3-level_2_7">
+                            <a href="https://cloud.sovlow.com/cart.php?gid=8" target="_self">
+                                                                Wordpress Hosting
+                                                            </a>
+                        </li>
+                                            <li menuItemName="level_2_11" class=" " id="Primary_Navbar-level_1_3-level_2_11">
+                            <a href="https://cloud.sovlow.com/cart.php?gid=3" target="_self">
+                                                                Asp.net Hosting
+                                                            </a>
+                        </li>
+                                            <li menuItemName="level_2_13" class=" " id="Primary_Navbar-level_1_3-level_2_13">
+                            <a href="https://cloud.sovlow.com/cart.php?gid=4" target="_self">
+                                                                Linux Reseller Hosting
+                                                            </a>
+                        </li>
+                                            <li menuItemName="level_2_15" class=" " id="Primary_Navbar-level_1_3-level_2_15">
+                            <a href="https://cloud.sovlow.com/cart.php?gid=9" target="_self">
+                                                                Email Hosting
+                                                            </a>
+                        </li>
+                                            <li menuItemName="level_2_19" class=" " id="Primary_Navbar-level_1_3-level_2_19">
+                            <a href="https://cloud.sovlow.com/cart.php?gid=7" target="_self">
+                                                                Windows Reseller Hosting
+                                                            </a>
+                        </li>
+                                            <li menuItemName="level_2_21" class=" " id="Primary_Navbar-level_1_3-level_2_21">
+                            <a href="https://cloud.sovlow.com/cart.php?gid=2" target="_self">
+                                                                Linux VPS Hosting
+                                                            </a>
+                        </li>
+                                            <li menuItemName="level_2_60" class=" " id="Primary_Navbar-level_1_3-level_2_60">
+                            <a href="https://cloud.sovlow.com/cart.php?a=add&amp;domain=register" target="_self">
+                                                                Register a New Domain
+                                                            </a>
+                        </li>
+                                            <li menuItemName="level_2_62" class=" " id="Primary_Navbar-level_1_3-level_2_62">
+                            <a href="https://cloud.sovlow.com/cart.php?a=add&amp;domain=transfer" target="_self">
+                                                                Transfer Domains to Us
+                                                            </a>
+                        </li>
+                                    </ul>
+                    </li>
+            <li menuItemName="level_1_27" class="  " id="Primary_Navbar-level_1_27">
+            <a href="https://cloud.sovlow.com/submitticket.php" target="_self">
+                                                    <span>Open Ticket</span>
+                                                
+                               
+            </a>
+                    </li>
+            <li menuItemName="level_1_29" class="  " id="Primary_Navbar-level_1_29">
+            <a href="https://cloud.sovlow.com/contact.php" target="_self">
+                                                    <span>Contact Us</span>
+                                                
+                               
+            </a>
+                    </li>
+                        </ul>
+                                      
+                    <div class="navbar-nav navbar-right">
+                                                    <a href="/cart.php?a=view" class="btn btn-link btn-icon"><i class="lm lm-basket"></i></a>                            <a href="/register.php" class="btn btn-default btn-outline">Register</a>                            <a href="/login.php" class="btn btn-primary">Login</a>
+                                            </div>
+                                            <ul class="nav navbar-nav language-nav">        
+                            <li class="dropdown language">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <span class="item-text">English</span>
+                                    <i class="ls ls-caret"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right" id="languageChooserContent">
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=arabic">العربية</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=azerbaijani">Azerbaijani</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=catalan">Català</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=chinese">中文</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=croatian">Hrvatski</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=czech">Čeština</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=danish">Dansk</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=dutch">Nederlands</a>
+                                        </li>
+                                                                            <li class="active">
+                                            <a href="/cart.php?gid=1&amp;language=english">English</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=estonian">Estonian</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=farsi">Persian</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=french">Français</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=german">Deutsch</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=hebrew">עברית</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=hungarian">Magyar</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=italian">Italiano</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=macedonian">Macedonian</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=norwegian">Norwegian</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=portuguese-br">Português</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=portuguese-pt">Português</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=romanian">Română</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=russian">Русский</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=spanish">Español</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=swedish">Svenska</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=turkish">Türkçe</a>
+                                        </li>
+                                                                            <li class="">
+                                            <a href="/cart.php?gid=1&amp;language=ukranian">Українська</a>
+                                        </li>
+                                                                    </ul>                 
+                            </li>
+                        </ul>    
+                                    </div><!-- /.navbar-collapse -->
+            </div>
+        </nav>
+    </section>
+        </div>
+
+                        <div class="app-header main-header header-lined ">
+                <div class="container">
+                                                  
+                        <h1>
+                Shared Hosting
+            </h1>
+                            <p>Shared Hosting</p>
+                                                                        </div>
+            </div>
+               
+<div class="app-main">    
+            <div class="main-body "> 
+        <div class="container">
+            <div class="main-grid  row">
+                                                
+
+
+ 
+     
+    <script type="text/javascript" src="/templates/orderforms/lagom/js/order.min.js?v=1.5.2"></script>
+
+    <div class="col-md-3 pull-md-left main-sidebar sidebar hidden-xs hidden-sm">
+                    <div menuItemName="Categories" class="panel panel-sidebar">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                                            <i class="fas fa-shopping-cart"></i>&nbsp;
+                    
+                    Categories
+
+                    
+                    <i class="fa fa-chevron-up panel-minimise pull-right"></i>
+                </h3>
+            </div>
+
+            
+                            <div class="list-group">
+                                                                        <a menuItemName="Shared Hosting" href="/cart.php?gid=1" class="list-group-item active" id="Secondary_Sidebar-Categories-Shared_Hosting">
+                                                                    <i class="ls ls-hosting"></i>
+                                
+                                Shared Hosting
+
+                                                            </a>
+                                                                                                <a menuItemName="Wordpress Hosting" href="/cart.php?gid=8" class="list-group-item" id="Secondary_Sidebar-Categories-Wordpress_Hosting">
+                                                                    <i class="ls ls-hosting"></i>
+                                
+                                Wordpress Hosting
+
+                                                            </a>
+                                                                                                <a menuItemName="Windows Asp.net Hosting" href="/cart.php?gid=3" class="list-group-item" id="Secondary_Sidebar-Categories-Windows_Asp.net_Hosting">
+                                                                    <i class="ls ls-hosting"></i>
+                                
+                                Windows Asp.net Hosting
+
+                                                            </a>
+                                                                                                <a menuItemName="Linux Reseller Hosting" href="/cart.php?gid=4" class="list-group-item" id="Secondary_Sidebar-Categories-Linux_Reseller_Hosting">
+                                                                    <i class="ls ls-hosting"></i>
+                                
+                                Linux Reseller Hosting
+
+                                                            </a>
+                                                                                                <a menuItemName="Email Hosting" href="/cart.php?gid=9" class="list-group-item" id="Secondary_Sidebar-Categories-Email_Hosting">
+                                                                    <i class="ls ls-hosting"></i>
+                                
+                                Email Hosting
+
+                                                            </a>
+                                                                                                <a menuItemName="Windows Reseller Hosting" href="/cart.php?gid=7" class="list-group-item" id="Secondary_Sidebar-Categories-Windows_Reseller_Hosting">
+                                                                    <i class="ls ls-hosting"></i>
+                                
+                                Windows Reseller Hosting
+
+                                                            </a>
+                                                                                                <a menuItemName="Linux VPS Hosting" href="/cart.php?gid=2" class="list-group-item" id="Secondary_Sidebar-Categories-Linux_VPS_Hosting">
+                                                                    <i class="ls ls-hosting"></i>
+                                
+                                Linux VPS Hosting
+
+                                                            </a>
+                                                                                                <a menuItemName="Linux Cloud Hosting" href="/cart.php?gid=6" class="list-group-item" id="Secondary_Sidebar-Categories-Linux_Cloud_Hosting">
+                                                                    <i class="ls ls-hosting"></i>
+                                
+                                Linux Cloud Hosting
+
+                                                            </a>
+                                                            </div>
+            
+                    </div>
+
+                    <div menuItemName="Actions" class="panel panel-sidebar">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                                            <i class="fas fa-plus"></i>&nbsp;
+                    
+                    Actions
+
+                    
+                    <i class="fa fa-chevron-up panel-minimise pull-right"></i>
+                </h3>
+            </div>
+
+            
+                            <div class="list-group">
+                                                                        <a menuItemName="Domain Registration" href="/cart.php?a=add&domain=register" class="list-group-item" id="Secondary_Sidebar-Actions-Domain_Registration">
+                                                                    <i class="fas fa-ticket ls ls-dns"></i>&nbsp;
+                                
+                                Register a New Domain
+
+                                                            </a>
+                                                                                                <a menuItemName="Domain Transfer" href="/cart.php?a=add&domain=transfer" class="list-group-item" id="Secondary_Sidebar-Actions-Domain_Transfer">
+                                                                    <i class="fas fa-ticket ls ls-transfer"></i>&nbsp;
+                                
+                                Transfer in a Domain
+
+                                                            </a>
+                                                                                                <a menuItemName="View Cart" href="/cart.php?a=view" class="list-group-item" id="Secondary_Sidebar-Actions-View_Cart">
+                                                                    <i class="fas fa-ticket ls ls-basket"></i>&nbsp;
+                                
+                                View Cart
+
+                                                            </a>
+                                                            </div>
+            
+                    </div>
+
+                </div>
+    <div class="main-content col-md-9 pull-md-right">
+        
+    <div class="categories-collapsed visible-xs visible-sm clearfix">
+
+        <div class="pull-left form-inline">
+            <div class="dropdown">
+                <a href="#" data-toggle="dropdown" class="btn btn-default">
+                                            Shared Hosting
+                     
+                    <i class="ls ls-caret"></i>
+                </a>
+                <ul class="dropdown-menu ps">
+                                                                        <li class="dropdown-title h6">Categories</li>
+                                                                                                                                    <li>
+                                        <a menuItemName="Shared Hosting" href="/cart.php?gid=1" class=" active" id="Secondary_Sidebar-Categories-Shared_Hosting">
+                                            Shared Hosting
+                                        </a>
+                                    </li>
+                                                                                                                                            <li>
+                                        <a menuItemName="Wordpress Hosting" href="/cart.php?gid=8" class="" id="Secondary_Sidebar-Categories-Wordpress_Hosting">
+                                            Wordpress Hosting
+                                        </a>
+                                    </li>
+                                                                                                                                            <li>
+                                        <a menuItemName="Windows Asp.net Hosting" href="/cart.php?gid=3" class="" id="Secondary_Sidebar-Categories-Windows_Asp.net_Hosting">
+                                            Windows Asp.net Hosting
+                                        </a>
+                                    </li>
+                                                                                                                                            <li>
+                                        <a menuItemName="Linux Reseller Hosting" href="/cart.php?gid=4" class="" id="Secondary_Sidebar-Categories-Linux_Reseller_Hosting">
+                                            Linux Reseller Hosting
+                                        </a>
+                                    </li>
+                                                                                                                                            <li>
+                                        <a menuItemName="Email Hosting" href="/cart.php?gid=9" class="" id="Secondary_Sidebar-Categories-Email_Hosting">
+                                            Email Hosting
+                                        </a>
+                                    </li>
+                                                                                                                                            <li>
+                                        <a menuItemName="Windows Reseller Hosting" href="/cart.php?gid=7" class="" id="Secondary_Sidebar-Categories-Windows_Reseller_Hosting">
+                                            Windows Reseller Hosting
+                                        </a>
+                                    </li>
+                                                                                                                                            <li>
+                                        <a menuItemName="Linux VPS Hosting" href="/cart.php?gid=2" class="" id="Secondary_Sidebar-Categories-Linux_VPS_Hosting">
+                                            Linux VPS Hosting
+                                        </a>
+                                    </li>
+                                                                                                                                            <li>
+                                        <a menuItemName="Linux Cloud Hosting" href="/cart.php?gid=6" class="" id="Secondary_Sidebar-Categories-Linux_Cloud_Hosting">
+                                            Linux Cloud Hosting
+                                        </a>
+                                    </li>
+                                                                                                                                                                                                <li class="dropdown-title h6">Actions</li>
+                                                                                                                                    <li>
+                                        <a menuItemName="Domain Registration" href="/cart.php?a=add&domain=register" class="" id="Secondary_Sidebar-Actions-Domain_Registration">
+                                            Register a New Domain
+                                        </a>
+                                    </li>
+                                                                                                                                            <li>
+                                        <a menuItemName="Domain Transfer" href="/cart.php?a=add&domain=transfer" class="" id="Secondary_Sidebar-Actions-Domain_Transfer">
+                                            Transfer in a Domain
+                                        </a>
+                                    </li>
+                                                                                                                                            <li>
+                                        <a menuItemName="View Cart" href="/cart.php?a=view" class="" id="Secondary_Sidebar-Actions-View_Cart">
+                                            View Cart
+                                        </a>
+                                    </li>
+                                                                                                                                                            </ul>
+            </div>
+        </div>
+
+        
+    </div>
+            
+                <div class="products" id="products">
+            <div class="row row-eq-height row-eq-height-sm">
+                                    <div class="col-lg-4 col-sm-6">
+                        
+                        <div class="package " id="product1">
+                                                        <h3 class="package-name">Starter</h3>
+                            <div class="package-price">                               
+                                                                                                                                                <div class="price">$1.99 USD<span class="price-cycle">/mo</span></div>
+                                                                                                                                    </div>
+                                                                                        <div class="package-content">
+                                    <p>1 Website<br />
+5GB Web Space<br />
+Unlimited bandwidth<br />
+FREE SSL Certificate<br />
+No FREE Domain Registar<br />
+Supporting PHP<br />
+24/7/365 Support<br />
+</p>
+                                </div>    
+                                                        <div class="package-footer">
+                                <a href="cart.php?a=add&pid=1" class="btn btn-lg btn-primary" id="product1-order-button">
+                                    Order Now
+                                </a>
+                                                            </div>
+                        </div>
+                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                        
+                        <div class="package " id="product2">
+                                                        <h3 class="package-name">Business</h3>
+                            <div class="package-price">                               
+                                                                                                                                                <div class="price">$8.99 USD<span class="price-cycle">/mo</span></div>
+                                                                                                                                    </div>
+                                                                                        <div class="package-content">
+                                    <p>5 Websites<br />
+50GB Web Space<br />
+Unlimited bandwidth<br />
+FREE SSL Certificate<br />
+FREE Domain Registar<br />
+Supporting PHP<br />
+24/7/365 Support<br />
+</p>
+                                </div>    
+                                                        <div class="package-footer">
+                                <a href="cart.php?a=add&pid=2" class="btn btn-lg btn-primary" id="product2-order-button">
+                                    Order Now
+                                </a>
+                                                            </div>
+                        </div>
+                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                        
+                        <div class="package " id="product3">
+                                                        <h3 class="package-name">Premium</h3>
+                            <div class="package-price">                               
+                                                                                                                                                <div class="price">$15.99 USD<span class="price-cycle">/mo</span></div>
+                                                                                                                                    </div>
+                                                                                        <div class="package-content">
+                                    <p>Unlimited Websites<br />
+90GB Web Space<br />
+Unlimited bandwidth<br />
+FREE SSL Certificate<br />
+FREE Domain Registar<br />
+Supporting PHP<br />
+24/7/365 Support<br />
+</p>
+                                </div>    
+                                                        <div class="package-footer">
+                                <a href="cart.php?a=add&pid=3" class="btn btn-lg btn-primary" id="product3-order-button">
+                                    Order Now
+                                </a>
+                                                            </div>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+           
+            </div>
+
+
+
+                            
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>       
+                                        <div class="main-footer hidden-print">
+                    <div class="container">
+                        <div class="footer-content">
+                            <p>Copyright &copy; 2026 Sovlow. All Rights Reserved.</p> 
+                                                            <ul class="footer-links">
+                                                                                <li class="">
+        <a  href="https://sovlow.com/privacy-policy/" target="_self" data-original-title="Privacy Policy">
+                        <span class="hidden-minibar"> Privacy Policy</span>
+                    </a>
+                    </li>
+    <li class="">
+        <a  href="https://sovlow.com/terms-and-conditions/" target="_self" data-original-title="Terms of Service">
+                        <span class="hidden-minibar"> Terms of Service</span>
+                    </a>
+                    </li>
+    <li class="">
+        <a  href="https://sovlow.com/refund-policy-page/" target="_self" data-original-title="Refund Policy">
+                        <span class="hidden-minibar"> Refund Policy</span>
+                    </a>
+                    </li>
+
+
+                                    <li class="dropdown language">
+                                        
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            English
+                                            <i class="ls ls-caret"></i>
+                                        </a>
+
+                                        <div class="dropdown-menu dropdown-menu-right ps" id="languageChooserContent">
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=arabic">العربية</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=azerbaijani">Azerbaijani</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=catalan">Català</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=chinese">中文</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=croatian">Hrvatski</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=czech">Čeština</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=danish">Dansk</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=dutch">Nederlands</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item active">
+                                                    <a href="/cart.php?gid=1&amp;language=english">English</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=estonian">Estonian</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=farsi">Persian</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=french">Français</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=german">Deutsch</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=hebrew">עברית</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=hungarian">Magyar</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=italian">Italiano</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=macedonian">Macedonian</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=norwegian">Norwegian</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=portuguese-br">Português</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=portuguese-pt">Português</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=romanian">Română</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=russian">Русский</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=spanish">Español</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=swedish">Svenska</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=turkish">Türkçe</a>
+                                                </div>
+                                                                                            <div class="dropdown-menu-item ">
+                                                    <a href="/cart.php?gid=1&amp;language=ukranian">Українська</a>
+                                                </div>
+                                                                                        <div class="ps__rail-x">
+                                                <div class="ps__thumb-x" tabindex="0"></div>                    
+                                            </div>
+                                            <div class="ps__rail-y">
+                                                <div class="ps__thumb-y" tabindex="0"></div>                   
+                                            </div>
+                                        </div>                 
+                                    </li>                       
+                                </ul>
+                                                    </div>
+                        <a href="#" class="back-to-top btn btn-sm btn-icon"><i class="lm lm-go-top"></i></a>
+                    </div>
+                </div>
+                    
+        <div id="fullpage-overlay" class="hidden">
+            <div class="outer-wrapper">
+                <div class="inner-wrapper">
+                    <img src="/assets/img/overlay-spinner.svg">
+                    <br>
+                    <span class="msg"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal system-modal fade" id="modalAjax" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="lm lm-close"></i></button>
+                        <h3 class="modal-title"></h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="loader">
+                             
+    <div class="spinner ">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+                             </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary modal-submit">
+                            Submit
+                        </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                        Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form action="#" id="frmGeneratePassword" class="form-horizontal">
+    <div class="modal fade" id="modalGeneratePassword">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="lm lm-close"></i></button>
+                    <h3 class="modal-title">
+                        Generate Password
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger hidden" id="generatePwLengthError">
+                        Please enter a number between 8 and 64 for the password length
+                    </div>
+                    <div class="form-group">
+                        <label for="generatePwLength" class="col-sm-4 control-label">Password Length</label>
+                        <div class="col-sm-8">
+                            <input type="number" min="8" max="64" value="12" step="1" class="form-control input-inline input-inline-100" id="inputGeneratePasswordLength">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="generatePwOutput" class="col-sm-4 control-label">Generated Password</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="inputGeneratePasswordOutput">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-4">
+                            <button type="submit" class="btn btn-default btn-sm">
+                                <i class="fa fa-plus fa-fw"></i>
+                                Generate new password
+                            </button>
+                            <button type="button" class="btn btn-default btn-sm copy-to-clipboard" data-clipboard-target="#inputGeneratePasswordOutput">
+                                <img src="/assets/img/clippy.svg" alt="Copy to clipboard" width="15">
+                                
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary" id="btnGeneratePasswordInsert" data-clipboard-target="#inputGeneratePasswordOutput">
+                        Copy to clipboard & Insert
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+    </div>
+            
+<script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+
+    <div class="overlay"></div>
+    <script src="/templates/lagom/assets/js/vendor.js?v=1.5.2"></script>
+    <script src="/templates/lagom/assets/js/lagom-app.js?v=1.5.2"></script>
+    <script src="/templates/lagom/assets/js/whmcs-custom.min.js?v=1.5.2"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"15dc4491525f4e7b8484a9542a7ba8c1","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+   
