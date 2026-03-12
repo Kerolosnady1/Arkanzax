@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="@yield('meta_description', 'Arkanzax — AI-powered software house helping brands grow with data-driven strategies, creative campaigns, and performance software house.')" />
+    <meta name="keywords"
+        content="@yield('meta_keywords', 'Arkanzax, software house, AI software house, SEO, social media, paid ads, branding')" />
+    <meta property="og:title" content="@yield('og_title', 'Arkanzax | AI-Powered Software House')" />
+    <meta property="og:description"
+        content="@yield('og_description', 'We help brands grow with AI-driven software house solutions.')" />
+    <meta property="og:type" content="website" />
+    <title>@yield('title', 'Arkanzax | AI-Powered Software House')</title>
+
+    <!-- Google Fonts: Latin + Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+
+    <!-- RTL Arabic font override -->
+    <style>
+        html[dir="rtl"] body {
+            font-family: 'Cairo', 'Outfit', sans-serif;
+        }
+
+        html[dir="rtl"] .section-title,
+        html[dir="rtl"] .hero-title,
+        html[dir="rtl"] h1,
+        html[dir="rtl"] h2,
+        html[dir="rtl"] h3 {
+            font-family: 'Cairo', 'Outfit', sans-serif;
+        }
+    </style>
+
+    @yield('head')
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+<header class="site-header" id="header">
+
+    <!-- Top Bar -->
+    <div class="header-top">
+      <div class="container">
+        <div class="header-top-inner">
+          <div class="header-contact-info">
+            <a href="mailto:info@arkanzax.com"><i class="fas fa-envelope"></i> info@arkanzax.com</a>
+            <a href="tel:+201033477682"><i class="fas fa-phone"></i> +20 1033 477 682</a>
+          </div>
+          <div class="social-links">
+            <a href="{{ route('home') }}" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="{{ route('home') }}" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="{{ route('home') }}" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="{{ route('home') }}" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a title="WhatsApp" href="https://wa.me/+201033477682"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Nav -->
+    <div class="header-main" id="header-main">
+      <div class="container">
+        <nav class="nav-inner">
+          <!-- Logo -->
+          <a href="{{ route('home') }}" class="logo">
+            <img src="{{ asset('assets/logo.png') }}" alt="Arkanzax Logo" width="160" height="52" />
+          </a>
+
+          <!-- Desktop Nav Links -->
+          <ul class="nav-list main-nav" role="list">
+            <li><a href="{{ route('home') }}#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+            <li><a href="{{ route('hosting') }}" data-en="Hosting &
+Domain" data-ar="الاستضافة
+والنطاق">Hosting &
+                Domain</a></li>
+            <li><a href="{{ route('home') }}#about" data-en="About" data-ar="من نحن">About</a></li>
+            <li class="nav-item-mega">
+              <a href="{{ route('product.pms') }}" data-en="Products" data-ar="منتجاتنا">Products</a>
+              <div class="mega-menu">
+                <div class="mega-menu-inner">
+                  <div class="mega-menu-header">
+                    <h3 data-en="Core Software Products" data-ar="منتجات البرمجيات الأساسية">Core Software Products</h3>
+                  </div>
+                  <div class="mega-menu-grid grid-4">
+                    <a href="{{ route('items.show', 'property-management') }}" class="client-card">
+                      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600" alt="Property Management System" style="height:120px; object-fit:cover;">
+                      <div class="client-card-info">
+                        <h4 data-en="Property Management" data-ar="إدارة العقارات">Property Management</h4>
+                        <p data-en="Complete PMS Solution" data-ar="حل كامل لإدارة العقارات">Complete PMS Solution</p>
+                      </div>
+                    </a>
+                    <a href="{{ route('items.show', 'marketing-tools-smes') }}" class="client-card">
+                      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Marketing Tools SMEs" style="height:120px; object-fit:cover;">
+                      <div class="client-card-info">
+                        <h4 data-en="Marketing for SMEs" data-ar="تسويق للشركات الصغيرة">Marketing for SMEs</h4>
+                        <p data-en="Growth Tools & Automation" data-ar="أدوات النمو والأتمتة">Growth Tools & Automation</p>
+                      </div>
+                    </a>
+                    <a href="{{ route('items.show', 'e-commerce-product') }}" class="client-card">
+                      <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=600" alt="E-Commerce Product" style="height:120px; object-fit:cover;">
+                      <div class="client-card-info">
+                        <h4 data-en="E-Commerce Product" data-ar="منتج التجارة الإلكترونية">E-Commerce Product</h4>
+                        <p data-en="Complete Commerce Suite" data-ar="منصة تجارة متكاملة">Complete Commerce Suite</p>
+                      </div>
+                    </a>
+                    <a href="{{ route('product.crm') }}" class="client-card">
+                      <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=600" alt="CRM & POS" style="height:120px; object-fit:cover;">
+                      <div class="client-card-info">
+                        <h4 data-en="CRM & POS" data-ar="إدارة علاقات العملاء ونقاط البيع">CRM & POS</h4>
+                        <p data-en="X9 Smart Point of Sale" data-ar="نظام X9 الذكي لنقاط البيع">X9 Smart Point of Sale</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="#testi-sec" data-en="Testimonials" data-ar="آراء العملاء">Testimonials</a></li>
+            <li class="nav-item-mega">
+              <a href="javascript:void(0)" data-en="Other
+Clients" data-ar="عملاء
+آخرون">Other
+                Clients</a>
+              <div class="mega-menu">
+                <div class="mega-menu-inner">
+                  <div class="mega-menu-header">
+                    <h3 data-en="Our Previous Work" data-ar="أعمالنا السابقة">Our Previous Work</h3>
+                  </div>
+                  <div class="mega-menu-grid">
+                    <div class="client-card">
+                      <img src="{{ asset('assets/clients/client-1.jpg') }}" alt="Good Life Platform">
+                      <div class="client-card-info">
+                        <h4 data-en="Good Life" data-ar="جود لايف">Good Life</h4>
+                        <p data-en="E-commerce Platform" data-ar="منصة منتج التجارة الإلكترونية">E-commerce Platform</p>
+                      </div>
+                    </div>
+                    <div class="client-card">
+                      <img src="{{ asset('assets/clients/client-4.jpg') }}" alt="Good Life Experience">
+                      <div class="client-card-info">
+                        <h4 data-en="Good Life" data-ar="جود لايف">Good Life</h4>
+                        <p data-en="Digital Experience App" data-ar="تطبيق التجربة الرقمية">Digital Experience App</p>
+                      </div>
+                    </div>
+                    <div class="client-card">
+                      <img src="{{ asset('assets/clients/client-3.jpg') }}" alt="Turath Pharma Portal">
+                      <div class="client-card-info">
+                        <h4 data-en="Turath Pharma" data-ar="تراث فارما">Turath Pharma</h4>
+                        <p data-en="Enterprise Web Portal" data-ar="بوابة الويب للمؤسسة">Enterprise Web Portal</p>
+                      </div>
+                    </div>
+                    <div class="client-card">
+                      <img src="{{ asset('assets/clients/client-4.jpg') }}" alt="Turath Pharma Inventory">
+                      <div class="client-card-info">
+                        <h4 data-en="Turath Pharma" data-ar="تراث فارما">Turath Pharma</h4>
+                        <p data-en="Inventory Management System" data-ar="نظام إدارة المخازن">Inventory Management
+                          System</p>
+                      </div>
+                    </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            
+            <li><a href="{{ route('home') }}#blog" data-en="Blog" data-ar="المدونة">Blog</a></li>
+            <li><a href="{{ route('home') }}#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+          </ul>
+
+          <!-- Header Actions -->
+          <div class="header-actions">
+            <!-- Language Toggle -->
+            <button id="lang-toggle" class="lang-toggle" aria-label="Switch language" title="Switch language">
+              <span class="lang-flag"><i class="fas fa-globe"></i></span>
+              <span id="lang-label">العربية</span>
+            </button>
+
+            <!-- Get Invoice Button -->
+            <button class="btn btn-invoice btn-invoice-open" data-en="Get Invoice" data-ar="طلب فاتورة">
+              <i class="fas fa-file-invoice"></i> <span id="invoice-label">Get Invoice</span></button>
+
+            <!-- CTA Button -->
+            <a href="{{ route('home') }}#contact" class="btn btn-primary" data-en="Get Started" data-ar="ابدأ الآن">Get Started</a>
+          </div>
+
+          <!-- Mobile Toggle -->
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+      <!-- Mobile Nav -->
+      <div class="mobile-nav" id="mobile-nav">
+        <ul role="list">
+          <li><a href="{{ route('home') }}#services" data-en="Services" data-ar="الخدمات">Services</a></li>
+          <li><a href="{{ route('hosting') }}" data-en="Hosting & Domain" data-ar="الاستضافة والنطاق">Hosting & Domain</a></li>
+          <li><a href="{{ route('home') }}#about" data-en="About" data-ar="من نحن">About</a></li>
+          <li class="has-submenu">
+            <a href="javascript:void(0)" data-en="Products" data-ar="منتجاتنا">Products</a>
+            <ul class="mobile-submenu">
+              <li>
+                <a href="{{ route('product.pms') }}" class="mobile-client-card">
+                  <i class="fas fa-building" style="color: var(--primary); font-size: 1.2rem;"></i>
+                  <div class="mobile-client-info">
+                    <h4 data-en="Property Management" data-ar="نظام إدارة العقارات">Property Management</h4>
+                    <p data-en="Real Estate Solutions" data-ar="حلول العقارات">Real Estate Solutions</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="{{ route('product.marketing') }}" class="mobile-client-card">
+                  <i class="fas fa-bullhorn" style="color: var(--primary); font-size: 1.2rem;"></i>
+                  <div class="mobile-client-info">
+                    <h4 data-en="Marketing Tools" data-ar="أدوات التسويق">Marketing Tools</h4>
+                    <p data-en="SME Growth Pack" data-ar="حزمة نمو الشركات">SME Growth Pack</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="{{ route('product.ecommerce') }}" class="mobile-client-card">
+                  <i class="fas fa-mobile-alt" style="color: var(--primary); font-size: 1.2rem;"></i>
+                  <div class="mobile-client-info">
+                    <h4 data-en="E-Commerce Product" data-ar="منتج التجارة الإلكترونية">E-Commerce Product</h4>
+                    <p data-en="Scalable Commerce Platform" data-ar="منصة تجارة قابلة للتوسع">Scalable Commerce Platform</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="{{ route('home') }}#testi-sec" data-en="Testimonials" data-ar="آراء العملاء">Testimonials</a></li>
+          <li class="has-submenu">
+            <a href="javascript:void(0)" data-en="Other Clients" data-ar="عملاء آخرون">Other Clients</a>
+            <ul class="mobile-submenu">
+              <li>
+                <a href="javascript:void(0)" class="mobile-client-card">
+                  <img src="{{ asset('assets/clients/client-1.jpg') }}" alt="Good Life" style="width: 42px; height: 42px; border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+                  <div class="mobile-client-info">
+                    <h4 data-en="Good Life" data-ar="جود لايف">Good Life</h4>
+                    <p data-en="E-commerce Platform" data-ar="منصة منتج التجارة الإلكترونية">E-commerce Platform</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="mobile-client-card">
+                  <img src="{{ asset('assets/clients/client-4.jpg') }}" alt="Good Life Experience" style="width: 42px; height: 42px; border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+                  <div class="mobile-client-info">
+                    <h4 data-en="Good Life" data-ar="جود لايف">Good Life</h4>
+                    <p data-en="Digital Experience App" data-ar="تطبيق التجربة الرقمية">Digital Experience App</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="mobile-client-card">
+                  <img src="{{ asset('assets/clients/client-3.jpg') }}" alt="Turath Pharma" style="width: 42px; height: 42px; border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+                  <div class="mobile-client-info">
+                    <h4 data-en="Turath Pharma" data-ar="تراث فارما">Turath Pharma</h4>
+                    <p data-en="Enterprise Web Portal" data-ar="بوابة الويب للمؤسسة">Enterprise Web Portal</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="mobile-client-card">
+                  <img src="{{ asset('assets/clients/client-4.jpg') }}" alt="Turath Pharma Inventory" style="width: 42px; height: 42px; border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+                  <div class="mobile-client-info">
+                    <h4 data-en="Turath Pharma" data-ar="تراث فارما">Turath Pharma</h4>
+                    <p data-en="Inventory Management System" data-ar="نظام إدارة المخازن">Inventory Management</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="{{ route('blogs.index') }}" data-en="Blog" data-ar="المدونة">Blog</a></li>
+          <li><a href="{{ route('contact') }}" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+        </ul>
+        <div class="sidebar-actions">
+          <button class="btn btn-invoice btn-invoice-open" data-en="Get Invoice" data-ar="طلب فاتورة">
+            <i class="fas fa-file-invoice"></i> <span id="invoice-label">Get Invoice</span>
+          </button>
+          <a href="{{ route('contact') }}" class="btn btn-primary" data-en="Get Started" data-ar="ابدأ الآن">Get Started</a>
+        </div>
+      </div>
+
+      
+
+          </div>
+  
+    @yield('sub_header')
+  </header>
+
+    <!-- ═══════════════════════════ MAIN CONTENT ═══════════════════════════ -->
+    @yield('content')
+
+    <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="site-footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+
+          <!-- Brand Col -->
+          <div>
+            <div class="footer-logo">
+              <img src="{{ asset('assets/logo.png') }}" alt="Arkanzax" width="160" height="60" />
+            </div>
+            <p class="footer-about"
+              data-en="AI-powered software house solutions that help brands grow faster, smarter, and more efficiently."
+              data-ar="حلول برمجية مدعومة بالذكاء الاصطناعي تساعد العلامات التجارية على النمو بشكل أسرع وأذكى وأكثر كفاءة.">
+              AI-powered software house solutions that help brands grow faster, smarter, and more efficiently.
+            </p>
+            <div class="footer-social">
+              <a href="{{ route('home') }}" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="{{ route('home') }}" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="{{ route('home') }}" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="{{ route('home') }}" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+              <a title="WhatsApp" href="https://wa.me/+201033477682"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="footer-heading" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+            <nav class="footer-links">
+              <a href="{{ route('home') }}" data-en="Home" data-ar="الرئيسية">Home</a>
+              <a href="{{ route('home') }}#services" data-en="Services" data-ar="الخدمات">Services</a>
+              <a href="{{ route('home') }}#about" data-en="About Us" data-ar="من نحن">About Us</a>
+              <a href="{{ route('blogs.index') }}" data-en="Blog" data-ar="المدونة">Blog</a>
+              <a href="{{ route('contact') }}" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+            </nav>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4 class="footer-heading" data-en="Services" data-ar="خدماتنا">Services</h4>
+            <nav class="footer-links">
+              <a href="{{ route('seo') }}" data-en="Web Dev & SEO" data-ar="تطوير الويب وSEO">Web Dev & SEO</a>
+              <a href="{{ route('ads') }}" data-en="Cloud Infrastructure" data-ar="البنية التحتية السحابية">Cloud
+                Infrastructure</a>
+              <a href="{{ route('social') }}" data-en="Mobile App Dev" data-ar="تطوير تطبيقات الجوال">Mobile App Dev</a>
+              <a href="{{ route('email') }}" data-en="API Integration" data-ar="تكامل الـ API">API Integration</a>
+              <a href="{{ route('analytics') }}" data-en="AI & Data Engineering" data-ar="الذكاء الاصطناعي وهندسة البيانات">AI &
+                Data Engineering</a>
+              <a href="{{ route('branding') }}" data-en="UI/UX Design" data-ar="تصميم تجربة وواجهة المستخدم">UI/UX
+                Design</a>
+              <a href="{{ route('hosting') }}" data-en="Hosting & Domain" data-ar="الاستضافة والنطاق">Hosting & Domain</a>
+              <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.05);">
+                <span
+                  style="font-size: 0.75rem; text-transform: uppercase; color: var(--primary); letter-spacing: 1px; font-weight: 700; margin-bottom: 8px; display: block;"
+                  data-en="Our Products" data-ar="منتجاتنا">Our Products</span>
+                <a href="{{ route('product.pms') }}" data-en="Property Management" data-ar="نظام إدارة العقارات">Property
+                  Management</a>
+                <a href="{{ route('product.marketing') }}" data-en="Marketing Tools SMEs" data-ar="أدوات تسويق">Marketing Tools
+                  SMEs</a>
+                <a href="{{ route('product.ecommerce') }}" data-en="E-Commerce Product" data-ar="تجارة متنقلة">E-commerce
+                  Mobility</a>
+              </div>
+            </nav>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4 class="footer-heading" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</h4>
+            <div class="footer-contact">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span data-en="6th of October, Giza, Egypt" data-ar="السادس من أكتوبر، الجيزة، مصر">6th of October,
+                  Giza, Egypt</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@arkanzax.com">info@arkanzax.com</a>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+201033477682">+20 1033 477 682</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-inner">
+          <p data-en="© {{ date('Y') }} Arkanzax. All rights reserved." data-ar="© {{ date('Y') }} أركانزاكس. جميع الحقوق محفوظة.">© {{ date('Y') }}
+            Arkanzax. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="{{ route('privacy') }}" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+            <a href="{{ route('terms') }}" data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</a>
+            <a href="{{ route('cookies') }}" data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Scroll-to-Top Button -->
+    <button class="scroll-top-btn" id="scroll-top" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- Invoice Modal -->
+    <div class="invoice-modal-overlay" id="invoice-modal-overlay">
+        <div class="invoice-modal">
+            <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+            <div id="invoice-form-container">
+                <div class="modal-header">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h2 data-en="Request Your Invoice" data-ar="طلب فاتورتك">Request Your Invoice</h2>
+                    <p data-en="Fill in your details and we'll contact you shortly." data-ar="أدخل بياناتك وسنتواصل معك قريباً.">Fill in your details and we'll contact you shortly.
+                    </p>
+                </div>
+                <form class="invoice-form" id="invoice-form">
+                    <div class="form-field"><label for="inv-name" data-en="Full Name" data-ar="الاسم الكامل">Full
+                            Name</label><input type="text" id="inv-name" placeholder="John Doe" required /></div>
+                    <div class="form-field"><label for="inv-email" data-en="Business Email"
+                            data-ar="البريد الإلكتروني للعمل">Business Email</label><input type="email" id="inv-email"
+                            placeholder="john@company.com" required /></div>
+                    <div class="form-field"><label for="inv-details" data-en="Additional Details (Optional)"
+                            data-ar="تفاصيل إضافية (اختياري)">Additional Details (Optional)</label><textarea
+                            id="inv-details" rows="3" placeholder="Project name, invoice amount, etc."></textarea></div>
+                    <button type="submit" class="invoice-submit" data-en="Send Request" data-ar="إرسال الطلب">Send
+                        Request</button>
+                </form>
+            </div>
+            <div class="invoice-success" id="invoice-success">
+                <i class="fas fa-check-circle"></i>
+                <h3 data-en="Request Sent Successfully!" data-ar="تم إرسال الطلب بنجاح!">Request Sent Successfully!</h3>
+                <p data-en="We have received your request and will contact you at your email address shortly."
+                    data-ar="لقد تلقينا طلبك وسنتواصل معك على بريدك الإلكتروني قريباً.">We have received your request
+                    and will contact you at your email address shortly.</p>
+                <div style="margin-top: 20px;">
+                    <a href="{{ asset('assets/invoice-sample.pdf') }}" class="btn-download" download>
+                        <i class="fas fa-download"></i>
+                        <span data-en="Download Sample Invoice" data-ar="تحميل نموذج الفاتورة">Download Sample
+                            Invoice</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ asset('js/main.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,558 @@
+/* =============================================================
+   ARKANZAX REPLICA — MAIN JAVASCRIPT
+   ============================================================= */
+
+'use strict';
+
+// ─── 1. DOM Ready ────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  initStickyHeader();
+  initMobileMenu();
+  initScrollReveal();
+  initTestimonialsSlider();
+  initScrollTopButton();
+  initCTAForm();
+  initLanguageToggle();
+  initCardHoverEffects();
+  initInvoiceModal();
+  initHeroProducts();
+});
+
+
+// ─── 2. Sticky Header ────────────────────────────────────────
+function initStickyHeader() {
+  const headerMain = document.getElementById('header-main');
+  if (!headerMain) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      headerMain.classList.add('scrolled');
+    } else {
+      headerMain.classList.remove('scrolled');
+    }
+  }, { passive: true });
+}
+
+// ─── 3. Mobile Menu ──────────────────────────────────────────
+function initMobileMenu() {
+  const toggle = document.getElementById('mobile-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  if (!toggle || !mobileNav) return;
+
+  // Create overlay if not exists
+  let overlay = document.querySelector('.mobile-nav-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.className = 'mobile-nav-overlay';
+    document.body.appendChild(overlay);
+  }
+
+  function toggleMenu(forceClose = false) {
+    const isOpen = forceClose ? false : !mobileNav.classList.contains('open');
+
+    mobileNav.classList.toggle('open', isOpen);
+    overlay.classList.toggle('active', isOpen);
+    document.body.classList.toggle('no-scroll', isOpen);
+
+    // Reset ALL submenus whenever the menu state changes (open OR close)
+    mobileNav.querySelectorAll('.has-submenu').forEach(li => {
+      li.classList.remove('is-open');
+      const link = li.querySelector('a');
+      if (link) link.setAttribute('aria-expanded', 'false');
+    });
+
+    if (isOpen) {
+      mobileNav.scrollTop = 0;
+    }
+
+    toggle.innerHTML = isOpen
+      ? '<i class="fas fa-xmark"></i>'
+      : '<i class="fas fa-bars"></i>';
+    toggle.setAttribute('aria-expanded', isOpen);
+  }
+
+  toggle.addEventListener('click', () => toggleMenu());
+  overlay.addEventListener('click', () => toggleMenu(true));
+
+  // Handle sidebar clicks
+  mobileNav.addEventListener('click', (e) => {
+    const clickedLink = e.target.closest('a');
+    if (!clickedLink) return;
+
+    const parentLi = clickedLink.parentElement;
+
+    // Toggle Submenu if it's a parent link
+    if (parentLi && parentLi.classList.contains('has-submenu') && clickedLink.getAttribute('href') === 'javascript:void(0)') {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const wasOpen = parentLi.classList.contains('is-open');
+
+      // Close other open submenus first
+      mobileNav.querySelectorAll('.has-submenu').forEach(li => {
+        li.classList.remove('is-open');
+        const l = li.querySelector('a');
+        if (l) l.setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle current
+      if (!wasOpen) {
+        parentLi.classList.add('is-open');
+        clickedLink.setAttribute('aria-expanded', 'true');
+      }
+      return;
+    }
+
+    // If it's a regular navigation link, close the entire menu
+    const href = clickedLink.getAttribute('href');
+    if (href && href !== '#' && href !== 'javascript:void(0)') {
+      toggleMenu(true);
+    }
+  });
+
+  // Initial reset to be absolutely sure submenus start closed
+  mobileNav.querySelectorAll('.has-submenu').forEach(li => {
+    li.classList.remove('is-open');
+    const link = li.querySelector('a');
+    if (link) link.setAttribute('aria-expanded', 'false');
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+      toggleMenu(true);
+    }
+  });
+}
+
+// ─── 4. Scroll Reveal ────────────────────────────────────────
+function initScrollReveal() {
+  const elements = document.querySelectorAll(
+    '.reveal-up, .reveal-left, .reveal-right, .reveal-card'
+  );
+  if (!elements.length) return;
+
+  // Stagger reveal-card children in each grid
+  const grids = document.querySelectorAll(
+    '.challenges-grid, .services-grid, .blog-grid'
+  );
+  grids.forEach(grid => {
+    const cards = grid.querySelectorAll('.reveal-card');
+    cards.forEach((card, i) => {
+      card.style.transitionDelay = `${i * 0.1}s`;
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -60px 0px'
+  });
+
+  elements.forEach(el => observer.observe(el));
+}
+
+// ─── 5. Testimonials Slider ──────────────────────────────────
+function initTestimonialsSlider() {
+  const track = document.getElementById('testimonials-track');
+  const dotsContainer = document.getElementById('testi-dots');
+  const prevBtn = document.getElementById('testi-prev');
+  const nextBtn = document.getElementById('testi-next');
+  if (!track) return;
+
+  const cards = track.querySelectorAll('.testi-card');
+  let current = 0;
+  let autoSlide;
+
+  // Determine cards visible based on viewport
+  function getVisible() {
+    if (window.innerWidth <= 640) return 1;
+    if (window.innerWidth <= 900) return 2;
+    return 3;
+  }
+
+  function totalSlides() {
+    return Math.ceil(cards.length / getVisible());
+  }
+
+  // Build dots
+  function buildDots() {
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = '';
+    const n = totalSlides();
+    for (let i = 0; i < n; i++) {
+      const dot = document.createElement('div');
+      dot.className = `testi-dot${i === 0 ? ' active' : ''}`;
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    if (!dotsContainer) return;
+    dotsContainer.querySelectorAll('.testi-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function goTo(index) {
+    const n = totalSlides();
+    current = ((index % n) + n) % n;
+    const visible = getVisible();
+    const cardWidthPercent = 100 / visible;
+    // Each card is 33.333% or 50% or 100% width; shift track by current * (visible cards)
+    const shiftPercent = current * visible * cardWidthPercent;
+    track.style.transform = `translateX(-${shiftPercent}%)`;
+    updateDots();
+  }
+
+  function nextSlide() { goTo(current + 1); }
+  function prevSlide() { goTo(current - 1); }
+
+  function startAuto() {
+    stopAuto();
+    autoSlide = setInterval(nextSlide, 5000);
+  }
+
+  function stopAuto() {
+    if (autoSlide) clearInterval(autoSlide);
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); startAuto(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); startAuto(); });
+
+  // Touch swipe support
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? nextSlide() : prevSlide();
+      startAuto();
+    }
+  });
+
+  // Pause on hover
+  track.parentElement.addEventListener('mouseenter', stopAuto);
+  track.parentElement.addEventListener('mouseleave', startAuto);
+
+  // Rebuild on resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      buildDots();
+      goTo(0);
+    }, 200);
+  });
+
+  buildDots();
+  startAuto();
+}
+
+// ─── 6. Scroll-to-Top Button ─────────────────────────────────
+function initScrollTopButton() {
+  const btn = document.getElementById('scroll-top');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// ─── 7. CTA Form ─────────────────────────────────────────────
+function initCTAForm() {
+  const form = document.getElementById('cta-form');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const emailInput = document.getElementById('email-input');
+    if (!emailInput || !emailInput.value) return;
+
+    const btn = form.querySelector('.btn-cta');
+    const originalText = btn.innerHTML;
+
+    btn.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
+    btn.style.background = '#16a34a';
+    btn.disabled = true;
+    emailInput.value = '';
+
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 3500);
+  });
+}
+
+// ─── 8. Language Toggle (EN ↔ AR) ────────────────────────────
+function initLanguageToggle() {
+  const btn = document.getElementById('lang-toggle');
+  const label = document.getElementById('lang-label');
+  if (!btn) return;
+
+  let isArabic = false;
+
+  btn.addEventListener('click', () => {
+    isArabic = !isArabic;
+    const html = document.documentElement;
+
+    // 1. Flip direction and language
+    html.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
+    html.setAttribute('lang', isArabic ? 'ar' : 'en');
+
+    // 2. Update button UI
+    if (label) label.textContent = isArabic ? 'English' : 'العربية';
+    const flag = btn.querySelector('.lang-flag');
+    if (flag) {
+      flag.innerHTML = '<i class="fas fa-globe"></i>';
+    }
+    btn.setAttribute('title', isArabic ? 'Switch to English' : 'التبديل إلى العربية');
+
+    // 3. Swap all translatable text nodes
+    const translatables = document.querySelectorAll('[data-en][data-ar]');
+    translatables.forEach(el => {
+      // Skip the button label itself (handled above)
+      if (el === label) return;
+
+      const text = isArabic ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+      if (text) el.textContent = text;
+    });
+
+    // 4. Swap input placeholders
+    const inputs = document.querySelectorAll('[data-en-placeholder][data-ar-placeholder]');
+    inputs.forEach(inp => {
+      inp.placeholder = isArabic
+        ? inp.getAttribute('data-ar-placeholder')
+        : inp.getAttribute('data-en-placeholder');
+    });
+
+    // 5. Announce to screen readers
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.className = 'sr-only';
+    announcement.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);';
+    announcement.textContent = isArabic ? 'تم التبديل إلى العربية' : 'Switched to English';
+    document.body.appendChild(announcement);
+    setTimeout(() => announcement.remove(), 1000);
+  });
+}
+
+// ─── 9. Card 3D Hover Effects ────────────────────────────────
+function initCardHoverEffects() {
+  const cards = document.querySelectorAll('.challenge-card, .service-card');
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const rotX = ((y - cy) / cy) * -6;
+      const rotY = ((x - cx) / cx) * 6;
+
+      card.style.transform = `translateY(-8px) perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+
+// ─── 9. Active Nav Link on Scroll ────────────────────────────
+(function initActiveNav() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-list a');
+  if (!sections.length || !navLinks.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${entry.target.id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => observer.observe(s));
+})();
+
+// ─── 10. Hero Particle Canvas (lightweight) ──────────────────
+(function initParticles() {
+  const hero = document.getElementById('hero');
+  if (!hero) return;
+
+  const canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0.5';
+  hero.appendChild(canvas);
+
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let animFrame;
+
+  function resize() {
+    canvas.width = hero.offsetWidth;
+    canvas.height = hero.offsetHeight;
+  }
+
+  function createParticle() {
+    return {
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5 + 0.3,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: -Math.random() * 0.5 - 0.1,
+      opacity: Math.random() * 0.6 + 0.1
+    };
+  }
+
+  function initParticleList() {
+    particles = Array.from({ length: 80 }, createParticle);
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,255,255,${p.opacity})`;
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.y < -5) { Object.assign(p, createParticle(), { y: canvas.height + 5 }); }
+    });
+    animFrame = requestAnimationFrame(animate);
+  }
+
+  resize();
+  initParticleList();
+  animate();
+
+  window.addEventListener('resize', () => {
+    resize();
+    initParticleList();
+  }, { passive: true });
+
+  // Clean up if section leaves viewport
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) {
+        cancelAnimationFrame(animFrame);
+      } else {
+        animate();
+      }
+    });
+  });
+  obs.observe(hero);
+})();
+
+// ─── 11. Invoice Modal ───────────────────────────────────────
+function initInvoiceModal() {
+  const modalOverlay = document.getElementById('invoice-modal-overlay');
+  const openBtns = document.querySelectorAll('.btn-invoice-open');
+  const closeBtn = document.getElementById('modal-close');
+  const form = document.getElementById('invoice-form');
+  const successDiv = document.getElementById('invoice-success');
+
+  if (!modalOverlay || !openBtns.length) return;
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+    // Reset form after delay
+    setTimeout(() => {
+      if (form) form.style.display = 'flex';
+      if (successDiv) successDiv.style.display = 'none';
+    }, 400);
+  }
+
+  openBtns.forEach(btn => btn.addEventListener('click', openModal));
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeModal();
+  });
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('.invoice-submit');
+      const name = document.getElementById('inv-name').value;
+      const email = document.getElementById('inv-email').value;
+      const details = document.getElementById('inv-details').value;
+
+      if (!name || !email) return;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+
+      // Simulate API call and open mailto
+      setTimeout(() => {
+        const subject = encodeURIComponent("Invoice Request - Arkanzax");
+        const body = encodeURIComponent(`Hello Arkanzax Team,\n\nI would like to request an invoice.\n\nName: ${name}\nEmail: ${email}\nDetails: ${details}\n\nPlease contact me and send the invoice PDF.\n\nBest regards,\n${name}`);
+
+        // Open mailto link
+        window.location.href = `mailto:info@arkanzax.com?subject=${subject}&body=${body}`;
+
+        // Show success message
+        form.style.display = 'none';
+        successDiv.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send Request';
+      }, 1000);
+    });
+  }
+}
+
+// ─── 12. Hero Products Dropdown ──────────────────────────────
+function initHeroProducts() {
+  const btn = document.getElementById('hero-products-btn');
+  const dropdown = document.getElementById('hero-products-dropdown');
+  if (!btn || !dropdown) return;
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dropdown.classList.toggle('active');
+    btn.classList.toggle('active');
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.remove('active');
+      btn.classList.remove('active');
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      dropdown.classList.remove('active');
+      btn.classList.remove('active');
+    }
+  });
+}
