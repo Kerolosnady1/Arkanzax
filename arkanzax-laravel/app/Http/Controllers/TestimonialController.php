@@ -9,8 +9,9 @@ class TestimonialController extends Controller
 {
     public function index(ApiService $api)
     {
-        $res = $api->get('testimonials', []);
-        $allTestimonials = $res['data']['data'] ?? $res['data'] ?? [];
+        $res = $api->get('testimonials', []) ?? [];
+        $allTestimonials = data_get($res, 'data.data') ?? data_get($res, 'data', []);
+        if (!is_array($allTestimonials)) $allTestimonials = [];
         $testimonials = array_values(array_filter($allTestimonials, fn($t) => ($t['status'] ?? 0) == 1));
         return view('testimonials.index', compact('testimonials'));
     }

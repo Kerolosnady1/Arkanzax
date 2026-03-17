@@ -99,6 +99,12 @@ html[dir="rtl"] body {
             margin: 0 auto;
         }
 
+        @media (max-width: 768px) {
+            .help-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
         .help-card {
             background: var(--dark-card);
             border: 1px solid var(--dark-border);
@@ -267,9 +273,15 @@ html[dir="rtl"] body {
         }
 
         @media (max-width:768px) {
+        .inner-hero {
+            padding: 220px 0 60px;
+        }
+
+        @media (max-width: 768px) {
             .inner-hero {
-                padding: 120px 0 60px;
+                padding: 180px 0 60px;
             }
+        }
 
             .domain-search-bar {
                 flex-direction: column;
@@ -291,6 +303,55 @@ html[dir="rtl"] body {
                 font-size: 0.8rem;
             }
         }
+
+        /* Domain Search Results Styling */
+        #search-result-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: left;
+            animation: fadeIn 0.4s ease;
+        }
+
+        html[dir="rtl"] #search-result-container {
+            text-align: right;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-info h4 {
+            color: #fff;
+            margin-bottom: 4px;
+            font-size: 1.1rem;
+        }
+
+        .result-info p {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        .price-tag {
+            color: #6c63ff;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 </style>
 @endsection
 @section('content')
@@ -310,9 +371,12 @@ html[dir="rtl"] body {
                 </p>
                 <div class="domain-search-bar reveal-up">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="youridea.com" data-en-placeholder="youridea.com"
+                    <input type="text" id="domain-input" placeholder="youridea.com" data-en-placeholder="youridea.com"
                         data-ar-placeholder="فكرتك.com">
-                    <button data-en="Search" data-ar="بحث">Search</button>
+                    <button id="domain-search-btn" data-en="Search" data-ar="بحث">Search</button>
+                </div>
+                <div id="search-result-container" class="reveal-up" style="display:none; margin-top:20px; max-width:700px; margin-left:auto; margin-right:auto;">
+                    <!-- Result will be injected here -->
                 </div>
                 <div class="tld-row reveal-up">
                     <span><strong>.com</strong> $15.00/yr</span>
@@ -396,7 +460,7 @@ html[dir="rtl"] body {
                                     </p>
                                 </div>
                                 <div class="pricing-price">
-                                    <span class="price-value">$1.99</span>
+                                    <span class="price-value">$60</span>
                                     <span class="price-currency">USD</span>
                                     <span class="price-period">/mo</span>
                                 </div>
@@ -423,7 +487,7 @@ html[dir="rtl"] body {
                                     </p>
                                 </div>
                                 <div class="pricing-price">
-                                    <span class="price-value">$8.99</span>
+                                    <span class="price-value">$100</span>
                                     <span class="price-currency">USD</span>
                                     <span class="price-period">/mo</span>
                                 </div>
@@ -449,7 +513,7 @@ html[dir="rtl"] body {
                                     </p>
                                 </div>
                                 <div class="pricing-price">
-                                    <span class="price-value">$15.99</span>
+                                    <span class="price-value">$120</span>
                                     <span class="price-currency">USD</span>
                                     <span class="price-period">/mo</span>
                                 </div>
@@ -482,7 +546,7 @@ html[dir="rtl"] body {
                                     </p>
                                 </div>
                                 <div class="pricing-price">
-                                    <span class="price-value">$2.99</span>
+                                    <span class="price-value">$60</span>
                                     <span class="price-currency">USD</span>
                                     <span class="price-period">/mo</span>
                                 </div>
@@ -510,7 +574,7 @@ html[dir="rtl"] body {
                                     </p>
                                 </div>
                                 <div class="pricing-price">
-                                    <span class="price-value">$8.99</span>
+                                    <span class="price-value">$100</span>
                                     <span class="price-currency">USD</span>
                                     <span class="price-period">/mo</span>
                                 </div>
@@ -537,7 +601,7 @@ html[dir="rtl"] body {
                                     </p>
                                 </div>
                                 <div class="pricing-price">
-                                    <span class="price-value">$15.99</span>
+                                    <span class="price-value">$120</span>
                                     <span class="price-currency">USD</span>
                                     <span class="price-period">/mo</span>
                                 </div>
@@ -570,7 +634,7 @@ html[dir="rtl"] body {
                                         ASP.NET Hosting</p>
                                 </div>
                                 <div class="pricing-price">
-                                    <span class="price-value">$3.99</span>
+                                    <span class="price-value">$60</span>
                                     <span class="price-currency">USD</span>
                                     <span class="price-period">/mo</span>
                                 </div>
@@ -598,7 +662,7 @@ html[dir="rtl"] body {
                                         ASP.NET Hosting</p>
                                 </div>
                                 <div class="pricing-price">
-                                    <span class="price-value">$10.99</span>
+                                    <span class="price-value">$100</span>
                                     <span class="price-currency">USD</span>
                                     <span class="price-period">/mo</span>
                                 </div>
@@ -625,7 +689,7 @@ html[dir="rtl"] body {
                                         ASP.NET Hosting</p>
                                 </div>
                                 <div class="pricing-price">
-                                    <span class="price-value">$25.99</span>
+                                    <span class="price-value">$120</span>
                                     <span class="price-currency">USD</span>
                                     <span class="price-period">/mo</span>
                                 </div>
@@ -656,7 +720,7 @@ html[dir="rtl"] body {
                                     Reseller Hosting</p>
                             </div>
                             <div class="pricing-price">
-                                <span class="price-value">$9.80</span>
+                                <span class="price-value">$60</span>
                                 <span class="price-currency">USD</span>
                                 <span class="price-period">/mo</span>
                             </div>
@@ -680,7 +744,7 @@ html[dir="rtl"] body {
                                     Reseller Hosting</p>
                             </div>
                             <div class="pricing-price">
-                                <span class="price-value">$13.73</span>
+                                <span class="price-value">$100</span>
                                 <span class="price-currency">USD</span>
                                 <span class="price-period">/mo</span>
                             </div>
@@ -703,7 +767,7 @@ html[dir="rtl"] body {
                                     Reseller Hosting</p>
                             </div>
                             <div class="pricing-price">
-                                <span class="price-value">$18.13</span>
+                                <span class="price-value">$120</span>
                                 <span class="price-currency">USD</span>
                                 <span class="price-period">/mo</span>
                             </div>
@@ -734,7 +798,7 @@ html[dir="rtl"] body {
                                         Hosting</p>
                                 </div>
                                 <div class="pricing-price">
-                                    <span class="price-value">$3.45</span>
+                                    <span class="price-value">$60</span>
                                     <span class="price-currency">USD</span>
                                     <span class="price-period">/mo</span>
                                 </div>
@@ -762,7 +826,7 @@ html[dir="rtl"] body {
                                         Hosting</p>
                                 </div>
                                 <div class="pricing-price">
-                                    <span class="price-value">$14.99</span>
+                                    <span class="price-value">$100</span>
                                     <span class="price-currency">USD</span>
                                     <span class="price-period">/mo</span>
                                 </div>
@@ -789,7 +853,7 @@ html[dir="rtl"] body {
                                         Hosting</p>
                                 </div>
                                 <div class="pricing-price">
-                                    <span class="price-value">$24.99</span>
+                                    <span class="price-value">$120</span>
                                     <span class="price-currency">USD</span>
                                     <span class="price-period">/mo</span>
                                 </div>
@@ -821,7 +885,7 @@ html[dir="rtl"] body {
                                     Reseller Hosting</p>
                             </div>
                             <div class="pricing-price">
-                                <span class="price-value">$12.80</span>
+                                <span class="price-value">$60</span>
                                 <span class="price-currency">USD</span>
                                 <span class="price-period">/mo</span>
                             </div>
@@ -846,7 +910,7 @@ html[dir="rtl"] body {
                                     Reseller Hosting</p>
                             </div>
                             <div class="pricing-price">
-                                <span class="price-value">$16.73</span>
+                                <span class="price-value">$100</span>
                                 <span class="price-currency">USD</span>
                                 <span class="price-period">/mo</span>
                             </div>
@@ -870,7 +934,7 @@ html[dir="rtl"] body {
                                     Reseller Hosting</p>
                             </div>
                             <div class="pricing-price">
-                                <span class="price-value">$21.13</span>
+                                <span class="price-value">$120</span>
                                 <span class="price-currency">USD</span>
                                 <span class="price-period">/mo</span>
                             </div>
@@ -899,7 +963,7 @@ html[dir="rtl"] body {
                                     Hosting</p>
                             </div>
                             <div class="pricing-price">
-                                <span class="price-value">$4.99</span>
+                                <span class="price-value">$60</span>
                                 <span class="price-currency">USD</span>
                                 <span class="price-period">/mo</span>
                             </div>
@@ -922,7 +986,7 @@ html[dir="rtl"] body {
                                     Hosting</p>
                             </div>
                             <div class="pricing-price">
-                                <span class="price-value">$11.99</span>
+                                <span class="price-value">$100</span>
                                 <span class="price-currency">USD</span>
                                 <span class="price-period">/mo</span>
                             </div>
@@ -944,7 +1008,7 @@ html[dir="rtl"] body {
                                     Hosting</p>
                             </div>
                             <div class="pricing-price">
-                                <span class="price-value">$24.99</span>
+                                <span class="price-value">$120</span>
                                 <span class="price-currency">USD</span>
                                 <span class="price-period">/mo</span>
                             </div>
@@ -972,7 +1036,7 @@ html[dir="rtl"] body {
                                     Cloud Hosting</p>
                             </div>
                             <div class="pricing-price">
-                                <span class="price-value">$8.99</span>
+                                <span class="price-value">$60</span>
                                 <span class="price-currency">USD</span>
                                 <span class="price-period">/mo</span>
                             </div>
@@ -995,7 +1059,7 @@ html[dir="rtl"] body {
                                     Cloud Hosting</p>
                             </div>
                             <div class="pricing-price">
-                                <span class="price-value">$16.99</span>
+                                <span class="price-value">$100</span>
                                 <span class="price-currency">USD</span>
                                 <span class="price-period">/mo</span>
                             </div>
@@ -1017,7 +1081,7 @@ html[dir="rtl"] body {
                                     Cloud Hosting</p>
                             </div>
                             <div class="pricing-price">
-                                <span class="price-value">$28.99</span>
+                                <span class="price-value">$120</span>
                                 <span class="price-currency">USD</span>
                                 <span class="price-period">/mo</span>
                             </div>
@@ -1065,6 +1129,69 @@ html[dir="rtl"] body {
                         if (panel) panel.classList.add('active');
                     });
                 });
+
+                // Domain Search Mock Implementation
+                const searchBtn = document.getElementById('domain-search-btn');
+                const domainInput = document.getElementById('domain-input');
+                const resultContainer = document.getElementById('search-result-container');
+
+                if (searchBtn && domainInput && resultContainer) {
+                    searchBtn.addEventListener('click', function () {
+                        const domain = domainInput.value.trim();
+                        if (!domain) {
+                            alert(document.documentElement.lang === 'ar' ? 'يرجى إدخال اسم النطاق' : 'Please enter a domain name');
+                            return;
+                        }
+
+                        // Start searching state
+                        const originalBtnText = searchBtn.textContent;
+                        searchBtn.disabled = true;
+                        searchBtn.textContent = '...';
+                        resultContainer.style.display = 'none';
+
+                        setTimeout(() => {
+                            searchBtn.disabled = false;
+                            searchBtn.textContent = originalBtnText;
+
+                            // Mock results
+                            const isAr = document.documentElement.lang === 'ar';
+                            const extensions = ['.com', '.net', '.org', '.xyz'];
+                            const baseDomain = domain.split('.')[0];
+                            
+                            let resultsHtml = '';
+                            extensions.forEach(ext => {
+                                const fullDomain = baseDomain + ext;
+                                const isAvailable = Math.random() > 0.3; // 70% chance available
+                                const price = ext === '.xyz' ? '$3.00' : (ext === '.net' ? '$16.00' : '$15.00');
+                                
+                                resultsHtml += `
+                                    <div class="result-item">
+                                        <div class="result-info">
+                                            <h4>${fullDomain}</h4>
+                                            <p style="color: ${isAvailable ? '#2ecc71' : '#e74c3c'}">
+                                                ${isAvailable ? (isAr ? 'متاح للتسجيل' : 'Available for registration') : (isAr ? 'غير متاح' : 'Not available')}
+                                            </p>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <span class="price-tag">${price}/yr</span>
+                                            <br>
+                                            ${isAvailable ? `<a href="#contact" class="btn btn-primary" style="padding: 6px 16px; font-size: 0.8rem; margin-top: 8px;">${isAr ? 'سجل الآن' : 'Register Now'}</a>` : ''}
+                                        </div>
+                                    </div>
+                                `;
+                            });
+
+                            resultContainer.innerHTML = resultsHtml;
+                            resultContainer.style.display = 'block';
+                            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }, 1200);
+                    });
+
+                    // Allow Enter key
+                    domainInput.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter') searchBtn.click();
+                    });
+                }
             });
         </script>
         @include('partials.testimonials')

@@ -206,9 +206,13 @@ function initTestimonialsSlider() {
     current = ((index % n) + n) % n;
     const visible = getVisible();
     const cardWidthPercent = 100 / visible;
-    // Each card is 33.333% or 50% or 100% width; shift track by current * (visible cards)
     const shiftPercent = current * visible * cardWidthPercent;
-    track.style.transform = `translateX(-${shiftPercent}%)`;
+    
+    // Handle RTL direction
+    const isRTL = document.documentElement.dir === 'rtl';
+    const multiplier = isRTL ? 1 : -1;
+    
+    track.style.transform = `translateX(${multiplier * shiftPercent}%)`;
     updateDots();
   }
 
@@ -346,6 +350,16 @@ function initLanguageToggle() {
     announcement.textContent = isArabic ? 'تم التبديل إلى العربية' : 'Switched to English';
     document.body.appendChild(announcement);
     setTimeout(() => announcement.remove(), 1000);
+
+    // 6. Reset Testimonials Slider for direction change
+    if (typeof initTestimonialsSlider === 'function') {
+      const track = document.getElementById('testimonials-track');
+      if (track) {
+        // We re-run the slider init or a specific reset if exported
+        // For this script, we can just trigger a resize event to force rebuild
+        window.dispatchEvent(new Event('resize'));
+      }
+    }
   });
 }
 

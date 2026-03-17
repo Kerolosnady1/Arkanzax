@@ -95,21 +95,21 @@ Domain" data-ar="الاستضافة
                     <h3 data-en="Core Software Products" data-ar="منتجات البرمجيات الأساسية">Core Software Products</h3>
                   </div>
                   <div class="mega-menu-grid grid-4">
-                    <a href="{{ route('items.show', 'property-management') }}" class="client-card">
+                    <a href="{{ route('product.pms') }}" class="client-card">
                       <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600" alt="Property Management System" style="height:120px; object-fit:cover;">
                       <div class="client-card-info">
                         <h4 data-en="Property Management" data-ar="إدارة العقارات">Property Management</h4>
                         <p data-en="Complete PMS Solution" data-ar="حل كامل لإدارة العقارات">Complete PMS Solution</p>
                       </div>
                     </a>
-                    <a href="{{ route('items.show', 'marketing-tools-smes') }}" class="client-card">
+                    <a href="{{ route('product.marketing') }}" class="client-card">
                       <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600" alt="Marketing Tools SMEs" style="height:120px; object-fit:cover;">
                       <div class="client-card-info">
                         <h4 data-en="Marketing for SMEs" data-ar="تسويق للشركات الصغيرة">Marketing for SMEs</h4>
                         <p data-en="Growth Tools & Automation" data-ar="أدوات النمو والأتمتة">Growth Tools & Automation</p>
                       </div>
                     </a>
-                    <a href="{{ route('items.show', 'e-commerce-product') }}" class="client-card">
+                    <a href="{{ route('product.ecommerce') }}" class="client-card">
                       <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=600" alt="E-Commerce Product" style="height:120px; object-fit:cover;">
                       <div class="client-card-info">
                         <h4 data-en="E-Commerce Product" data-ar="منتج التجارة الإلكترونية">E-Commerce Product</h4>
@@ -233,6 +233,15 @@ Clients" data-ar="عملاء
                   <div class="mobile-client-info">
                     <h4 data-en="E-Commerce Product" data-ar="منتج التجارة الإلكترونية">E-Commerce Product</h4>
                     <p data-en="Scalable Commerce Platform" data-ar="منصة تجارة قابلة للتوسع">Scalable Commerce Platform</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="{{ route('product.crm') }}" class="mobile-client-card">
+                  <i class="fas fa-cash-register" style="color: var(--primary); font-size: 1.2rem;"></i>
+                  <div class="mobile-client-info">
+                    <h4 data-en="CRM & POS" data-ar="إدارة علاقات العملاء ونقاط البيع">CRM & POS</h4>
+                    <p data-en="X9 Smart Point of Sale" data-ar="نظام X9 الذكي لنقاط البيع">X9 Smart Point of Sale</p>
                   </div>
                 </a>
               </li>

@@ -81,12 +81,14 @@ class PageController extends Controller
 
     private function getCommonData(ApiService $api)
     {
-        $testimonialsRes = $api->get('testimonials');
-        $testimonialsAll = $testimonialsRes['data']['data'] ?? $testimonialsRes['data'] ?? [];
+        $testimonialsRes = $api->get('testimonials') ?? [];
+        $testimonialsAll = data_get($testimonialsRes, 'data.data') ?? data_get($testimonialsRes, 'data', []);
+        if (!is_array($testimonialsAll)) $testimonialsAll = [];
         $testimonialsList = array_values(array_filter($testimonialsAll, fn($t) => ($t['status'] ?? 0) == 1));
 
-        $blogsRes = $api->get('blogs', ['number' => 3]);
-        $blogsAll = $blogsRes['data']['blogs']['data'] ?? $blogsRes['data'] ?? [];
+        $blogsRes = $api->get('blogs', ['number' => 3]) ?? [];
+        $blogsAll = data_get($blogsRes, 'data.blogs.data') ?? data_get($blogsRes, 'data', []);
+        if (!is_array($blogsAll)) $blogsAll = [];
         $blogsList = array_values(array_filter($blogsAll, fn($b) => ($b['status'] ?? 0) == 1));
 
         return compact('testimonialsList', 'blogsList');

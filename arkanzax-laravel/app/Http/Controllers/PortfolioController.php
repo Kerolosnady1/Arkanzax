@@ -11,11 +11,13 @@ class PortfolioController extends Controller
     {
         $search = $request->query('search', '');
         
-        $catRes = $api->get('portfolio-categories', []);
-        $categories = $catRes['data']['data'] ?? $catRes['data'] ?? [];
+        $catRes = $api->get('portfolio-categories', []) ?? [];
+        $categories = data_get($catRes, 'data.data') ?? data_get($catRes, 'data', []);
+        if (!is_array($categories)) $categories = [];
 
-        $portRes = $api->get('portfolios', ['search' => $search]);
-        $portfolios = $portRes['data']['data'] ?? $portRes['data'] ?? [];
+        $portRes = $api->get('portfolios', ['search' => $search]) ?? [];
+        $portfolios = data_get($portRes, 'data.portfolios.data') ?? data_get($portRes, 'data.data') ?? data_get($portRes, 'data', []);
+        if (!is_array($portfolios)) $portfolios = [];
 
         return view('portfolios.index', compact('categories', 'portfolios', 'search'));
     }

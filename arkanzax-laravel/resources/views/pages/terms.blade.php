@@ -52,8 +52,8 @@ html[dir="rtl"] body {
     <div class="legal-content reveal-up">
       <div class="legal-body">
         <h1 data-en="Terms of Service" data-ar="شروط الخدمة">Terms of Service</h1>
-        <p data-en="Last updated: February 19, 2025" data-ar="آخر تحديث: 19 فبراير 2025">Last updated: February
-          19, 2025</p>
+        <p data-en="Last updated: March 16, 2026" data-ar="آخر تحديث: 16 مارس 2026">Last updated: March
+16, 2026</p>
 
         <h2 data-en="1. Acceptance of Terms" data-ar="1. قبول الشروط">1. Acceptance of Terms</h2>
         <p data-en="By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement."

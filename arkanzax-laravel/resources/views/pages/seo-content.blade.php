@@ -7,35 +7,7 @@ html[dir="rtl"] body {
       font-family: 'Cairo', 'Outfit', sans-serif;
     }
 
-    .inner-hero {
-      padding: 160px 0 80px;
-      background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark) 100%);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .inner-hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(49, 165, 161, 0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    @media (max-width: 768px) {
-      .inner-hero {
-        padding: 120px 0 60px;
-      }
-
-      .content-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-    }
+    /* Using Global Styles from style.css */
 
     .service-content {
       padding: 100px 0;
@@ -95,18 +67,12 @@ html[dir="rtl"] body {
 
     @media (max-width: 900px) {
       .content-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         text-align: center;
       }
-
-      .feature-list {
-        display: inline-block;
-        text-align: left;
-      }
-
-      html[dir="rtl"] .feature-list {
-        text-align: right;
-      }
+      .content-text h2 { font-size: 2rem; }
+      .feature-list { display: inline-block; text-align: left; }
+      html[dir="rtl"] .feature-list { text-align: right; }
     }
 </style>
 @endsection
@@ -156,7 +122,7 @@ html[dir="rtl"] body {
             </ul>
           </div>
           <div class="content-image reveal-right">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426"
+            <img src="{{ asset('assets/images/services/seo.png') }}"
               alt="SEO Analysis" />
           </div>
         </div>

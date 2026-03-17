@@ -56,11 +56,8 @@ html[dir="rtl"] body {
       display: block;
     }
 
-    @media (max-width: 900px) {
-      .content-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+    .content-grid {
+      display: none;
     }
 </style>
 @section('sub_header')
@@ -86,7 +83,7 @@ html[dir="rtl"] body {
 
     <section class="service-content">
       <div class="container">
-        <div class="content-grid">
+        <div class="responsive-grid">
           <div class="content-text reveal-left">
             <h2 data-en="Empowering Small Business Growth" data-ar="تمكين نمو الشركات الصغيرة">Empowering
               Small Business Growth</h2>
@@ -109,7 +106,7 @@ html[dir="rtl"] body {
             </ul>
           </div>
           <div class="content-image reveal-right">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000"
+            <img src="{{ asset('assets/images/services/api.png') }}"
               alt="Marketing Automation" />
           </div>
         </div>

@@ -52,12 +52,13 @@ Arkanzax is a corporate software house website built with **Laravel 12**. The fr
 ## Features
 
 ### 🌐 Public Website
-- **18 static pages** — Homepage, Services (SEO, Paid Ads, Social Media, Email Marketing, Analytics, Branding), Hosting & Domain, Product pages (PMS, Marketing, E-Commerce), Blog pages, Legal pages (Privacy, Terms, Cookies)
-- **Bilingual support** — Full EN/AR with RTL layout switching via JavaScript
-- **Dynamic content** — Blogs, Offers, Items, Jobs, Portfolios, Testimonials, Contact form — all fetched from external API
-- **E-commerce** — Checkout system with coupon validation, receipt upload, and order tracking
-- **Invoice modal** — Request invoice form with success state
-- **Responsive design** — Mobile-first with hamburger menu, mega menus, scroll-to-top
+- **Complete Product Restoration** — Property Management, Marketing Tools, and E-Commerce pages now feature 100% of their original static content restored into high-performance Blade views.
+- **Bilingual support** — Full EN/AR with RTL layout switching via JavaScript.
+- **Dynamic content** — Blogs, Offers, Items, Jobs, Portfolios, Testimonials, Contact form — all fetched from external API.
+- **E-commerce** — Checkout system with coupon validation, receipt upload, and order tracking.
+- **Invoice modal** — Request invoice form with success state.
+- **Responsive design** — Mobile-first with hamburger menu, mega menus, scroll-to-top.
+- **Maintenance/Kill Switch** — Built-in security toggle via environment variables to control site access.
 
 ### 🔒 Admin Dashboard
 - Full CRUD management for: Blogs, Blog Categories, Offers, Offer Types, Items, Item Types, Jobs, Team Members, Portfolios, Portfolio Categories, Sliders, Testimonials, Subscribers, Contact Messages, Orders, Coupons, Payment Methods, Clients, Settings, Social Integrations, AI Settings, Sitemaps
@@ -108,6 +109,8 @@ arkanzax-laravel/
 ├── routes/
 │   └── web.php                 # All routes (150+ lines)
 ├── .env                        # Environment configuration
+├── render.yaml                 # Render.com Blueprint for one-click deployment
+├── build.sh                    # Automated build script for production environments
 └── seo-panel-api-v1.0.0.postman_collection.json  # API documentation
 ```
 
@@ -165,6 +168,9 @@ API_TENANT_ID=3
 # Admin Credentials
 ADMIN_USER=your-admin-email@example.com
 ADMIN_PASSWORD=your-secure-password
+
+# Site Security (Kill Switch)
+SITE_STATUS=active              # Set to 'locked' to deactivate the site
 ```
 
 ### API Configuration Explained
@@ -297,12 +303,16 @@ php artisan view:cache
 chmod -R 775 storage bootstrap/cache
 ```
 
-### Option B: VPS / Docker
+### Option A: Render.com (Recommended)
 
-```bash
-# 1. Clone to server
-git clone https://github.com/Kerolosnady1/Arkanzax.git
-cd arkanzax-laravel
+This project is pre-configured for **Render.com** using the included `render.yaml` and `build.sh`.
+
+1. **Push to GitHub**: Connect your repository to Render.
+2. **One-Click Deploy**: Render will detect `render.yaml` and set up the Web Service automatically.
+3. **Environment Variables**: Add your `API_KEY` and other credentials in the Render Dashboard.
+4. **Site Status**: Toggle the `SITE_STATUS` variable to control public access.
+
+### Option B: Shared Hosting (cPanel)
 
 # 2. Install dependencies
 composer install --optimize-autoloader --no-dev

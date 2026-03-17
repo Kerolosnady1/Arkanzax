@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 @section('title', 'blog-ai | Arkanzax')
 @section('content')
 
@@ -38,7 +38,7 @@
           perfect solution to the perfect person.
         </p>
 
-        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2664"
+        <img src="{{ asset('assets/images/services/ai.png') }}"
           alt="AI Software Concept" />
 
         <h2 data-en="2. Predictive Customer Journey" data-ar="2. Ø±Ø­Ù„Ø© Ø§Ù„Ø¹Ù…ÙŠÙ„ Ø§Ù„ØªÙ†Ø¨Ø¤ÙŠØ©">2. Predictive Customer

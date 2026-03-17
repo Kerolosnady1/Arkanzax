@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: arkanzax-laravel
+    env: php
+    plan: free # Change to starter/pro if client needs more power
+    buildCommand: ./build.sh
+    startCommand: php artisan serve --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: APP_KEY
+        generateValue: true # Or manually copy from local .env
+      - key: API_BASE_URL
+        value: https://admin.arkanzax.com/a/public/api/v1
+      - key: API_TENANT_ID
+        value: "1"
+      - key: DEMO_MODE
+        value: "true"

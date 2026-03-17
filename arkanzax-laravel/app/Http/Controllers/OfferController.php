@@ -11,11 +11,13 @@ class OfferController extends Controller
     {
         $search = $request->query('search', '');
         
-        $typeRes = $api->get('offer-types', []);
-        $offerTypes = $typeRes['data']['data'] ?? $typeRes['data'] ?? [];
+        $typeRes = $api->get('offer-types', []) ?? [];
+        $offerTypes = data_get($typeRes, 'data.data') ?? data_get($typeRes, 'data', []);
+        if (!is_array($offerTypes)) $offerTypes = [];
 
-        $offersRes = $api->get('offers', ['search' => $search]);
-        $offers = $offersRes['data']['offers']['data'] ?? $offersRes['data'] ?? [];
+        $offersRes = $api->get('offers', ['search' => $search]) ?? [];
+        $offers = data_get($offersRes, 'data.offers.data') ?? data_get($offersRes, 'data', []);
+        if (!is_array($offers)) $offers = [];
 
         return view('offers.index', compact('offerTypes', 'offers', 'search'));
     }

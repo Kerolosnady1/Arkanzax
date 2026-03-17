@@ -11,13 +11,15 @@ class BlogController extends Controller
     {
         $search = $request->query('search', '');
         
-        $catRes = $api->get('categories', []);
-        $categoriesAll = $catRes['data']['data'] ?? $catRes['data'] ?? [];
+        $catRes = $api->get('categories', []) ?? [];
+        $categoriesAll = data_get($catRes, 'data.data') ?? data_get($catRes, 'data', []);
+        if (!is_array($categoriesAll)) $categoriesAll = [];
         $categories = array_values(array_filter($categoriesAll, fn($c) => ($c['status'] ?? 0) == 1));
         
-        $blogsRes = $api->get('blogs', ['search' => $search]);
+        $blogsRes = $api->get('blogs', ['search' => $search]) ?? [];
         // Standard mapping for blogs: $res['data']['blogs']['data'] or $res['data']
-        $allBlogs = $blogsRes['data']['blogs']['data'] ?? $blogsRes['data'] ?? [];
+        $allBlogs = data_get($blogsRes, 'data.blogs.data') ?? data_get($blogsRes, 'data', []);
+        if (!is_array($allBlogs)) $allBlogs = [];
         $blogs = array_values(array_filter($allBlogs, fn($b) => ($b['status'] ?? 0) == 1));
 
         return view('blogs.index', compact('categories', 'blogs', 'search'));

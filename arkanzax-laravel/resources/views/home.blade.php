@@ -69,14 +69,14 @@
             <i class="fas fa-chart-line"></i>
             <div>
               <strong>+247%</strong>
-              <span data-en="Traffic Growth" data-ar="نمو الزيارات">Traffic Growth</span>
+              <span style="color: #000000;" data-en="Traffic Growth" data-ar="نمو الزيارات">Traffic Growth</span>
             </div>
           </div>
           <div class="floating-card card-2">
             <i class="fas fa-robot"></i>
             <div>
               <strong>AI</strong>
-              <span data-en="Campaign Optimized" data-ar="حملة محسّنة">Campaign Optimized</span>
+              <span style="color: #000000;" data-en="Campaign Optimized" data-ar="حملة محسّنة">Campaign Optimized</span>
             </div>
           </div>
         </div>
@@ -139,7 +139,8 @@
                   $iconMap = [
                       'property-management' => 'fa-building',
                       'marketing-tools-smes' => 'fa-bullhorn',
-                      'e-commerce-product' => 'fa-mobile-alt'
+                      'e-commerce-product' => 'fa-mobile-alt',
+                      'product-crm-pos' => 'fa-cash-register'
                   ];
                   $pIcon = $iconMap[$item['slug_en']] ?? 'fa-cube';
               @endphp
@@ -165,6 +166,7 @@
                 if($item['slug_en'] == 'property-management') $features = ['Listing Management', 'Tenant Tracking', 'Auto Contracts'];
                 if($item['slug_en'] == 'marketing-tools-smes') $features = ['Growth Analytics', 'Ad Automation', 'SME Focused'];
                 if($item['slug_en'] == 'e-commerce-product') $features = ['Native Checkout', 'Live Inventory', 'Multi-Store'];
+                if($item['slug_en'] == 'product-crm-pos') $features = ['Smart POS', 'Inventory Sync', 'Sales Analytics'];
             @endphp
             <ul class="product-features-list">
               @foreach($features as $f)
@@ -230,6 +232,25 @@
               <li><i class="fas fa-check"></i> <span data-en="Offline Mode" data-ar="وضع عدم الاتصال">Offline Mode</span></li>
             </ul>
             <a href="{{ route('product.ecommerce') }}" class="btn-product-learn" data-en="Explore Product" data-ar="استكشف المنتج">
+              <span data-en="Explore Product" data-ar="استكشف المنتج">Explore Product</span> <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <!-- Product 4 -->
+          <div class="product-showcase-card reveal-card" onclick="window.location.href='{{ route('product.crm') }}'">
+            <div class="product-showcase-icon">
+              <i class="fas fa-cash-register"></i>
+            </div>
+            <h3 data-en="CRM & POS" data-ar="نظام البيع و CRM">CRM & POS</h3>
+            <p data-en="Scale your retail or service business with our smart CRM and cloud-based POS system."
+              data-ar="وسع نطاق تجارتك بالتجزئة أو خدماتك من خلال نظام CRM الذكي ونظام POS السحابي الخاص بنا.">
+              Scale your retail or service business with our smart CRM and cloud-based POS system.
+            </p>
+            <ul class="product-features-list">
+              <li><i class="fas fa-check"></i> <span data-en="Smart POS" data-ar="نقاط بيع ذكية">Smart POS</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Inventory Sync" data-ar="تزامن المخزون">Inventory Sync</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Sales Analytics" data-ar="تحليلات المبيعات">Sales Analytics</span></li>
+            </ul>
+            <a href="{{ route('product.crm') }}" class="btn-product-learn" data-en="Explore Product" data-ar="استكشف المنتج">
               <span data-en="Explore Product" data-ar="استكشف المنتج">Explore Product</span> <i class="fas fa-arrow-right"></i>
             </a>
           </div>
@@ -353,6 +374,45 @@
               <p data-en="System crashing under heavy load? We build cloud-native architectures that scale horizontally to handle millions of users."
                 data-ar="هل يتوقف النظام تحت الحمل الثقيل؟ نحن نبني معماريات سحابية أصلية تتوسع أفقياً للتعامل مع ملايين المستخدمين.">
                 System crashing under heavy load? We build cloud-native architectures that scale horizontally to handle millions of users.</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="challenge-card reveal-card" tabindex="0">
+            <div class="challenge-icon">
+              <div class="icon-glow"></div>
+              <i class="fas fa-shield-alt" style="font-size: 2rem; color: #10b981;"></i>
+            </div>
+            <div class="challenge-content">
+              <h3 data-en="Security Gaps" data-ar="الثغرات الأمنية">Security Gaps</h3>
+              <p data-en="Worried about data breaches? We implement zero-trust security modules and conduct rigorous penetration testing to protect your data."
+                data-ar="قلق بشأن اختراقات البيانات؟ نحن نطبق وحدات أمان صفرية الثقة ونجري اختبارات اختراق صارمة لحماية بياناتك.">
+                Worried about data breaches? We implement zero-trust security modules and conduct rigorous penetration testing to protect your data.</p>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div class="challenge-card reveal-card" tabindex="0">
+            <div class="challenge-icon">
+              <div class="icon-glow"></div>
+              <i class="fas fa-history" style="font-size: 2rem; color: #f59e0b;"></i>
+            </div>
+            <div class="challenge-content">
+              <h3 data-en="Technical Debt" data-ar="الديون التقنية">Technical Debt</h3>
+              <p data-en="Legacy systems holding you back? We specialize in code modernization and refactoring to make your software maintainable and fast."
+                data-ar="هل تعيقك الأنظمة القديمة؟ نحن نتخصص في تحديث الشيفرة وإعادة هيكلتها لجعل برمجياتك قابلة للصيانة وسريعة.">
+                Legacy systems holding you back? We specialize in code modernization and refactoring to make your software maintainable and fast.</p>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="challenge-card reveal-card" tabindex="0">
+            <div class="challenge-icon">
+              <div class="icon-glow"></div>
+              <i class="fas fa-microchip" style="font-size: 2rem; color: #ef4444;"></i>
+            </div>
+            <div class="challenge-content">
+              <h3 data-en="Data Inefficiency" data-ar="عدم كفاءة البيانات">Data Inefficiency</h3>
+              <p data-en="Unstructured data causing confusion? We build unified data engineering pipelines to turn chaos into clear, actionable intelligence."
+                data-ar="هل تسبب البيانات غير المهيكلة ارتباكاً؟ نحن نبني خطوط أنابيب هندسة بيانات موحدة لتحويل الفوضى إلى ذكاء واضح وقابل للتنفيذ.">
+                Unstructured data causing confusion? We build unified data engineering pipelines to turn chaos into clear, actionable intelligence.</p>
             </div>
           </div>
         @endforelse

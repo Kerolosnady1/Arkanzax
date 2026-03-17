@@ -52,8 +52,8 @@ html[dir="rtl"] body {
     <div class="legal-content reveal-up">
       <div class="legal-body">
         <h1 data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</h1>
-        <p data-en="Last updated: February 19, 2025" data-ar="آخر تحديث: 19 فبراير 2025">Last updated: February
-          19, 2025</p>
+        <p data-en="Last updated: March 16, 2026" data-ar="آخر تحديث: 16 مارس 2026">Last updated: March
+16, 2026</p>
 
         <h2 data-en="1. Introduction" data-ar="1. مقدمة">1. Introduction</h2>
         <p data-en="Welcome to Arkanzax. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website."

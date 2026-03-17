@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 @section('title', 'blog-tiktok | Arkanzax')
 @section('content')
 
@@ -37,7 +37,7 @@
           code is the new gold standard.
         </p>
 
-        <img src="https://images.unsplash.com/photo-1611606063065-ee7946f0787a?auto=format&fit=crop&q=80&w=2574"
+        <img src="{{ asset('assets/images/services/mobile.png') }}"
           alt="TikTok Tech Integration" />
 
         <h2 data-en="Real-time Webhook Integration" data-ar="ØªÙƒØ§Ù…Ù„ Ø§Ù„Ù€ Webhook ÙÙŠ Ø§Ù„ÙˆÙ‚Øª Ø§Ù„ÙØ¹Ù„ÙŠ">Real-time Webhook

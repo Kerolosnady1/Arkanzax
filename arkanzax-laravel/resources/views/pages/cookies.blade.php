@@ -52,8 +52,8 @@ html[dir="rtl"] body {
     <div class="legal-content reveal-up">
       <div class="legal-body">
         <h1 data-en="Cookie Policy" data-ar="سياسة ملفات الارتباط">Cookie Policy</h1>
-        <p data-en="Last updated: February 19, 2025" data-ar="آخر تحديث: 19 فبراير 2025">Last updated: February
-          19, 2025</p>
+        <p data-en="Last updated: March 16, 2026" data-ar="آخر تحديث: 16 مارس 2026">Last updated: March
+16, 2026</p>
 
         <h2 data-en="What Are Cookies" data-ar="ما هي ملفات الارتباط">What Are Cookies</h2>
         <p data-en="As is common practice with almost all professional websites this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience."

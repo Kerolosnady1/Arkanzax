@@ -2,10 +2,12 @@
 @section('title', 'CRM & POS System | X9 — Arkanzax')
 @section('meta_description', 'X9 is an integrated POS & CRM system for restaurants, cafes, and retail. Smart sales, real-time inventory, KDS, QR menus, multi-branch management. Powered by Arkanzax.')
 
-@section('content')
-@include('partials.product_sub_header')
+@section('sub_header')
+    @include('partials.product_sub_header')
+@endsection
 
-{{-- ══════════════ HERO ══════════════ --}}
+@section('content')
+{{-- HERO --}}
 <section class="crm-hero-section" style="
     position: relative;
     min-height: 90vh;
@@ -13,14 +15,10 @@
     align-items: center;
     background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
     overflow: hidden;
-    padding-top: 100px;
+    padding-top: 220px;
 ">
-    {{-- Animated background blobs --}}
-    <div style="position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.25),transparent);top:-100px;right:-100px;animation:float 8s ease-in-out infinite;"></div>
-    <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(59,158,245,0.2),transparent);bottom:-80px;left:-80px;animation:float 10s ease-in-out infinite reverse;"></div>
-
-    <div class="container" style="position:relative;z-index:2;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+    <div class="container">
+        <div class="responsive-grid" style="grid-template-columns: 1.2fr 0.8fr; align-items: center;">
             <div class="reveal-up">
                 {{-- Badge --}}
                 <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.4);border-radius:50px;padding:6px 18px;margin-bottom:24px;">
@@ -39,7 +37,6 @@
                     <a href="https://www.get-x9.com/ar/features" target="_blank" style="border:2px solid rgba(255,255,255,0.3);color:#fff;padding:14px 32px;border-radius:50px;font-weight:700;text-decoration:none;font-size:1rem;transition:all 0.3s;" data-en="Explore Features" data-ar="استكشف الميزات">Explore Features</a>
                 </div>
 
-                {{-- Trust badges --}}
                 <div style="display:flex;gap:24px;margin-top:40px;flex-wrap:wrap;">
                     <div style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);font-size:0.85rem;">
                         <i class="fas fa-check-circle" style="color:#10b981;"></i>
@@ -56,14 +53,12 @@
                 </div>
             </div>
 
-            {{-- Hero visual --}}
             <div class="reveal-up" style="position:relative;">
                 <div style="background:linear-gradient(135deg,rgba(124,58,237,0.15),rgba(59,158,245,0.1));border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:40px;text-align:center;backdrop-filter:blur(10px);">
                     <div style="font-size:6rem;margin-bottom:20px;">🖥️</div>
                     <div style="font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:8px;">X9 POS & CRM</div>
                     <div style="color:rgba(255,255,255,0.6);margin-bottom:24px;" data-en="All-in-One Business Platform" data-ar="منصة أعمال متكاملة">All-in-One Business Platform</div>
-                    {{-- Mini stat cards --}}
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                    <div class="responsive-grid" style="grid-template-columns:1fr 1fr;gap:12px;">
                         <div style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:16px;">
                             <div style="font-size:1.5rem;font-weight:800;color:#10b981;">99.9%</div>
                             <div style="font-size:0.75rem;color:rgba(255,255,255,0.6);" data-en="Uptime" data-ar="وقت التشغيل">Uptime</div>
@@ -87,16 +82,15 @@
     </div>
 </section>
 
-{{-- ══════════════ FEATURES GRID ══════════════ --}}
+{{-- FEATURES GRID --}}
 <section style="padding:100px 0;background:#0a0a1a;">
     <div class="container">
         <div class="section-header text-center reveal-up" style="margin-bottom:60px;">
             <span class="sub-badge" data-en="Core Capabilities" data-ar="القدرات الأساسية">Core Capabilities</span>
             <h2 class="section-title" data-en="Everything You Need to Run Your Business" data-ar="كل ما تحتاجه لإدارة أعمالك">Everything You Need to Run Your Business</h2>
-            <p class="section-subtitle" data-en="A comprehensive suite of tools and features designed specifically to meet the needs of modern restaurants and retail businesses." data-ar="مجموعة شاملة من الأدوات والميزات المصممة خصيصاً لتلبية احتياجات المطاعم الحديثة.">A comprehensive suite of tools and features designed specifically to meet the needs of modern restaurants and retail businesses.</p>
+            <p class="section-subtitle" data-en="A comprehensive suite of tools and features designed specifically to meet the needs of modern restaurants and retail businesses." data-ar="مجموعة شاملة من الأدوات والميزات المصممة خصيصاً لتلبية احتياجات المطاعم وتجارة التجزئة الحديثة.">A comprehensive suite of tools and features designed specifically to meet the needs of modern restaurants and retail businesses.</p>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
-
+        <div class="responsive-grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
             @php
             $features = [
                 ['icon'=>'fa-cash-register','color'=>'#7c3aed','bg'=>'rgba(124,58,237,0.12)','en_title'=>'Smart POS','ar_title'=>'نقطة بيع ذكية','en_desc'=>'Lightning-fast, intuitive interface for receiving orders and managing sales efficiently.','ar_desc'=>'واجهة سهلة الاستخدام لاستقبال الطلبات وإدارة المبيعات بسرعة وكفاءة.'],
@@ -107,7 +101,6 @@
                 ['icon'=>'fa-building-user','color'=>'#8b5cf6','bg'=>'rgba(139,92,246,0.12)','en_title'=>'Branch Management','ar_title'=>'إدارة الفروع','en_desc'=>'Full control over all your branches from a single unified dashboard.','ar_desc'=>'تحكم كامل في جميع فروعك من لوحة تحكم واحدة.'],
             ];
             @endphp
-
             @foreach($features as $f)
             <div class="reveal-card" style="background:linear-gradient(135deg,#111128,#0d0d1f);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:32px;transition:all 0.3s;position:relative;overflow:hidden;"
                 onmouseenter="this.style.transform='translateY(-8px)';this.style.borderColor='{{ $f['color'] }}40';"
@@ -129,10 +122,10 @@
     </div>
 </section>
 
-{{-- ══════════════ BUSINESS INTELLIGENCE ══════════════ --}}
+{{-- BUSINESS INTELLIGENCE --}}
 <section style="padding:100px 0;background:linear-gradient(135deg,#0f0c29,#1a1040);">
     <div class="container">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+        <div class="responsive-grid" style="grid-template-columns: 1fr 1fr; align-items: center;">
             <div class="reveal-up">
                 <span class="sub-badge" data-en="Business Intelligence" data-ar="ذكاء الأعمال">Business Intelligence</span>
                 <h2 class="section-title" style="text-align:left;" data-en="Understand Your Business With Heat Maps & Smart Analytics" data-ar="افهم أعمالك بالخرائط الحرارية والتحليلات الذكية">
@@ -141,7 +134,7 @@
                 <p style="color:rgba(255,255,255,0.65);line-height:1.8;margin-bottom:32px;" data-en="Interactive heat maps to understand the rhythm of your restaurant and improve performance." data-ar="خرائط حرارية تفاعلية لفهم إيقاع مطعمك وتحسين الأداء.">
                     Interactive heat maps to understand the rhythm of your restaurant and improve performance.
                 </p>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div class="responsive-grid" style="gap:16px;">
                     <div style="background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.25);border-radius:16px;padding:20px;">
                         <div style="font-size:1.5rem;margin-bottom:8px;">🔥</div>
                         <h4 style="color:#fff;font-weight:700;margin-bottom:6px;" data-en="Sales Heat Map" data-ar="الخريطة الحرارية للمبيعات">Sales Heat Map</h4>
@@ -159,7 +152,7 @@
                 </a>
             </div>
 
-            <div class="reveal-up" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="reveal-up responsive-grid" style="grid-template-columns: 1fr 1fr; gap:16px;">
                 @php
                 $stats = [
                     ['icon'=>'📈','value'=>'+40%','label_en'=>'Sales Growth','label_ar'=>'نمو المبيعات','color'=>'#10b981'],
@@ -180,14 +173,14 @@
     </div>
 </section>
 
-{{-- ══════════════ BUSINESS TYPES ══════════════ --}}
+{{-- BUSINESS TYPES --}}
 <section style="padding:100px 0;background:#0a0a1a;">
     <div class="container">
         <div class="section-header text-center reveal-up" style="margin-bottom:60px;">
             <span class="sub-badge" data-en="Use Cases" data-ar="حالات الاستخدام">Use Cases</span>
             <h2 class="section-title" data-en="Built for Every Type of Business" data-ar="مناسب لجميع أنواع الأعمال">Built for Every Type of Business</h2>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;">
+        <div class="responsive-grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;">
             @php
             $types = [
                 ['icon'=>'🍽️','en'=>'Restaurants','ar'=>'المطاعم'],
@@ -195,7 +188,7 @@
                 ['icon'=>'🛒','en'=>'Retail Stores','ar'=>'متاجر التجزئة'],
                 ['icon'=>'🍕','en'=>'Pizzerias','ar'=>'بيتزا'],
                 ['icon'=>'🧋','en'=>'Bubble Tea','ar'=>'شاي بالحليب'],
-                ['icon'=>'🏪','en'=>'Food Courts','ar'=>'مطاعم الفود كورت'],
+                ['icon'=>'🍿','en'=>'Food Courts','ar'=>'مطاعم الفود كورت'],
             ];
             @endphp
             @foreach($types as $t)
@@ -210,14 +203,14 @@
     </div>
 </section>
 
-{{-- ══════════════ TESTIMONIALS ══════════════ --}}
+{{-- TESTIMONIALS --}}
 <section style="padding:100px 0;background:linear-gradient(135deg,#0f0c29,#1a1040);">
     <div class="container">
         <div class="section-header text-center reveal-up" style="margin-bottom:60px;">
             <span class="sub-badge" data-en="Client Love" data-ar="آراء العملاء">Client Love</span>
             <h2 class="section-title" data-en="What Our Clients Say" data-ar="ماذا يقول عملاؤنا">What Our Clients Say</h2>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+        <div class="responsive-grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
             @php
             $testimonials = [
                 ['text_en'=>'An amazing system that completely changed how we manage our restaurant. Now we track everything easily.','text_ar'=>'نظام رائع غيّر طريقة إدارتنا للمطعم بالكامل. الآن نتابع كل شيء بسهولة.','author'=>'Ahmed K.','role_en'=>'Restaurant Owner','role_ar'=>'صاحب مطعم'],
@@ -242,14 +235,14 @@
     </div>
 </section>
 
-{{-- ══════════════ HOW TO START ══════════════ --}}
+{{-- HOW TO START --}}
 <section style="padding:100px 0;background:#0a0a1a;">
     <div class="container">
         <div class="section-header text-center reveal-up" style="margin-bottom:60px;">
             <span class="sub-badge" data-en="Simple Onboarding" data-ar="تهيئة بسيطة">Simple Onboarding</span>
             <h2 class="section-title" data-en="Get Started in 3 Simple Steps" data-ar="ابدأ في 3 خطوات بسيطة">Get Started in 3 Simple Steps</h2>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:32px;">
+        <div class="responsive-grid" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:32px;">
             @php
             $steps = [
                 ['num'=>'01','icon'=>'fa-user-plus','color'=>'#7c3aed','en_title'=>'Create Your Account','ar_title'=>'سجّل حسابك','en_desc'=>'Create a free account in minutes with no credit card required.','ar_desc'=>'أنشئ حساباً مجانياً في دقائق.'],
@@ -271,7 +264,7 @@
     </div>
 </section>
 
-{{-- ══════════════ CTA SECTION ══════════════ --}}
+{{-- CTA SECTION --}}
 <section style="padding:100px 0;background:linear-gradient(135deg,#1a0a2e,#0f0c29);">
     <div class="container text-center reveal-up">
         <div style="max-width:700px;margin:0 auto;">
@@ -283,16 +276,18 @@
             <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
                 <a href="https://console.get-x9.com/offer-6months-free?lang=ar" target="_blank"
                     style="background:linear-gradient(135deg,#7c3aed,#5b21b6);color:#fff;padding:16px 40px;border-radius:50px;font-weight:700;text-decoration:none;font-size:1.1rem;box-shadow:0 12px 40px rgba(124,58,237,0.45);transition:all 0.3s;"
-                    data-en="🎁 Get 6 Months Free" data-ar="🎁 احصل على عرض الـ 6 أشهر">🎁 Get 6 Months Free</a>
+                    data-en="🎁  Get 6 Months Free" data-ar="🎁  احصل على عرض الـ 6 أشهر">🎁  Get 6 Months Free</a>
                 <a href="https://www.get-x9.com/ar" target="_blank"
                     style="border:2px solid rgba(255,255,255,0.3);color:#fff;padding:16px 40px;border-radius:50px;font-weight:700;text-decoration:none;font-size:1.1rem;"
                     data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
             </div>
-            <p style="color:rgba(255,255,255,0.4);font-size:0.85rem;margin-top:20px;" data-en="⏰ Offer ends soon — act now!" data-ar="⏰ العرض ينتهي قريباً - لا تفوت الفرصة!">⏰ Offer ends soon — act now!</p>
+            <p style="color:rgba(255,255,255,0.4);font-size:0.85rem;margin-top:20px;" data-en="⌛ Offer ends soon — act now!" data-ar="⌛ العرض ينتهي قريباً - لا تفوت الفرصة!">⌛ Offer ends soon — act now!</p>
         </div>
     </div>
 </section>
 
+@include('partials.testimonials')
+@include('partials.blog_section')
 @endsection
 
 @push('styles')

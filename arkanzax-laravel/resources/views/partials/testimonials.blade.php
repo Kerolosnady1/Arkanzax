@@ -15,8 +15,10 @@
           @forelse($testimonialsList as $t)
           <div class="testi-card">
             <div class="testi-stars">★★★★★</div>
-            <div class="testi-text">
-                {!! $t['testimonial'] ?? '' !!}
+            <div class="testi-text" 
+                 data-en="{{ strip_tags($t['testimonial_en'] ?? $t['testimonial'] ?? '') }}" 
+                 data-ar="{{ strip_tags($t['testimonial_ar'] ?? $t['testimonial'] ?? '') }}">
+                {!! $t['testimonial_en'] ?? $t['testimonial'] ?? '' !!}
             </div>
             <div class="testi-author">
               <div class="author-avatar">
@@ -27,7 +29,10 @@
                 @endif
               </div>
               <div class="author-info">
-                <strong>{{ $t['name'] ?? 'Valued Client' }}</strong>
+                <strong data-en="{{ $t['name_en'] ?? $t['name'] ?? 'Valued Client' }}" 
+                        data-ar="{{ $t['name_ar'] ?? $t['name'] ?? 'عميل موثق' }}">
+                    {{ $t['name_en'] ?? $t['name'] ?? 'Valued Client' }}
+                </strong>
                 <span data-en="Verified Client" data-ar="عميل موثق">Verified Client</span>
               </div>
             </div>
